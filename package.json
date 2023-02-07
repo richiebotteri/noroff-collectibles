@@ -1,0 +1,25 @@
+{
+  "name": "semester-project-2",
+  "version": "0.0.1",
+  "description": "Noroff Collectibles - a platform where registered users can buy and sell items through bidding. New users receive 1000 credits to start. Non-registered users can browse listings, while only registered users can place bids. Built using cutting-edge technologies to ensure a seamless bidding experience.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richiebotteri/Semester-Project-2.git"
+  },
+  "keywords": [
+    "semester-project-2",
+    "sp2",
+    "auction-website",
+    "exam"
+  ],
+  "author": "Richie Botteri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richiebotteri/Semester-Project-2/issues"
+  },
+  "homepage": "https://github.com/richiebotteri/Semester-Project-2#readme"
+}
