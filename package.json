@@ -24,6 +24,7 @@
   "homepage": "https://github.com/richiebotteri/Semester-Project-2#readme",
   "devDependencies": {
     "bootstrap": "^5.2.3",
+    "prettier": "^2.8.3",
     "sass": "^1.58.0"
   }
 }
