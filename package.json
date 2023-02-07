@@ -4,9 +4,10 @@
   "description": "Noroff Collectibles - a platform where registered users can buy and sell items through bidding. New users receive 1000 credits to start. Non-registered users can browse listings, while only registered users can place bids. Built using cutting-edge technologies to ensure a seamless bidding experience.",
   "main": "index.js",
   "scripts": {
-    "build:sass": "sass src/scss:dist/css",
-    "start:sass": "sass -watch srs/scss:dist/css",
-    "format:prettier": "prettier -w **/**/*.{js,scss}"
+    "build": "sass src/scss:dist/css",
+    "start": "sass -watch src/scss:dist/css",
+    "format": "prettier -w src/**/*.{js,scss}",
+    "lint": "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
