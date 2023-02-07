@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build:sass": "sass src/scss:dist/css",
-    "start:sass": "sass -watch srs/scss:dist/css"
+    "start:sass": "sass -watch srs/scss:dist/css",
+    "format:prettier": "prettier -w **/**/*.{js,scss}"
   },
   "repository": {
     "type": "git",
