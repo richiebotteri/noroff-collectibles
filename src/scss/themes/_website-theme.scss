@@ -13,11 +13,11 @@ $website-theme: (
   "dark-blue": $blue-1100,
 );
 
-@import "../base/functions";
-@import "../base/variables";
+@import "../vendors/bootstrap/functions";
+@import "../vendors/bootstrap/variables";
 @import "./bootstrap-theme";
 
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $website-theme);
 
-@import "../vendors/bootstrap";
+@import "../vendors/bootstrap/bootstrap";
