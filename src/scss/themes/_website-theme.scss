@@ -2,15 +2,15 @@
 
 // My Bootstrap Theme
 $website-theme: (
-  "green-50": $green-50,
-  "green-200": $green-200,
-  "green-800": $green-800,
-  "green-900": $green-900,
-  "green-1000": $green-1000,
-  "blue-50": $blue-50,
-  "blue-300": $blue-300,
-  "blue-1000": $blue-1000,
-  "blue-1100": $blue-1100,
+  "light-green-1": $green-50,
+  "light-green-2": $green-200,
+  "dark-green-1": $green-800,
+  "dark-green-2": $green-900,
+  "dark-green-3": $green-1000,
+  "light-blue-1": $blue-50,
+  "light-blue-2": $blue-300,
+  "accent-blue": $blue-1000,
+  "dark-blue": $blue-1100,
 );
 
 @import "../base/functions";
