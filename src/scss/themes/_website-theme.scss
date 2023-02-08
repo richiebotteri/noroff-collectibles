@@ -15,18 +15,7 @@ $website-theme: (
 
 @import "../base/functions";
 @import "../base/variables";
-
-$theme-colors: (
-  "primary": $green-800,
-  "secondary": $secondary,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "danger-light": $light-red,
-  "danger-dark": $dark-red,
-  "light": $light,
-  "dark": $dark,
-);
+@import "./bootstrap-theme";
 
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $website-theme);
