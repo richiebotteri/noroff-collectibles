@@ -1,0 +1,40 @@
+@import "../base/colors";
+@import "../base/components";
+@import "../themes/website-theme";
+
+// Buttons
+$btn-padding-y: $padding-y;
+$btn-padding-x: $padding-x;
+
+$btn-font-weight: $font-weight-semibold;
+
+$btn-border-radius: $border-radius-pill;
+$btn-border-radius-sm: $border-radius-pill;
+$btn-border-radius-lg: $border-radius-pill;
+
+// Button Classes
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @if $color == "accent-blue" {
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
+        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
+        $active-background: shade-color($value, $btn-active-bg-shade-amount),
+        $active-border: shade-color($value, $btn-active-border-shade-amount)
+      );
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+@import "../vendors/bootstrap/functions";
+@import "../vendors/bootstrap/variables";
+@import "../vendors/bootstrap/bootstrap";
