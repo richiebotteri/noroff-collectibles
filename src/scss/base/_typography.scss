@@ -17,8 +17,13 @@ span,
 ul,
 ol,
 li,
+label,
 figure,
 figcaption,
 blockquote {
   font-family: $content-font;
 }
+
+// Font Wait
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
