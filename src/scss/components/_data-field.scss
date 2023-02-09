@@ -1,0 +1,28 @@
+@import "../base/components";
+
+.data-field {
+  display: flex;
+  justify-content: space-between;
+  border-radius: $border-radius-pill;
+}
+
+.data-field-left {
+  width: 100%;
+  padding: $padding-y $padding-x;
+  border-radius: $border-radius-pill 0 0 $border-radius-pill;
+  border: $border-width solid $component-active-bg;
+}
+
+.data-field-right,
+.data-field-right-accent {
+  padding: 0.9375rem $padding-x;
+  background-color: $component-active-bg;
+  border-radius: 0 $border-radius-pill $border-radius-pill 0;
+  line-height: 1.75rem;
+  margin-left: -$border-width;
+}
+
+.data-field-right-accent {
+  background-color: $blue-1000;
+  color: $blue-50;
+}
