@@ -1,0 +1,23 @@
+@import "../base/root";
+@import "../base/colors";
+@import "../base/components";
+@import "../themes/website-theme";
+
+// Replacing Bootstrap Variables
+$card-spacer-y: $spacer;
+$card-spacer-x: $spacer;
+
+@import "../vendors/bootstrap/functions";
+@import "../vendors/bootstrap/variables";
+@import "../vendors/bootstrap/bootstrap";
+
+.card {
+  border: none;
+  color: $blue-1000;
+  background-color: $blue-50;
+  box-shadow: $box-shadow;
+}
+
+.card-listing-vertical {
+  width: 278;
+}
