@@ -1,9 +1,6 @@
 @import "../base/colors";
 @import "../base/typography";
 
-// Global component variables
-//
-
 // Border
 
 $border-width: 2px;
@@ -85,4 +82,5 @@ $input-plaintext-color: $blue-1000;
 
 @import "../vendors/bootstrap/functions";
 @import "../vendors/bootstrap/variables";
+
 @import "../vendors/bootstrap/bootstrap";

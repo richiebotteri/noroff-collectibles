@@ -1,0 +1,16 @@
+$enable-cssgrid: true;
+
+// Spacing for all body and compponents
+
+$spacer: 1.25rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.5,
+  2: $spacer,
+  3: $spacer * 2,
+  4: $spacer * 4,
+);
+
+@import "../vendors/bootstrap/functions";
+@import "../vendors/bootstrap/variables";
+@import "../vendors/bootstrap/bootstrap";
