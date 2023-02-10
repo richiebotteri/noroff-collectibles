@@ -1,35 +1,54 @@
+@import "../base/colors";
+@import "../base/typography";
 @import "../base/components";
 
 .data-field {
-  display: flex;
-  justify-content: space-between;
-  border-radius: $border-radius-pill;
-}
-
-.data-field--deadline {
-  padding: $padding-y $padding-x;
-  justify-content: center;
-  background-color: $light-red;
-  color: $dark-red;
-}
-
-.data-field-left {
   width: 100%;
+  display: flex;
+  border-radius: $border-radius-pill;
+  &--tag {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    font-size: 14px;
+    border: $border-width solid $component-active-bg;
+    border-radius: $border-radius-pill;
+  }
+}
+
+.data-field-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
   padding: $padding-y $padding-x;
-  border-radius: $border-radius-pill 0 0 $border-radius-pill;
   border: $border-width solid $component-active-bg;
-}
+  border-radius: $border-radius-pill;
+  &--left {
+    @extend .data-field-content;
+    width: 60%;
+    border-radius: $border-radius-pill 0 0 $border-radius-pill;
+  }
 
-.data-field-right,
-.data-field-right-accent {
-  padding: 0.9375rem $padding-x;
-  background-color: $component-active-bg;
-  border-radius: 0 $border-radius-pill $border-radius-pill 0;
-  line-height: 1.75rem;
-  margin-left: -$border-width;
-}
+  &--right {
+    @extend .data-field-content;
+    width: 40%;
+    background-color: $component-active-bg;
+    border-radius: 0 $border-radius-pill $border-radius-pill 0;
+    margin-left: -$border-width;
+    &-accent {
+      @extend .data-field-content--right;
+      border: $border-width solid $blue-1000;
+      background-color: $blue-1000;
+      color: $blue-50;
+      font-weight: $font-weight-bold;
+    }
+  }
 
-.data-field-right-accent {
-  background-color: $blue-1000;
-  color: $blue-50;
+  &--deadline {
+    @extend .data-field-content;
+    border: $light-red;
+    justify-content: center;
+    background-color: $light-red;
+    color: $dark-red;
+    font-weight: $font-weight-bold;
+  }
 }
