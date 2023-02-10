@@ -12,29 +12,65 @@ $btn-border-radius: $border-radius-pill;
 $btn-border-radius-sm: $border-radius-pill;
 $btn-border-radius-lg: $border-radius-pill;
 
-// Button Classes
-
-@each $color, $value in $theme-colors {
-  .btn-#{$color} {
-    @if $color == "accent-blue" {
-      @include button-variant(
-        $value,
-        $value,
-        $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
-        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
-        $active-background: shade-color($value, $btn-active-bg-shade-amount),
-        $active-border: shade-color($value, $btn-active-border-shade-amount)
-      );
-    }
-  }
-}
-
-@each $color, $value in $theme-colors {
-  .btn-outline-#{$color} {
-    @include button-outline-variant($value);
-  }
-}
-
 @import "../vendors/bootstrap/functions";
 @import "../vendors/bootstrap/variables";
 @import "../vendors/bootstrap/bootstrap";
+
+// Button Classes
+
+.btn-accent-dark {
+  $background: $blue-1000;
+  $border: $blue-1000;
+  $color: $blue-50;
+  $hover-background: $blue-1100;
+  @include button-variant(
+    $background,
+    $border,
+    $color,
+    $hover-background,
+    $hover-border: $hover-background,
+    $hover-color: $color,
+    $active-background: $background,
+    $active-border: $background,
+    $active-color: $color,
+    $disabled-background: $background,
+    $disabled-border: $border,
+    $disabled-color: $color
+  );
+}
+
+.btn-accent-light {
+  $background: $blue-50;
+  $border: $blue-50;
+  $color: $blue-1100;
+  $hover-background: $blue-300;
+  @include button-variant(
+    $background,
+    $border,
+    $color,
+    $hover-background,
+    $hover-border: $hover-background,
+    $hover-color: $color,
+    $active-background: $background,
+    $active-border: $background,
+    $active-color: $color,
+    $disabled-background: $background,
+    $disabled-border: $border,
+    $disabled-color: $color
+  );
+}
+
+.btn-outline-light {
+  color: $blue-1000;
+  $outline: $blue-300;
+  $color-hover: $blue-1000;
+  $active-background: $blue-300;
+  $active-border: $active-background;
+  @include button-outline-variant(
+    $outline,
+    $color-hover,
+    $active-background,
+    $active-border,
+    $active-color: $color-hover
+  );
+}
