@@ -1,7 +1,7 @@
 @import "../base/colors";
 
 // My Bootstrap Theme
-$website-theme: (
+$website-colors: (
   "light-green-1": $green-50,
   "light-green-2": $green-200,
   "dark-green-1": $green-800,
@@ -14,9 +14,18 @@ $website-theme: (
 
 @import "../vendors/bootstrap/functions";
 @import "../vendors/bootstrap/variables";
-@import "./bootstrap-theme";
+
+$theme-colors: (
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger-light": $light-red,
+  "danger-dark": $dark-red,
+  "light": $light,
+  "dark": $dark,
+);
 
 // Merge the maps
-$theme-colors: map-merge($theme-colors, $website-theme);
+$theme-colors: map-merge($theme-colors, $website-colors);
 
 @import "../vendors/bootstrap/bootstrap";
