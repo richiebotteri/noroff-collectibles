@@ -9,10 +9,6 @@ $font-family-base: $header-font;
 // Margin reset
 $paragraph-margin-bottom: 0rem;
 
-@import "../vendors/bootstrap/functions";
-@import "../vendors/bootstrap/variables";
-@import "../vendors/bootstrap/bootstrap";
-
 // Adding secondary font to content
 p,
 a,
@@ -27,6 +23,9 @@ blockquote {
   font-family: $content-font;
 }
 
-// Font Wait
+// Font Weight
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
+
+// Line Height
+$line-height-sm: 1.25 !default;

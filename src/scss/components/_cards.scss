@@ -1,23 +1,26 @@
-@import "../base/root";
-@import "../base/colors";
-@import "../base/components";
-@import "../themes/website-theme";
-
 // Replacing Bootstrap Variables
 $card-spacer-y: $spacer;
 $card-spacer-x: $spacer;
-
-@import "../vendors/bootstrap/functions";
-@import "../vendors/bootstrap/variables";
-@import "../vendors/bootstrap/bootstrap";
 
 .card {
   border: none;
   color: $blue-1000;
   background-color: $blue-50;
   box-shadow: $box-shadow;
+
+  &-listing-y {
+    @extend .card;
+    width: 17.1875rem;
+  }
+
+  &-listing-x {
+    @extend .card;
+    height: 280px;
+    width: 46.75rem;
+  }
 }
 
-.card-listing-vertical {
-  width: 278;
+.card-img-left {
+  @extend .card-img-top;
+  border-radius: $border-radius 0 0 $border-radius;
 }

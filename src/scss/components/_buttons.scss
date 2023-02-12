@@ -1,20 +1,3 @@
-@import "../base/colors";
-@import "../base/components";
-
-// Buttons
-$btn-padding-y: $padding-y;
-$btn-padding-x: $padding-x;
-
-$btn-font-weight: $font-weight-semibold;
-
-$btn-border-radius: $border-radius-pill;
-$btn-border-radius-sm: $border-radius-pill;
-$btn-border-radius-lg: $border-radius-pill;
-
-@import "../vendors/bootstrap/functions";
-@import "../vendors/bootstrap/variables";
-@import "../vendors/bootstrap/bootstrap";
-
 // Button Classes
 
 .btn-accent-dark {

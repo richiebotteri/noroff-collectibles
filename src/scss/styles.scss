@@ -1,7 +1,17 @@
-@use "./base/root";
-@use "./base/typography";
-@use "./base/components";
-@use "./themes/website-theme";
-@use "./components/data-field";
-@use "./components/buttons";
-@use "./components/cards";
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "./vendors/bootstrap/functions";
+
+// 2. Include any default variable overrides here
+@import "./base/root";
+@import "./base/colors";
+@import "./base/typography";
+@import "./base/components";
+@import "./themes/website-theme";
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "./vendors/bootstrap/bootstrap.scss";
+
+// 4. Include any optional Bootstrap components as you like
+@import "./components/buttons";
+@import "./components/data-field";
+@import "./components/cards";
