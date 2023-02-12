@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass -watch src/scss:dist/css",
-    "format": "prettier -w src/**/*.{js,scss}",
+    "watch": "sass -watch src/scss:dist/css & live-server",
+    "format": "prettier -w src/**/*.{js,scss,html}",
     "lint": "eslint src/**/*.js",
     "prepare": "husky install"
   },
@@ -31,6 +31,7 @@
     "eslint": "^8.33.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.1",
+    "live-server": "^1.2.2",
     "prettier": "^2.8.3",
     "sass": "^1.58.0"
   },
