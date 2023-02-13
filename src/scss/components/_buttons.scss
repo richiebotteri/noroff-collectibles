@@ -19,6 +19,27 @@
     $disabled-border: $border,
     $disabled-color: $color
   );
+  &--search {
+    @extend .btn-accent-dark;
+    $background: $blue-50;
+    $border: $blue-300;
+    $color: $blue-1000;
+    $hover-background: $blue-300;
+    @include button-variant(
+      $background,
+      $border,
+      $color,
+      $hover-background,
+      $hover-border: $hover-background,
+      $hover-color: $color,
+      $active-background: $background,
+      $active-border: $background,
+      $active-color: $color,
+      $disabled-background: $background,
+      $disabled-border: $border,
+      $disabled-color: $color
+    );
+  }
 }
 
 .btn-accent-light {

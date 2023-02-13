@@ -26,6 +26,12 @@
       @extend .data-field--left;
       border: $border-width solid $light-red;
     }
+    &-logo {
+      @extend .data-field--left;
+      width: fit-content;
+      border: none;
+      z-index: 1;
+    }
   }
 
   &--right {
@@ -52,6 +58,15 @@
       color: $dark-red;
       font-weight: $font-weight-bold;
     }
+
+    &-navbar {
+      @extend .data-field--right;
+      background-color: $blue-1000;
+      color: $blue-50;
+      width: 100%;
+      height: 100%;
+      margin-left: -$border-width;
+    }
   }
 
   &--tag {
@@ -73,4 +88,11 @@
 
 .right-width-large {
   width: 95px;
+}
+
+@media (min-width: 992px) {
+  .data-field--right-navbar {
+    background-color: $blue-50;
+    color: $blue-1000;
+  }
 }

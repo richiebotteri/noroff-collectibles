@@ -1,0 +1,50 @@
+// Header Classes
+
+.navbar {
+  height: 100px;
+  flex-wrap: nowrap;
+  padding: 0;
+}
+
+.navbar-collapse {
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  border-radius: 0 0 50px 50px;
+  background-color: $blue-50;
+  padding: 80px 40px 40px 40px;
+  width: inherit;
+  z-index: -1;
+  box-shadow: $box-shadow;
+}
+
+.navbar-brand {
+  width: fit-content;
+  white-space: normal;
+  width: 174px;
+  margin-right: 0;
+}
+
+.nav-link {
+  font-weight: $font-weight-bold;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse {
+    position: static;
+    border-radius: none;
+    background-color: $blue-50;
+    padding: 0;
+    width: inherit;
+    z-index: 1;
+    box-shadow: none;
+  }
+}
