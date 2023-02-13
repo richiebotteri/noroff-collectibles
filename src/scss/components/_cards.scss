@@ -1,26 +1,82 @@
-// Replacing Bootstrap Variables
-$card-spacer-y: $spacer;
-$card-spacer-x: $spacer;
+$card-spacer-y: calc($spacer * 2);
+$card-spacer-x: calc($spacer * 2);
 
 .card {
   border: none;
   color: $blue-1000;
   background-color: $blue-50;
   box-shadow: $box-shadow;
+  border-radius: 0;
 
-  &-listing-y {
+  &-listing-responsive {
     @extend .card;
-    width: 17.1875rem;
+    width: 280px;
   }
 
   &-listing-x {
     @extend .card;
-    height: 280px;
-    width: 46.75rem;
+    width: 280px;
+  }
+  &-listing-description {
+    @extend .card;
+    width: 100%;
+  }
+  &-listing-seller {
+    @extend .card;
+    width: 100%;
   }
 }
 
-.card-img-left {
-  @extend .card-img-top;
-  border-radius: $border-radius 0 0 $border-radius;
+.my-card-img {
+  border-radius: 0;
+  &--carousel {
+    @extend .my-card-img;
+  }
+}
+
+.img-thumbnail {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: none;
+}
+
+@media (min-width: 576px) {
+  .my-card-img {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+  .card {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
+
+@media (min-width: 768px) {
+  .my-card-img {
+    width: 50%;
+    border-radius: $border-radius 0 0 $border-radius;
+    object-fit: cover;
+    &--carousel {
+      @extend .my-card-img;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius;
+    }
+  }
+  .card {
+    border-radius: $border-radius;
+
+    &-listing-responsive {
+      @extend .card;
+      width: 700px;
+    }
+    &-listing-description {
+      @extend .card;
+      width: 50%;
+    }
+    &-listing-seller {
+      @extend .card;
+      width: 50%;
+    }
+  }
 }

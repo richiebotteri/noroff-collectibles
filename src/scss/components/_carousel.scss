@@ -1,0 +1,11 @@
+.carousel-item,
+.carousel-inner {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    height: inherit;
+    width: 50%;
+  }
+}
