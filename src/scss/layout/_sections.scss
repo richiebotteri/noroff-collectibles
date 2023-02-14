@@ -1,0 +1,13 @@
+main {
+  background-color: $green-200;
+}
+
+.content-section,
+.cta-section {
+  padding: calc($spacer * 2) calc($spacer * 2);
+}
+
+.cta-section {
+  background-color: $blue-1000;
+  color: $blue-50;
+}
