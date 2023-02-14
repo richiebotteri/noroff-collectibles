@@ -1,0 +1,8 @@
+.footer {
+  background-color: $blue-1000;
+  color: $blue-50;
+  &-copywrite {
+    text-align: center;
+    padding: $padding-y;
+  }
+}
