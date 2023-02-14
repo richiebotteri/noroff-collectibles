@@ -12,7 +12,8 @@
 
   &-listing-x {
     @extend .card;
-    width: 280px;
+    min-width: 280px;
+    max-width: 500px;
   }
   &-listing-description {
     @extend .card;
@@ -76,7 +77,7 @@
     }
   }
 
-  .card-body {
+  .card-listing-responsive .card-body {
     width: 650px;
   }
 }

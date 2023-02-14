@@ -1,8 +1,10 @@
 .footer {
-  background-color: $blue-1100;
+  background-color: $blue-1000;
   color: $blue-50;
   &-copywrite {
+    @extend .footer;
     text-align: center;
+    background-color: $blue-1100;
     padding: $padding-y;
   }
 }
