@@ -47,9 +47,8 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .my-card-img {
-    width: 50%;
     border-radius: $border-radius 0 0 $border-radius;
     object-fit: cover;
     &--carousel {
@@ -75,5 +74,9 @@
       @extend .card;
       width: 50%;
     }
+  }
+
+  .card-body {
+    width: 650px;
   }
 }

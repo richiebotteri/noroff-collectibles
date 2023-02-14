@@ -1,41 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dist/css/styles.css">
-  <title>Document</title>
-</head>
-<body class="bg-light-green-1">
-  
-
-  <!-- Vertical Listing Card -->
-  <div class="card" style="width: 17.1875rem;">
-    <img src="https://images.unsplash.com/photo-1675789652575-0a5d2425b6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjAzODcwMA&ixlib=rb-4.0.3&q=80&w=1080" class="card-img-top" alt="">
-    <div class="card-body">
-      <div>
-        <h4 class="card-title pb-1 m-0 fw-semibold">Listing item title</h4>
-        <div class="pb-2">
-          <p class="data-field--tag">Tag</p>
-          <p class="data-field--tag">Tag</p>
-          <p class="data-field--tag">Tag</p>
-        </div>
-      </div>
-      <p class="card-text pt-0 pb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <div class="data-field pb-2">
-          <div class="data-field-content--left">
-            <p>5 bidsss</p>
-          </div>
-          <div class="data-field-content--right-accent">
-            <p>$300</p>
-          </div>
-        </div>
-        <div class="data-field-content--deadline">
-          <p>4 hours, 3 minutes</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="dist/css/styles.css" />
+      <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <title>Document</title>
+   </head>
+   <body class="bg-light-green-1">
+      <header class="container">
+         <nav class="navbar navbar-expand-lg rounded-pill shadow">
+            <a class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo" href="index.html">
+               <p>Noroff Collectible</p>
+            </a>
+            <div class="container-fluid d-flex data-field--right-navbar justify-content-end">
+               <button class="btn btn-outline-light-blue-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="fa-solid fa-bars"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Auctions</a>
+                     </li>
+                  </ul>
+                  <form class="form-search-field d-flex mb-2 mb-lg-0 me-lg-2" role="search">
+                     <input class="form-control" type="search" placeholder="Find a listing" aria-label="Search" />
+                     <button class="form-search-input btn btn-accent-dark--search">Search</button>
+                  </form>
+                  <button class="btn btn-outline-light me-1">Login</button>
+                  <button class="btn btn-accent-dark">Register</button>
+               </div>
+            </div>
+         </nav>
+         <div class="content-section mt-3">
+            <h1 class="mb-3">Find Your Treasure at Noroff Collectibles - Where Savings Meet Selection</h1>
+         </div>
+      </header>
+      <!-- Sections  -->
+      <main class="bg-light-green-2">
+         <div class="container content-section d-flex flex-column">
+            <p class="fs-3 fw-semibold text-end">Bid on new arrivals now!</p>
+            <!-- Carousel with Y-Listing-Cards-->
+            <div id="carouselExampleIndicators" class="carousel slide bg-light-green-2 py-5" data-bs-ride="true">
+               <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+               </div>
+               <div class="carousel-inner pt-3 pb-4">
+                  <div class="carousel-item active">
+                     <div class="d-block w-100 d-flex justify-content-center">
+                        <div class="card-listing-responsive m-sm-2">
+                           <div class="d-lg-flex">
+                              <img src="https://images.unsplash.com/photo-1675789652575-0a5d2425b6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjAzODcwMA&ixlib=rb-4.0.3&q=80&w=1080" class="card-img-top my-card-img" alt="" />
+                              <div class="card-body">
+                                 <div>
+                                    <h4 class="card-title pb-1 m-0 fw-semibold">Listing item title title title</h4>
+                                    <div class="pb-2">
+                                       <p class="data-field--tag">Tag</p>
+                                       <p class="data-field--tag">Tag</p>
+                                       <p class="data-field--tag">Tag</p>
+                                    </div>
+                                 </div>
+                                 <p class="card-text pt-0 pb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                 <div class="data-field pb-1">
+                                    <div class="data-field--left">
+                                       <p>Bids</p>
+                                    </div>
+                                    <div class="data-field--right-accent">
+                                       <p class="right-width-small">$300</p>
+                                    </div>
+                                 </div>
+                                 <div class="data-field--full-deadline">
+                                    <p>4 hours, 3 minutes</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="d-block w-100 d-flex justify-content-center">
+                        <div class="card-listing-responsive m-sm-2">
+                           <div class="d-lg-flex">
+                              <img src="https://images.unsplash.com/photo-1675789652575-0a5d2425b6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjAzODcwMA&ixlib=rb-4.0.3&q=80&w=1080" class="card-img-top my-card-img" alt="" />
+                              <div class="card-body">
+                                 <div>
+                                    <h4 class="card-title pb-1 m-0 fw-semibold">Listing item title title title</h4>
+                                    <div class="pb-2">
+                                       <p class="data-field--tag">Tag</p>
+                                       <p class="data-field--tag">Tag</p>
+                                       <p class="data-field--tag">Tag</p>
+                                    </div>
+                                 </div>
+                                 <p class="card-text pt-0 pb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                 <div class="data-field pb-1">
+                                    <div class="data-field--left">
+                                       <p>Bids</p>
+                                    </div>
+                                    <div class="data-field--right-accent">
+                                       <p class="right-width-small">$300</p>
+                                    </div>
+                                 </div>
+                                 <div class="data-field--full-deadline">
+                                    <p>4 hours, 3 minutes</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="d-block w-100 d-flex justify-content-center">
+                        <div class="card-listing-responsive m-sm-2">
+                           <div class="d-lg-flex">
+                              <img src="https://images.unsplash.com/photo-1675789652575-0a5d2425b6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjAzODcwMA&ixlib=rb-4.0.3&q=80&w=1080" class="card-img-top my-card-img" alt="" />
+                              <div class="card-body">
+                                 <div>
+                                    <h4 class="card-title pb-1 m-0 fw-semibold">Listing item title title title</h4>
+                                    <div class="pb-2">
+                                       <p class="data-field--tag">Tag</p>
+                                       <p class="data-field--tag">Tag</p>
+                                       <p class="data-field--tag">Tag</p>
+                                    </div>
+                                 </div>
+                                 <p class="card-text pt-0 pb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                 <div class="data-field pb-1">
+                                    <div class="data-field--left">
+                                       <p>Bids</p>
+                                    </div>
+                                    <div class="data-field--right-accent">
+                                       <p class="right-width-small">$300</p>
+                                    </div>
+                                 </div>
+                                 <div class="data-field--full-deadline">
+                                    <p>4 hours, 3 minutes</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                     <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                     <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                     <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                     <span class="visually-hidden">Next</span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </main>
+      <!-- Footer -->
+      <footer class="footer">
+         <div class="container cta-section d-flex flex-column justify-content-center align-items-center">
+            <h2 class="mb-3">Not registered yet?</h2>
+            <p class="mb-1 text-center">Register now and get 1000 credits to use right away</p>
+            <p class="mb-3 text-center">Save your money and start bidding now</p>
+            <button class="btn btn-accent-light">Create an account</button>
+         </div>
+         <div class="container">
+            <p class="footer-copywrite">Copyright</p>
+         </div>
+      </footer>
+   </body>
 </html>
