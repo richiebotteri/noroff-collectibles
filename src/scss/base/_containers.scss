@@ -1,0 +1,51 @@
+// Containers Variables
+//
+
+// Container Breakpoints
+
+$breakpoint-sm: 540px;
+$breakpoint-md: 720px;
+$breakpoint-lg: 960px;
+$breakpoint-xl: 1140px;
+$breakpoint-xxl: 1320px;
+
+// Container max-widths
+
+$container-max-widths: (
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+  xxl: $breakpoint-xxl,
+);
+
+// Border
+
+$border-width: 2px;
+$border-color: $blue-300;
+
+// Border radius
+
+$border-radius: 0.5rem;
+$border-radius-sm: 0;
+$border-radius-lg: 0.625rem;
+$border-radius-xl: 1rem;
+$border-radius-2xl: 2rem;
+$border-radius-pill: 50rem;
+
+// Box-shadow
+
+$box-shadow: 0 0.5rem 1rem rgba(black, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba(black, 0.175);
+
+// Spacing for all body and components
+
+$spacer: 1.25rem;
+
+$spacers: (
+  0: 0,
+  1: $spacer * 0.5,
+  2: $spacer,
+  3: $spacer * 2,
+  4: $spacer * 4,
+);

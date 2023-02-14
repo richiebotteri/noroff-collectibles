@@ -2,8 +2,9 @@
 @import "./vendors/bootstrap/functions";
 
 // 2. Include any default variable overrides here
-@import "./base/root";
+@import "./base/settings";
 @import "./base/colors";
+@import "./base/containers";
 @import "./base/typography";
 @import "./base/components";
 @import "./themes/website-theme";
@@ -21,3 +22,4 @@
 @import "./components/carousel";
 
 @import "./layout/header";
+@import "./layout/footer";

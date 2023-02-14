@@ -1,32 +1,15 @@
-// Border
+// Components Padding
 
-$border-width: 2px;
-$border-color: $blue-300;
-
-// Border radius
-
-$border-radius: 0.5rem;
-$border-radius-sm: 0;
-$border-radius-lg: 0.625rem;
-$border-radius-xl: 1rem;
-$border-radius-2xl: 2rem;
-$border-radius-pill: 50rem;
+$padding-y: 0.9375rem; /* 15px */
+$padding-x: 1.25rem; /* 20px */
 
 // Active component
 
 $component-active-color: $blue-50;
 $component-active-bg: $blue-300;
 
-// Box-shadow
-
-$box-shadow: 0 0.5rem 1rem rgba(black, 0.15);
-$box-shadow-lg: 0 1rem 3rem rgba(black, 0.175);
-
 // Form and Button
 //
-
-$padding-y: 0.9375rem;
-$padding-x: 1.25rem;
 
 $input-btn-font-family: $content-font;
 
@@ -100,3 +83,8 @@ $btn-font-weight: $font-weight-semibold;
 $btn-border-radius: $border-radius-pill;
 $btn-border-radius-sm: $border-radius-pill;
 $btn-border-radius-lg: $border-radius-pill;
+
+// Cards
+
+$card-spacer-y: calc($spacer * 2);
+$card-spacer-x: calc($spacer * 2);
