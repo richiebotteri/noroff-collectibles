@@ -4,7 +4,7 @@ main {
 
 .content-section,
 .cta-section {
-  padding: calc($spacer * 2) calc($spacer * 2);
+  padding: calc($spacer * 2) $spacer;
 }
 
 .cta-section {
