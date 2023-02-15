@@ -14,7 +14,6 @@
   &-listing-details {
     @extend .card;
     min-width: 280px;
-    max-width: 700px;
   }
 
   &-listing-y {
@@ -42,7 +41,14 @@
 
   &--details {
     @extend .my-card-img;
+    padding-bottom: 20px;
   }
+}
+
+.img-thumbnail {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 
 @media (min-width: 576px) {
@@ -56,15 +62,19 @@
 }
 
 @media (min-width: 700px) {
-  .my-card-img {
+  .my-card-img,
+  .my-card-img--details {
     border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .my-card-img--details {
+    padding-bottom: 0px;
   }
 }
 
 @media (min-width: 992px) {
   .my-card-img {
     border-radius: $border-radius 0 0 $border-radius;
-    object-fit: cover;
   }
 
   .my-card-img--details {
@@ -77,15 +87,6 @@
     &-listing-responsive {
       @extend .card;
       width: 700px;
-    }
-
-    &-listing-description {
-      @extend .card;
-      width: 50%;
-    }
-    &-listing-seller {
-      @extend .card;
-      width: 50%;
     }
   }
 }

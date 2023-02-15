@@ -50,6 +50,9 @@
   width: fit-content;
   margin: auto;
 }
+.carousel-indicators--details {
+  bottom: -10px;
+}
 
 @media (min-width: 992px) {
   .carousel-control-prev,
