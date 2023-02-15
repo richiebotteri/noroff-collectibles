@@ -3,25 +3,33 @@
   color: $blue-1000;
   background-color: $blue-50;
   box-shadow: $box-shadow;
-  border-radius: 0;
+  border-radius: $border-radius;
 
   &-listing-responsive {
     @extend .card;
     width: 280px;
   }
 
-  &-listing-x {
+  &-listing-details {
     @extend .card;
     min-width: 280px;
-    max-width: 500px;
+    max-width: 700px;
   }
+
   &-listing-description {
     @extend .card;
     width: 100%;
   }
+
   &-listing-seller {
     @extend .card;
     width: 100%;
+  }
+
+  &-listing-y {
+    @extend .card;
+    min-width: 280px;
+    max-width: 500px;
   }
 }
 
@@ -29,6 +37,12 @@
   border-radius: 0;
   &--carousel {
     @extend .my-card-img;
+  }
+  &--details {
+    @extend .my-card-img;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -43,9 +57,14 @@
   .my-card-img {
     border-radius: $border-radius $border-radius 0 0;
   }
-  .card {
-    border-radius: 0 0 $border-radius $border-radius;
+
+  .my-card-img--details {
+    border-radius: 0;
   }
+
+  // .card {
+  //    border-radius: 0 0 $border-radius $border-radius;
+  // }
 }
 
 @media (min-width: 992px) {
@@ -57,9 +76,14 @@
       display: block;
       width: 100%;
       height: 100%;
-      border-radius: $border-radius;
+      border-radius: $border-radius $border-radius 0 0;
     }
   }
+
+  .my-card-img--details {
+    border-radius: 0;
+  }
+
   .card {
     border-radius: $border-radius;
 

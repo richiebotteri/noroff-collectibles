@@ -6,11 +6,25 @@
 @media (min-width: 768px) {
   .carousel {
     height: inherit;
-    max-width: 1000px;
   }
 }
 
 .fa-chevron-left,
 .fa-chevron-right {
   font-size: $carousel-control-icon-width;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0;
+  opacity: 1;
+  margin: 0 10px;
 }
