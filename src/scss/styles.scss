@@ -11,10 +11,8 @@
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "./vendors/bootstrap/bootstrap.scss";
-@import "./vendors/font-awesome/fontawesome.scss";
 
 // 4. Include any optional Bootstrap components as you like
-@import "./vendors/font-awesome/solid.scss";
 @import "./components/buttons";
 @import "./components/inputs";
 @import "./components/data-field";
