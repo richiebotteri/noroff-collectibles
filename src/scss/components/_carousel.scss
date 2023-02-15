@@ -29,6 +29,11 @@
   margin: 0 10px;
 }
 
+.carousel-control--center {
+  align-items: center;
+  justify-content: center;
+}
+
 .carousel-indicators {
   position: absolute;
   right: 0;
