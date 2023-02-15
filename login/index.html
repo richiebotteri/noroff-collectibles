@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../dist/css/styles.css" />
+      <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <title>Login</title>
+   </head>
+   <body>
+      <div class="container card card bg-light-blue-1 p-2">
+         <!-- login form -->
+         <form method="post" action="/auth/login" id="form-to-login" class="d-flex flex-column gap-2 needs-validation" novalidate>
+            <h1>Login</h1>
+            <div class="form-group mb-1">
+               <label for="email" class="form-label">Email*</label>
+               <input type="email" class="form-control" id="email" name="email" placeholder="username@stud.noroff.no" pattern="^[\w\-.]+@(stud.)?noroff.no$" />
+               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                  <p class="p-3">Email must be a valid noroff email to register; user_name@stud.noroff.no</p>
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="password" class="form-label">Password*</label>
+               <input type="password" class="form-control" id="password" name="password" placeholder="write your password" required minlength="8" />
+               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                  <p class="p-3">Password need at least 8 word characters</p>
+               </div>
+            </div>
+            <div id="submit-feedback-login" class="d-none"></div>
+            <input type="submit" class="btn btn-accent-dark" value="Login" />
+         </form>
+      </div>
+   </body>
+</html>
