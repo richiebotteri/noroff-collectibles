@@ -97,31 +97,13 @@
          </form>
       </div>
       <div class="container card g-col-12 p-2 p-md-3">
-         <!-- Create Posts -->
-         <form action="/listings" method="post" id="create-listing-form" class="d-flex gap-2 flex-column needs-validation" novalidate>
-            <h2>Create a Listing</h2>
+         <!-- Bid on Listing -->
+         <form action="/listings" method="post" id="listing-bid-form" class="d-flex gap-2 flex-column needs-validation" novalidate>
+            <h2>Bid on listing</h2>
             <div class="form-group">
-               <label for="title" class="form-label">Title*</label>
-               <input type="text" class="form-control" id="title" name="title" placeholder="Add title" required maxlength="280" />
+               <label for="amount" class="form-label">amount*</label>
+               <input type="number" min="0" class="form-control" id="amount" name="amount" placeholder="Add amount" required maxlength="280" />
             </div>
-            <div class="form-group">
-               <label for="endsAt" class="form-label">Buds ends at*</label>
-               <input type="text" class="form-control" id="endsAt" name="endsAt" placeholder="YYYY-MM-DD" required />
-            </div>
-            <div class="form-group">
-               <label for="tags" class="form-label">Tags</label>
-               <input type="text" class="form-control" id="tags" name="tags" placeholder="Add tags" />
-            </div>
-            <div class="form-group">
-               <label for="media" class="form-label">Media</label>
-               <input type="text" class="form-control" id="media" name="media" placeholder="Add URL" />
-            </div>
-            <div class="form-group">
-               <label for="description" class="form-label">Description</label>
-               <input type="text" class="form-control" id="description" name="description" placeholder="Describe your item" />
-            </div>
-
-            <div class="create-post-feedback card bg-success p-5 rounded-2 text-white fw-semibold mb-2 d-none"></div>
             <button type="submit" class="btn btn-accent-dark">Create</button>
          </form>
       </div>
