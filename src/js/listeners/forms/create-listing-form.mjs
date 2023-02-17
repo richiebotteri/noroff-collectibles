@@ -1,5 +1,5 @@
 import { getFormData } from "../get-form-data.mjs";
-export function createListing() {
+export function createListingForm() {
    const createListing = document.querySelector("#create-listing-form");
    getFormData(createListing);
 }
