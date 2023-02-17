@@ -1,7 +1,10 @@
-import { loginForm } from "./listeners/forms/login.mjs";
-import { registerForm } from "./listeners/forms/register.mjs";
-import { createListing } from "./listeners/forms/create-listing.mjs";
+import { loginForm } from "./listeners/forms/login-form.mjs";
+import { registerForm } from "./listeners/forms/register-form.mjs";
+import { createListingForm } from "./listeners/forms/create-listing-form.mjs";
+import { getListings } from "./api/requests/get-listings.mjs";
 
 loginForm();
 registerForm();
-createListing();
+createListingForm();
+
+getListings();
