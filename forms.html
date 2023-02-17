@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="dist/css/styles.css" />
+      <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://kit.fontawesome.com/04c0f70bd8.js" crossorigin="anonymous"></script>
+      <script type="module" src="./src/js/index.mjs" defer></script>
+      <title>Create listing</title>
+   </head>
+   <body class="grid g-2">
+      <div class="container g-col-12 card bg-light-blue-1 p-2">
+         <!-- login form -->
+         <form method="post" action="/auth/login" id="login-form" class="d-flex flex-column gap-2 needs-validation" novalidate>
+            <h1>Login</h1>
+            <div class="form-group mb-1">
+               <label for="email" class="form-label">Email*</label>
+               <input type="email" class="form-control" id="email" name="email" placeholder="username@stud.noroff.no" />
+               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                  <p class="p-3">Email must be a valid noroff email to register; user_name@stud.noroff.no</p>
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="password" class="form-label">Password*</label>
+               <input type="password" class="form-control" id="password" name="password" placeholder="write your password" required minlength="8" />
+               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                  <p class="p-3">Password need at least 8 word characters</p>
+               </div>
+            </div>
+            <div id="submit-feedback-login" class="d-none"></div>
+            <input type="submit" class="btn btn-accent-dark" value="Login" />
+         </form>
+      </div>
+
+      <div class="container card g-col-12 bg-light-blue-1 p-2 p-md-3">
+         <!-- Register form -->
+         <form method="post" action="/auth/register" id="register-form" class="d-flex flex-column gap-2 needs-validation" novalidate>
+            <h1>Register</h1>
+            <div class="form-group">
+               <label for="name" class="form-label">Username*</label>
+               <input type="text" class="form-control" id="name" name="name" placeholder="write your username" required pattern="^[\w]+$" />
+               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                  <p class="p-3">username need at least 8 word characters</p>
+               </div>
+            </div>
+            <div class="form-group mb-1">
+               <label for="email" class="form-label">Email*</label>
+               <input type="email" class="form-control" id="email" name="email" placeholder="username@stud.noroff.no" pattern="^[\w\-.]+@(stud.)?noroff.no$" />
+               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                  <p class="p-3">Email must be a valid noroff email to register; user_name@stud.noroff.no</p>
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="password" class="form-label">Password*</label>
+               <input type="password" class="form-control" id="password" name="password" placeholder="write your password" required minlength="8" />
+               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                  <p class="p-3">Password need at least 8 word characters</p>
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="avatar" class="form-label">Avatar</label>
+               <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Add URL" />
+            </div>
+            <div id="submit-feedback-login" class="d-none"></div>
+            <input type="submit" class="btn btn-accent-dark fw-bold" value="Register" />
+         </form>
+      </div>
+      <div class="container card g-col-12 p-2 p-md-3">
+         <!-- Create Posts -->
+         <form action="/listings" method="post" id="create-listing-form" class="d-flex gap-2 flex-column needs-validation" novalidate>
+            <h2>Create a Listing</h2>
+            <div class="form-group">
+               <label for="title" class="form-label">Title*</label>
+               <input type="text" class="form-control" id="title" name="title" placeholder="Add title" required maxlength="280" />
+            </div>
+            <div class="form-group">
+               <label for="endsAt" class="form-label">Buds ends at*</label>
+               <input type="text" class="form-control" id="endsAt" name="endsAt" placeholder="YYYY-MM-DD" required />
+            </div>
+            <div class="form-group">
+               <label for="tags" class="form-label">Tags</label>
+               <input type="text" class="form-control" id="tags" name="tags" placeholder="Add tags" />
+            </div>
+            <div class="form-group">
+               <label for="media" class="form-label">Media</label>
+               <input type="text" class="form-control" id="media" name="media" placeholder="Add URL" />
+            </div>
+            <div class="form-group">
+               <label for="description" class="form-label">Description</label>
+               <input type="text" class="form-control" id="description" name="description" placeholder="Describe your item" />
+            </div>
+
+            <div class="create-post-feedback card bg-success p-5 rounded-2 text-white fw-semibold mb-2 d-none"></div>
+            <button type="submit" class="btn btn-accent-dark">Create</button>
+         </form>
+      </div>
+      <div class="container card g-col-12 p-2 p-md-3">
+         <!-- Create Posts -->
+         <form action="/listings" method="post" id="create-listing-form" class="d-flex gap-2 flex-column needs-validation" novalidate>
+            <h2>Create a Listing</h2>
+            <div class="form-group">
+               <label for="title" class="form-label">Title*</label>
+               <input type="text" class="form-control" id="title" name="title" placeholder="Add title" required maxlength="280" />
+            </div>
+            <div class="form-group">
+               <label for="endsAt" class="form-label">Buds ends at*</label>
+               <input type="text" class="form-control" id="endsAt" name="endsAt" placeholder="YYYY-MM-DD" required />
+            </div>
+            <div class="form-group">
+               <label for="tags" class="form-label">Tags</label>
+               <input type="text" class="form-control" id="tags" name="tags" placeholder="Add tags" />
+            </div>
+            <div class="form-group">
+               <label for="media" class="form-label">Media</label>
+               <input type="text" class="form-control" id="media" name="media" placeholder="Add URL" />
+            </div>
+            <div class="form-group">
+               <label for="description" class="form-label">Description</label>
+               <input type="text" class="form-control" id="description" name="description" placeholder="Describe your item" />
+            </div>
+
+            <div class="create-post-feedback card bg-success p-5 rounded-2 text-white fw-semibold mb-2 d-none"></div>
+            <button type="submit" class="btn btn-accent-dark">Create</button>
+         </form>
+      </div>
+   </body>
+</html>
