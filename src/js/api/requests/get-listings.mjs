@@ -4,7 +4,7 @@ import { guestOption } from "../options/guest-option.mjs";
 
 export async function getListings() {
    try {
-      const response = await fetch(`${AUCTIONS_URL}/listings/?_seller=true&_bids=true`, guestOption);
+      const response = await fetch(`${AUCTIONS_URL}/listings/?sort=created&sortOrder=desc&_seller=true&_bids=true`, guestOption);
       const listings = await response.json();
       if (response.status === 200) {
          routeListingData(listings);
