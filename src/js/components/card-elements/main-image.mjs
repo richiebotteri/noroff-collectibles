@@ -21,7 +21,5 @@ export function createHtmlMainImage(media, title) {
       imageChildTag.src = defaultImage;
    }
 
-   console.log(imageChildTag);
-
    return imageChildTag;
 }
