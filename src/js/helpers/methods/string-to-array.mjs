@@ -1,8 +1,10 @@
+import { trimString } from "./trim-string.mjs";
+
 export function stringToArray(string) {
    let stringArray = "";
    if (string.includes(",")) {
       stringArray = string.split(",").map((tag) => {
-         return tag.trim();
+         return trimString(tag);
       });
       return stringArray;
    } else {
