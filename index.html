@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="dist/css/styles.css" />
       <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
       <script src="https://kit.fontawesome.com/04c0f70bd8.js" crossorigin="anonymous"></script>
+      <script type="module" src="./src/js/index.mjs" defer></script>
       <title>Document</title>
    </head>
    <body class="bg-light-green-1">
@@ -45,55 +46,21 @@
       <main class="bg-light-green-2">
          <div class="container content-section d-flex flex-column">
             <p class="fs-3 fw-semibold text-end">Bid on new arrivals now!</p>
-
-            <div id="carouselExampleIndicators" class="carousel slide bg-light-green-2 py-5" data-bs-ride="true">
+            <div id="carouselArrivalsIndicators" class="carousel slide bg-light-green-2 py-5" data-bs-ride="true">
                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselArrivalsIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselArrivalsIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselArrivalsIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                </div>
-               <div class="carousel-inner pt-3 pb-4">
-                  <a href="/listing-details/index.html" class="carousel-item active d-block text-decoration-none">
-                     <div class="d-block w-100 d-flex justify-content-center">
-                        <div class="card-listing-responsive m-sm-2">
-                           <div class="grid">
-                              <img src="https://images.unsplash.com/photo-1675789652575-0a5d2425b6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjAzODcwMA&ixlib=rb-4.0.3&q=80&w=1080" class="my-card-img g-col-12 g-col-md-6" alt="" />
-                              <div class="card-body g-col-12 g-col-md-6">
-                                 <div>
-                                    <h4 class="card-title pb-1 m-0 fw-semibold">Listing item title title title</h4>
-                                    <div class="pb-2">
-                                       <p class="data-field--tag">Tag</p>
-                                       <p class="data-field--tag">Tag</p>
-                                       <p class="data-field--tag">Tag</p>
-                                    </div>
-                                 </div>
-                                 <p class="card-text pt-0 pb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                 <div class="data-field pb-1">
-                                    <div class="data-field--left">
-                                       <p>Bids</p>
-                                    </div>
-                                    <div class="data-field--right-accent">
-                                       <p class="right-width-small">$300</p>
-                                    </div>
-                                 </div>
-                                 <div class="data-field--full-deadline">
-                                    <p>4 hours, 3 minutes</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                     <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                     <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                     <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                     <span class="visually-hidden">Next</span>
-                  </button>
-               </div>
+               <div id="carousel-listing-container" class="carousel-inner pt-3 pb-4"></div>
+               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                  <span class="visually-hidden">Previous</span>
+               </button>
+               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  <span class="visually-hidden">Next</span>
+               </button>
             </div>
          </div>
       </main>

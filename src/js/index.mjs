@@ -3,8 +3,14 @@ import { registerForm } from "./listeners/forms/register-form.mjs";
 import { createListingForm } from "./listeners/forms/create-listing-form.mjs";
 import { getListings } from "./api/requests/get-listings.mjs";
 
-loginForm();
-registerForm();
-createListingForm();
+const path = location.pathname;
 
-getListings();
+if (path === "/login/") {
+   loginForm();
+} else if (path === "/register/") {
+   registerForm();
+} else if (path === "/create-listing/") {
+   createListingForm();
+} else {
+   getListings();
+}
