@@ -13,6 +13,8 @@ export function createHtmlTags(apiTags) {
          htmlSpan.innerText = item;
          return htmlSpan;
       });
+   } else {
+      htmlTags = [];
    }
 
    return htmlTags;

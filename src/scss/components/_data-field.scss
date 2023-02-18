@@ -36,7 +36,7 @@
 
   &--right {
     @extend .data-field;
-    width: fit-content;
+
     justify-content: center;
     align-items: center;
     padding: $padding-y $padding-x;

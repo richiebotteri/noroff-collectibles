@@ -51,6 +51,14 @@
   object-fit: cover;
 }
 
+.card-text {
+  min-height: 50px;
+}
+
+.card-text--hideTags {
+  min-height: 94px;
+}
+
 @media (min-width: 576px) {
   .my-card-img {
     border-radius: $border-radius $border-radius 0 0;

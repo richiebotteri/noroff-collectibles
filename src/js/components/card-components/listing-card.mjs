@@ -1,15 +1,13 @@
 import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
-import { createHtmlBids } from "../card-elements/bids.mjs";
 import { createHTMlDescription } from "../card-elements/description.mjs";
 import { createHtmlEndsAt } from "../card-elements/ends-at.mjs";
 import { createHtmlLastBid } from "../card-elements/last-bid.mjs";
 import { createHtmlMainImage } from "../card-elements/main-image.mjs";
-import { createHtmlStartDate } from "../card-elements/started.mjs";
 import { createHtmlTags } from "../card-elements/tags.mjs";
 import { createHtmlTitle } from "../card-elements/title.mjs";
 import { createCarousel } from "./carousel.mjs";
 
-export function createListingCard(title, description, media, tags, created, endsAt, _count, bids) {
+export function createListingCard(title, description, media, tags, endsAt, _count, bids, index) {
    const cardContainer = createHtmlElement("div");
    cardContainer.classList.add("card-listing-responsive", "m-sm-2");
 
@@ -20,10 +18,9 @@ export function createListingCard(title, description, media, tags, created, ends
    cardBody.classList.add("card-body", "g-col-12", "g-col-md-6");
 
    const tagChildContainer = createHtmlElement("div");
-   tagChildContainer.classList.add("pb-2");
 
    //  Main Image URL
-   const htmlMainImage = createHtmlMainImage(media);
+   const htmlMainImage = createHtmlMainImage(media, title);
 
    //  Card Body Content
    const htmlTitle = createHtmlTitle(title);
@@ -31,6 +28,13 @@ export function createListingCard(title, description, media, tags, created, ends
    const htmlLastBidField = createHtmlLastBid(bids);
    const htmlEndsAtField = createHtmlEndsAt(endsAt);
    const htmlDescription = createHTMlDescription(description);
+
+   if (htmlTags.length === 0) {
+      tagChildContainer.classList.add("d-none");
+      htmlDescription.classList.replace("card-text", "card-text--hideTags");
+   } else {
+      tagChildContainer.classList.add("pb-2");
+   }
 
    //  Create Component
 
@@ -49,5 +53,5 @@ export function createListingCard(title, description, media, tags, created, ends
    cardBody.appendChild(htmlLastBidField);
    cardBody.appendChild(htmlEndsAtField);
 
-   createCarousel(cardContainer);
+   createCarousel(cardContainer, index);
 }
