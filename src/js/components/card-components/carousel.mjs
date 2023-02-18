@@ -4,7 +4,7 @@ export function createCarousel(listingCard, index) {
    const carouselListingContainer = document.querySelector("#carousel-listing-container");
 
    const cardLink = createHtmlElement("a");
-   cardLink.href = "/listing-details/";
+   cardLink.href = "./listing-details/";
    if (index === 0) {
       cardLink.classList.add("carousel-item", "active", "text-decoration-none");
    } else {
