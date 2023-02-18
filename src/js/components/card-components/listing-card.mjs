@@ -5,22 +5,17 @@ import { createHtmlLastBid } from "../card-elements/last-bid.mjs";
 import { createHtmlMainImage } from "../card-elements/main-image.mjs";
 import { createHtmlTags } from "../card-elements/tags.mjs";
 import { createHtmlTitle } from "../card-elements/title.mjs";
+import { createAuctionListings } from "./auction-page-listing.mjs";
 import { createCarousel } from "./carousel.mjs";
 
 export function createListingCard(title, description, media, tags, endsAt, _count, bids, index) {
-   const cardContainer = createHtmlElement("div");
-   cardContainer.classList.add("card-listing-responsive", "m-sm-2");
-
-   const grid = createHtmlElement("div");
-   grid.classList.add("grid", "gap-0");
-
    const cardBody = createHtmlElement("div");
    cardBody.classList.add("card-body", "g-col-12", "g-col-md-6");
 
    const tagChildContainer = createHtmlElement("div");
 
    //  Main Image URL
-   const htmlMainImage = createHtmlMainImage(media, title);
+   const htmlImage = createHtmlMainImage(media, title);
 
    //  Card Body Content
    const htmlTitle = createHtmlTitle(title);
@@ -38,11 +33,6 @@ export function createListingCard(title, description, media, tags, endsAt, _coun
 
    //  Create Component
 
-   cardContainer.appendChild(grid);
-
-   grid.appendChild(htmlMainImage);
-   grid.appendChild(cardBody);
-
    cardBody.appendChild(htmlTitle);
    cardBody.appendChild(tagChildContainer);
    htmlTags.forEach((htmlTag) => {
@@ -53,5 +43,12 @@ export function createListingCard(title, description, media, tags, endsAt, _coun
    cardBody.appendChild(htmlLastBidField);
    cardBody.appendChild(htmlEndsAtField);
 
-   createCarousel(cardContainer, index);
+   const path = window.location.pathname;
+   if (path === "/auctions/" || path === "/Semester-Project-2/auctions/") {
+      createAuctionListings(cardBody, htmlImage);
+   } else {
+      if (index < 5) {
+         createCarousel(cardBody, htmlImage, index);
+      }
+   }
 }

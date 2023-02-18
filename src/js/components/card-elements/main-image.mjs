@@ -2,7 +2,7 @@ import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
 
 export function createHtmlMainImage(media, title) {
    const imageChildTag = createHtmlElement("img");
-   imageChildTag.classList.add("my-card-img", "g-col-12", "g-col-md-6");
+   imageChildTag.classList.add("img-thumbnail", "g-col-12", "g-col-md-6");
    imageChildTag.alt = title;
 
    const firstImage = media[0];
@@ -14,9 +14,6 @@ export function createHtmlMainImage(media, title) {
 
    if (firstImage) {
       imageChildTag.src = media[0];
-      if (imageChildTag.width < 320) {
-         imageChildTag.src = defaultImage;
-      }
    } else {
       imageChildTag.src = defaultImage;
    }

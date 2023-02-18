@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="../dist/css/styles.css" />
       <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script type="module" src="../src/js/index.mjs" defer></script>
       <title>Auctions</title>
    </head>
    <body class="bg-light-green-1">
@@ -43,33 +44,7 @@
       </header>
       <!-- Sections  -->
       <main class="bg-light-green-2">
-         <div class="container content-section grid">
-            <a href="/listing-details/index.html" class="card-listing-y g-col-12 g-col-md-6 g-col-lg-4 d-block">
-               <img src="https://images.unsplash.com/photo-1675789652575-0a5d2425b6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjAzODcwMA&ixlib=rb-4.0.3&q=80&w=1080" class="card-img-top" alt="" />
-               <div class="card-body">
-                  <div>
-                     <h4 class="card-title pb-1 m-0 fw-semibold">Listing item title title title</h4>
-                     <div class="pb-2">
-                        <p class="data-field--tag">Tag</p>
-                        <p class="data-field--tag">Tag</p>
-                        <p class="data-field--tag">Tag</p>
-                     </div>
-                  </div>
-                  <p class="card-text pt-0 pb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="data-field pb-1">
-                     <div class="data-field--left">
-                        <p>Bids</p>
-                     </div>
-                     <div class="data-field--right-accent">
-                        <p class="right-width-small">$300</p>
-                     </div>
-                  </div>
-                  <div class="data-field--full-deadline">
-                     <p>4 hours, 3 minutes</p>
-                  </div>
-               </div>
-            </a>
-         </div>
+         <div id="listing-auction-grid" class="container content-section grid"></div>
       </main>
       <!-- Footer -->
       <footer class="footer">
