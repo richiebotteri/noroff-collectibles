@@ -1,8 +1,9 @@
-import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
+import { createHtmlElement } from "../../../helpers/methods/create-element.mjs";
+import { createAuctionPageListings } from "../../cards/auction-page-listing.mjs";
 
 export function createHtmlMainImage(media, title) {
    const imageChildTag = createHtmlElement("img");
-   imageChildTag.classList.add("img-thumbnail", "g-col-12", "g-col-md-6");
+
    imageChildTag.alt = title;
 
    const firstImage = media[0];

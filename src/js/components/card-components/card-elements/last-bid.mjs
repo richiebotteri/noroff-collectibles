@@ -1,5 +1,5 @@
-import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
-import { removeEmptyArray } from "../../helpers/methods/remove-empty-array.mjs";
+import { createHtmlElement } from "../../../helpers/methods/create-element.mjs";
+import { removeEmptyArray } from "../../../helpers/methods/remove-empty-array.mjs";
 import { createChildDataFieldLeft } from "./data-fields/child-field-left.mjs";
 import { createChildDataFieldRight } from "./data-fields/child-field-right.mjs";
 import { createParentDataField } from "./data-fields/parent-field.mjs";

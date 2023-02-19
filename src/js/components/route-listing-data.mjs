@@ -1,10 +1,17 @@
-import { createAuctionListings } from "./card-components/auction-page-listing.mjs";
-import { createListingCard } from "./card-components/listing-card.mjs";
+import { createCardBody } from "./card-components/card-body.mjs";
+import { createHtmlMainImage } from "./card-components/card-elements/main-image.mjs";
+import { createAuctionPageListings } from "./cards/auction-page-listing.mjs";
+import { createIndexPageListings } from "./cards/index-page-listing.mjs";
 
 export function routeListingData(listingObjects) {
    listingObjects.forEach((apiListingObject, index) => {
-      const { id, title, description, media, tags, created, updated, endsAt, _count, bids, seller } = apiListingObject;
+      // Route data to create card components
 
-      createListingCard(title, description, media, tags, endsAt, _count, bids, index);
+      const path = window.location.pathname;
+      if (path === "/auctions/") {
+         createAuctionPageListings(apiListingObject, index);
+      } else {
+         createIndexPageListings(apiListingObject, index);
+      }
    });
 }

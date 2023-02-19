@@ -1,21 +1,18 @@
+import { createHTMlDescription } from "./card-elements/description.mjs";
+import { createHtmlEndsAt } from "./card-elements/ends-at.mjs";
 import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
-import { createHTMlDescription } from "../card-elements/description.mjs";
-import { createHtmlEndsAt } from "../card-elements/ends-at.mjs";
-import { createHtmlLastBid } from "../card-elements/last-bid.mjs";
-import { createHtmlMainImage } from "../card-elements/main-image.mjs";
-import { createHtmlTags } from "../card-elements/tags.mjs";
-import { createHtmlTitle } from "../card-elements/title.mjs";
-import { createAuctionListings } from "./auction-page-listing.mjs";
-import { createCarousel } from "./carousel.mjs";
+import { createHtmlLastBid } from "./card-elements/last-bid.mjs";
+import { createHtmlTags } from "./card-elements/tags.mjs";
 
-export function createListingCard(title, description, media, tags, endsAt, _count, bids, index) {
+import { createHtmlTitle } from "./card-elements/title.mjs";
+import { createIndexPageListings } from "../cards/index-page-listing.mjs";
+import { createAuctionPageListings } from "../cards/auction-page-listing.mjs";
+
+export function createCardBody(title, description, tags, endsAt, bids) {
    const cardBody = createHtmlElement("div");
    cardBody.classList.add("card-body", "g-col-12", "g-col-md-6");
 
    const tagChildContainer = createHtmlElement("div");
-
-   //  Main Image URL
-   const htmlImage = createHtmlMainImage(media, title);
 
    //  Card Body Content
    const htmlTitle = createHtmlTitle(title);
@@ -43,12 +40,5 @@ export function createListingCard(title, description, media, tags, endsAt, _coun
    cardBody.appendChild(htmlLastBidField);
    cardBody.appendChild(htmlEndsAtField);
 
-   const path = window.location.pathname;
-   if (path === "/auctions/" || path === "/Semester-Project-2/auctions/") {
-      createAuctionListings(cardBody, htmlImage);
-   } else {
-      if (index < 5) {
-         createCarousel(cardBody, htmlImage, index);
-      }
-   }
+   return cardBody;
 }

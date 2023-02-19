@@ -1,5 +1,5 @@
-import { removeEmptyArray } from "../../helpers/methods/remove-empty-array.mjs";
-import { trimArray } from "../../helpers/methods/trim-array.mjs";
+import { removeEmptyArray } from "../../../helpers/methods/remove-empty-array.mjs";
+import { trimArray } from "../../../helpers/methods/trim-array.mjs";
 
 export function createHtmlTags(apiTags) {
    const removedEmptyTags = removeEmptyArray(apiTags);
