@@ -8,9 +8,9 @@ export function routeListingData(listingObjects) {
       // Route data to create card components
 
       const path = window.location.pathname;
-      if (path === "/auctions/") {
+      if (path.includes("/auctions/")) {
          createAuctionPageListings(apiListingObject, index);
-      } else {
+      } else if (path.includes("/index.html")) {
          createIndexPageListings(apiListingObject, index);
       }
    });
