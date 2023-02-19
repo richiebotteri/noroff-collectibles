@@ -1,5 +1,3 @@
-import { createCardBody } from "./card-components/card-body.mjs";
-import { createHtmlMainImage } from "./card-components/card-elements/main-image.mjs";
 import { createAuctionPageListings } from "./cards/auction-page-listing.mjs";
 import { createIndexPageListings } from "./cards/index-page-listing.mjs";
 
@@ -8,9 +6,9 @@ export function routeListingData(listingObjects) {
       // Route data to create card components
 
       const path = window.location.pathname;
-      if (path.includes("/auctions/")) {
+      if (path === "/auctions/" || path === "/Semester-Project-2/auctions/") {
          createAuctionPageListings(apiListingObject, index);
-      } else if (path.includes("/index.html")) {
+      } else if (path === "/index.html" || path === "/Semester-Project-2/") {
          createIndexPageListings(apiListingObject, index);
       }
    });

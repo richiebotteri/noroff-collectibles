@@ -16,7 +16,7 @@ export function createAuctionPageListings(ApiListingData, listingIndex) {
    const totalListingParagraph = createTotalListingHtml(listingIndex);
 
    const cardLinkContainer = createHtmlElement("a");
-   cardLinkContainer.href = "/listing-details/";
+   cardLinkContainer.href = "./listing-details/";
    cardLinkContainer.classList.add("card-listing-y", "g-col-12", "g-col-md-6", "g-col-lg-4", "d-block");
 
    const htmlImage = createHtmlMainImage(media, title);

@@ -3,10 +3,7 @@ import { createHtmlEndsAt } from "./card-elements/ends-at.mjs";
 import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
 import { createHtmlLastBid } from "./card-elements/last-bid.mjs";
 import { createHtmlTags } from "./card-elements/tags.mjs";
-
 import { createHtmlTitle } from "./card-elements/title.mjs";
-import { createIndexPageListings } from "../cards/index-page-listing.mjs";
-import { createAuctionPageListings } from "../cards/auction-page-listing.mjs";
 
 export function createCardBody(title, description, tags, endsAt, bids) {
    const cardBody = createHtmlElement("div");
