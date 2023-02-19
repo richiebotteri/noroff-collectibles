@@ -39,5 +39,7 @@ export function createIndexPageListings(ApiListingData, listingIndex) {
    cardContainer.appendChild(grid);
    grid.appendChild(htmlImage);
    grid.appendChild(cardBody);
-   carouselListingContainer.appendChild(cardLink);
+   if (listingIndex < 5) {
+      carouselListingContainer.appendChild(cardLink);
+   }
 }
