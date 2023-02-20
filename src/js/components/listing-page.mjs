@@ -3,7 +3,6 @@ import { createCardBodyExpanded } from "./card-components/card-body-expanded.mjs
 import { createHtmlImages } from "./card-components/card-elements/images.mjs";
 import { createHtmlMainImage } from "./card-components/card-elements/main-image.mjs";
 import { createHtmlTags } from "./card-components/card-elements/tags.mjs";
-import { createListingTopCard } from "./cards/listing-top-card.mjs";
 
 export function createListingPageContent(ApiListingData, index) {
    const url = new URL(document.location);
