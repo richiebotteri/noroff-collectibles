@@ -6,41 +6,79 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="../dist/css/styles.css" />
       <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://kit.fontawesome.com/04c0f70bd8.js" crossorigin="anonymous"></script>
       <title>Register</title>
    </head>
-   <body>
-      <div class="container card card bg-light-blue-1 p-2 p-md-3">
-         <!-- Register form -->
-         <form method="post" action="/auth/login" id="form-to-login" class="d-flex flex-column gap-2 needs-validation" novalidate>
-            <h1>Register</h1>
-            <div class="form-group">
-               <label for="username" class="form-label">Username*</label>
-               <input type="text" class="form-control" id="username" name="username" placeholder="write your username" required />
-               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
-                  <p class="p-3">username need at least 8 word characters</p>
+   <body class="bg-light-green-2 grid">
+      <header class="container mt-2 g-col-12">
+         <nav class="navbar navbar-expand-lg rounded-pill shadow">
+            <a href="./../index.html" class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo">
+               <p>Noroff Collectible</p>
+            </a>
+            <div class="container-fluid d-flex data-field--right-navbar justify-content-end">
+               <button class="btn btn-outline-light-blue-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="fa-solid fa-bars"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./../index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/auctions/">Auctions</a>
+                     </li>
+                  </ul>
+                  <form class="form-search-field d-flex mb-2 mb-lg-0 me-lg-2" role="search">
+                     <input class="form-control" type="search" placeholder="Find a listing" aria-label="Search" />
+                     <button class="form-search-input btn btn-accent-dark--search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+                  <a href="./../../login/" aria-current="page" class="btn btn-outline-light me-1">Login</a>
+                  <a href="./../../register/" aria-current="page" class="btn btn-accent-dark bg-dark-blue-2">Register</a>
                </div>
             </div>
-            <div class="form-group mb-1">
-               <label for="email" class="form-label">Email*</label>
-               <input type="email" class="form-control" id="email" name="email" placeholder="username@stud.noroff.no" pattern="^[\w\-.]+@(stud.)?noroff.no$" />
-               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
-                  <p class="p-3">Email must be a valid noroff email to register; user_name@stud.noroff.no</p>
+         </nav>
+      </header>
+      <main class="container g-col-12 my-4">
+         <div class="card bg-light-blue-1 p-3">
+            <!-- Register form -->
+            <form method="post" action="/auth/login" id="form-to-login" class="d-flex flex-column gap-2 needs-validation" novalidate>
+               <h1>Register</h1>
+               <div class="form-group">
+                  <label for="username" class="form-label">Username*</label>
+                  <input type="text" class="form-control" id="username" name="username" placeholder="write your username" required />
+                  <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                     <p class="p-3">username need at least 8 word characters</p>
+                  </div>
                </div>
-            </div>
-            <div class="form-group">
-               <label for="password" class="form-label">Password*</label>
-               <input type="password" class="form-control" id="password" name="password" placeholder="write your password" required minlength="8" />
-               <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
-                  <p class="p-3">Password need at least 8 word characters</p>
+               <div class="form-group mb-1">
+                  <label for="email" class="form-label">Email*</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="username@stud.noroff.no" pattern="^[\w\-.]+@(stud.)?noroff.no$" />
+                  <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                     <p class="p-3">Email must be a valid noroff email to register; user_name@stud.noroff.no</p>
+                  </div>
                </div>
-            </div>
-            <div class="form-group">
-               <label for="avatar" class="form-label">Avatar</label>
-               <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Add URL" />
-            </div>
-            <div id="submit-feedback-login" class="d-none"></div>
-            <input type="submit" class="btn btn-accent-dark fw-bold" value="Register" />
-         </form>
-      </div>
+               <div class="form-group">
+                  <label for="password" class="form-label">Password*</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="write your password" required minlength="8" />
+                  <div class="invalid-feedback bg-danger rounded-2 text-white fw-semibold mb-2">
+                     <p class="p-3">Password need at least 8 word characters</p>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="avatar" class="form-label">Avatar</label>
+                  <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Add URL" />
+               </div>
+               <div id="submit-feedback-login" class="d-none"></div>
+               <input type="submit" class="btn btn-accent-dark fw-bold" value="Register" />
+            </form>
+         </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer g-col-12">
+         <div>
+            <p class="footer-copywrite">Copyright</p>
+         </div>
+      </footer>
    </body>
 </html>
