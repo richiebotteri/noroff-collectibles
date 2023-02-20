@@ -75,6 +75,7 @@
     padding: 0.3rem 0.75rem;
     font-size: 14px;
     border: $border-width solid $component-active-bg;
+    width: fit-content;
     &-green {
       @extend .data-field--tag;
       border: $border-width solid $green-300;

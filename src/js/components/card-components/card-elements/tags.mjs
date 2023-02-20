@@ -8,8 +8,8 @@ export function createHtmlTags(apiTags) {
 
    if (trimmedTagArray) {
       htmlTags = trimmedTagArray.map((item) => {
-         const htmlSpan = document.createElement("span");
-         htmlSpan.classList.add("data-field--tag", "me-1");
+         const htmlSpan = document.createElement("div");
+         htmlSpan.classList.add("data-field--tag");
          htmlSpan.innerText = item;
          return htmlSpan;
       });

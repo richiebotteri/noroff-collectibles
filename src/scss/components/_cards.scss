@@ -13,7 +13,7 @@
 
   &-listing-details {
     @extend .card;
-    min-width: 280px;
+    width: inherit;
   }
 
   &-listing-y {
@@ -58,6 +58,23 @@
   @extend .img-thumbnail;
 }
 
+.img-thumbnail--listingpage {
+  @extend .img-thumbnail;
+  height: inherit;
+}
+
+.img-thumbnail--listingpage-static {
+  @extend .img-thumbnail;
+  height: 366px;
+  border-radius: $border-radius;
+}
+
+.img-thumbnail--listingpage-seller {
+  @extend .img-thumbnail;
+  width: 200px;
+  height: 200px;
+}
+
 .card-text {
   min-height: 50px;
 }
@@ -89,6 +106,10 @@
   .img-thumbnail--homepage {
     border-radius: $border-radius 0 0 $border-radius;
     height: 320px;
+  }
+  .img-thumbnail--listingpage {
+    border-radius: $border-radius 0 0 $border-radius;
+    height: inherit;
   }
 }
 

@@ -5,14 +5,15 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="../dist/css/styles.css" />
+      <script type="module" src="../src/js/index.mjs" defer></script>
       <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
       <script src="https://kit.fontawesome.com/04c0f70bd8.js" crossorigin="anonymous"></script>
-      <title>Listing-Details</title>
+      <title>Listing Page</title>
    </head>
-   <body>
-      <header class="container mt-2">
+   <body class="bg-light-green-2">
+      <header class="container mt-2 g-col-12">
          <nav class="navbar navbar-expand-lg rounded-pill shadow">
-            <a class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo" href="index.html">
+            <a href="./../index.html" class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo">
                <p>Noroff Collectible</p>
             </a>
             <div class="container-fluid d-flex data-field--right-navbar justify-content-end">
@@ -22,120 +23,63 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                      <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="./../index.html">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/auctions/">Auctions</a>
+                        <a class="nav-link" aria-current="page" href="/auctions/">Auctions</a>
                      </li>
                   </ul>
                   <form class="form-search-field d-flex mb-2 mb-lg-0 me-lg-2" role="search">
                      <input class="form-control" type="search" placeholder="Find a listing" aria-label="Search" />
-                     <button class="form-search-input btn btn-accent-dark--search">Search</button>
+                     <button class="form-search-input btn btn-accent-dark--search"><i class="fa-solid fa-magnifying-glass"></i></button>
                   </form>
-                  <button class="btn btn-outline-light me-1">Login</button>
-                  <button class="btn btn-accent-dark">Register</button>
+                  <a href="./../../login/" class="btn btn-outline-light bg-light-blue-2 me-1">Login</a>
+                  <a href="./../../register/" class="btn btn-accent-dark">Register</a>
                </div>
             </div>
          </nav>
-         <section class="mt-3 px-3 py-2">
-            <h1 class="text-capitalize pb-2">Auction Item Name</h1>
-            <div class="pb-2">
-               <p class="data-field--tag">Tag</p>
-               <p class="data-field--tag">Tag</p>
-               <p class="data-field--tag">Tag</p>
-            </div>
-         </section>
       </header>
       <!-- Responsive Detail Listing Card -->
-      <main class="bg-light-green-2 grid">
+      <main class="grid">
          <div class="container content-section g-col-12 grid">
             <div class="card-listing-details g-col-12 m-lg-auto p-2">
-               <div class="grid gap-0">
-                  <div id="carouselExampleInterval" class="carousel slide g-col-12 g-col-md-6" data-bs-ride="carousel">
-                     <div class="carousel-indicators carousel-indicators--details">
-                        <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2" aria-label="Slide 3"></button>
+               <section id="listing-title-section" class="pb-0 rounded-top border-0 text-dark-blue pb-2"></section>
+               <div id="listing-data-container" class="grid">
+                  <div id="media-carousel" class="carousel d-none slide g-col-12 g-col-lg-6" data-bs-ride="carousel">
+                     <div id="listing-carousel-indicators" class="carousel-indicators carousel-indicators--details">
+                        <!-- indicators -->
                      </div>
-                     <div class="carousel-inner p-md-2">
-                        <div class="carousel-item active" data-bs-interval="10000">
-                           <img src="https://images.unsplash.com/photo-1675789652575-0a5d2425b6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjAzODcwMA&ixlib=rb-4.0.3&q=80&w=1080" class="card-img-top my-card-img--details" alt="" />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="10000">
-                           <img src="https://images.unsplash.com/photo-1675789652575-0a5d2425b6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjAzODcwMA&ixlib=rb-4.0.3&q=80&w=1080" class="card-img-top my-card-img--details" alt="" />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="10000">
-                           <img src="https://images.unsplash.com/photo-1675789652575-0a5d2425b6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjAzODcwMA&ixlib=rb-4.0.3&q=80&w=1080" class="card-img-top my-card-img--details" alt="" />
-                        </div>
+                     <div id="media-carousel-container" class="carousel-inner pb-2">
+                        <!-- images -->
                      </div>
                      <div class="carousel-control-prev carousel-control--center">
-                        <button class="btn btn-accent-light" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                        <button class="btn btn-accent-light" type="button" data-bs-target="#media-carousel" data-bs-slide="prev">
                            <i class="fa-solid fa-chevron-left fs-5" aria-hidden="true"></i>
                            <span class="visually-hidden">Previous</span>
                         </button>
                      </div>
                      <div class="carousel-control-next carousel-control--center">
-                        <button class="btn btn-accent-light" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        <button class="btn btn-accent-light" type="button" data-bs-target="#media-carousel" data-bs-slide="next">
                            <i class="fa-solid fa-chevron-right fs-5" aria-hidden="true"></i>
                            <span class="visually-hidden">Next</span>
                         </button>
                      </div>
                   </div>
-                  <div class="card-body g-col-12 g-col-md-6 p-lg-3">
-                     <div class="mb-2">
-                        <div class="data-field mb-1">
-                           <div class="data-field--left">
-                              <p>Bids</p>
-                           </div>
-                           <div class="data-field--right">
-                              <p class="right-width-small">5</p>
-                           </div>
-                        </div>
-                        <div class="data-field">
-                           <div class="data-field--left">
-                              <p>Bids</p>
-                           </div>
-                           <div class="data-field--right-accent">
-                              <p class="right-width-small">$300</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div>
-                        <div class="data-field mb-1">
-                           <div class="data-field--left">
-                              <p>Started</p>
-                           </div>
-                           <div class="data-field--right">
-                              <p class="right-width-large">2023-02-03</p>
-                           </div>
-                        </div>
-                        <div class="data-field mb-2">
-                           <div class="data-field--left-deadline">
-                              <p>Ends</p>
-                           </div>
-                           <div class="data-field--right-deadline">
-                              <p class="right-width-large">2 hr, 3 min</p>
-                           </div>
-                        </div>
-                     </div>
-                     <a href="/register/index.html " class="btn btn-accent-dark w-100">Register Now</a>
-                  </div>
                </div>
             </div>
 
             <!-- Listing Description -->
-            <div class="card-listing-description g-col-12 p-2 p-sm-3">
+            <section class="card-listing-description g-col-12 g-col-xl-6 p-2 p-sm-3">
                <h3>Description</h3>
                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, a!</p>
-            </div>
-
+            </section>
             <!-- Listing Seller -->
-            <div class="card-listing-seller g-col-12 p-2 p-sm-3">
+            <div class="card-listing-seller g-col-12 g-col-xl-6 p-2 p-sm-3">
                <div class="card-title">
                   <h3>Seller</h3>
                </div>
                <div class="card-body p-0 d-flex flex-column flex-md-row justify-content-md-center align-items-center gap-2">
-                  <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="rounded-pill img-thumbnail" alt="" />
+                  <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="rounded-pill img-thumbnail--listingpage-seller" alt="" />
                   <div class="d-flex flex-column gap-2">
                      <div class="text-center">
                         <p>Ronny Goodwind</p>

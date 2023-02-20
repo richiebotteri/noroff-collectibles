@@ -22,7 +22,7 @@ export function createCardBody(title, description, tags, endsAt, bids) {
       tagChildContainer.classList.add("d-none");
       htmlDescription.classList.replace("card-text", "card-text--hideTags");
    } else {
-      tagChildContainer.classList.add("pb-2");
+      tagChildContainer.classList.add("d-flex", "flex-wrap", "gap-1", "pb-2");
    }
 
    //  Create Component
