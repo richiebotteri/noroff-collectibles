@@ -7,10 +7,7 @@ export async function getListings() {
       const response = await fetch(`${AUCTIONS_URL}/listings/?sort=created&sortOrder=desc&_seller=true&_bids=true`, guestOption);
       const listings = await response.json();
       if (response.status === 200) {
-         const loader = document.querySelector("#loader");
-
          setTimeout(() => {
-            loader.classList.add("d-none");
             routeListingData(listings);
          }, 1000);
       }

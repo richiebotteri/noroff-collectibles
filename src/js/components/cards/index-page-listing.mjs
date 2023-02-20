@@ -33,6 +33,9 @@ export function createIndexPageListings(ApiListingData, listingIndex) {
 
    const cardBody = createCardBody(title, description, tags, endsAt, bids);
 
+   const loader = document.querySelector("#loader");
+   loader.classList.add("d-none");
+
    // Construct Index Page Carousel Card
    cardLink.appendChild(alignContainer);
    alignContainer.appendChild(cardContainer);
