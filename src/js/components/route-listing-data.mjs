@@ -11,7 +11,7 @@ export function routeListingData(listingObjects, searchValue) {
       createSearchResult(apiListingObject, index, searchValue);
       const path = document.location.pathname;
 
-      if (path === "/index.html" || path === "/Semester-Project-2/") {
+      if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
          createIndexPageListings(apiListingObject, index);
       } else if (path === "/auctions-page.html" || path === "/Semester-Project-2/auctions-page.html") {
          createAuctionPageListings(apiListingObject, index);
