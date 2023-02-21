@@ -14,63 +14,68 @@ export function createListingPageContent(ApiListingData, index) {
    // Only displaying cards with images
 
    if (mediaArray.length >= 1 && queryStringId === id) {
-      // HEADER SECTION
-
       const titleSection = document.querySelector("#listing-title-section");
-      const tagsContainer = createHtmlElement("div");
-      tagsContainer.classList.add("d-flex", "flex-wrap", "gap-1");
-      const listingTitle = createHtmlElement("h1");
-      listingTitle.classList.add("text-capitalize");
-      listingTitle.innerText = "title";
-      const listingTagsArray = createHtmlTags(tags);
 
-      titleSection.appendChild(listingTitle);
-      titleSection.appendChild(tagsContainer);
+      if (titleSection.children.length === 0) {
+         console.log(titleSection.children.length);
 
-      listingTagsArray.forEach((listingTag) => {
-         tagsContainer.appendChild(listingTag);
-      });
+         // HEADER SECTION
 
-      // CONTENT SECTION
-      const listingDataContainer = document.querySelector("#listing-data-container");
+         const tagsContainer = createHtmlElement("div");
+         tagsContainer.classList.add("d-flex", "flex-wrap", "gap-1");
+         const listingTitle = createHtmlElement("h1");
+         listingTitle.classList.add("text-capitalize");
+         listingTitle.innerText = title;
+         const listingTagsArray = createHtmlTags(tags);
 
-      // carousel
-      const mediaCarousel = document.querySelector("#media-carousel");
-      const carouselIndicatorContainer = document.querySelector("#listing-carousel-indicators");
-      const mediaCarouselContainer = document.querySelector("#media-carousel-container");
+         titleSection.appendChild(listingTitle);
+         titleSection.appendChild(tagsContainer);
 
-      // Card body
-      const cardBody = createCardBodyExpanded(created, bids, endsAt, _count);
-
-      // Switch image carousel if more than one image
-
-      if (mediaArray.length === 1) {
-         const mainImage = createHtmlMainImage(media, title);
-         mainImage.classList.add("img-thumbnail--listingpage-static", "g-col-12", "g-col-lg-6");
-         listingDataContainer.appendChild(mainImage);
-      } else {
-         mediaArray.forEach((item, index) => {
-            const carouselIndicatorButton = createHtmlElement("button");
-            carouselIndicatorButton.setAttribute("aria-label", `Slide ${index}`);
-            carouselIndicatorButton.setAttribute("aria-current", "true");
-            carouselIndicatorButton.classList.add("active");
-            carouselIndicatorButton.dataset.bsSlideTo = `${index}`;
-            carouselIndicatorButton.dataset.bsTarget = `#media-carousel`;
-            carouselIndicatorContainer.appendChild(carouselIndicatorButton);
-
-            let carouselMediaItem = "";
-            carouselMediaItem = createHtmlImages(media, title);
-            if (index < 1) {
-               mediaCarouselContainer.appendChild(carouselMediaItem);
-               carouselMediaItem.classList.add("active");
-            } else {
-               mediaCarouselContainer.appendChild(carouselMediaItem);
-            }
-
-            mediaCarousel.classList.remove("d-none");
+         listingTagsArray.forEach((listingTag) => {
+            tagsContainer.appendChild(listingTag);
          });
-      }
 
-      listingDataContainer.appendChild(cardBody);
+         // CONTENT SECTION
+         const listingDataContainer = document.querySelector("#listing-data-container");
+
+         // carousel
+         const mediaCarousel = document.querySelector("#media-carousel");
+         const carouselIndicatorContainer = document.querySelector("#listing-carousel-indicators");
+         const mediaCarouselContainer = document.querySelector("#media-carousel-container");
+
+         // Card body
+         const cardBody = createCardBodyExpanded(created, bids, endsAt, _count);
+
+         // Switch image carousel if more than one image
+
+         if (mediaArray.length === 1) {
+            const mainImage = createHtmlMainImage(media, title);
+            mainImage.classList.add("img-thumbnail--listingpage-static", "g-col-12", "g-col-lg-6");
+            listingDataContainer.appendChild(mainImage);
+         } else {
+            mediaArray.forEach((item, index) => {
+               const carouselIndicatorButton = createHtmlElement("button");
+               carouselIndicatorButton.setAttribute("aria-label", `Slide ${index}`);
+               carouselIndicatorButton.setAttribute("aria-current", "true");
+               carouselIndicatorButton.classList.add("active");
+               carouselIndicatorButton.dataset.bsSlideTo = `${index}`;
+               carouselIndicatorButton.dataset.bsTarget = `#media-carousel`;
+               carouselIndicatorContainer.appendChild(carouselIndicatorButton);
+
+               let carouselMediaItem = "";
+               carouselMediaItem = createHtmlImages(media, title);
+               if (index < 1) {
+                  mediaCarouselContainer.appendChild(carouselMediaItem);
+                  carouselMediaItem.classList.add("active");
+               } else {
+                  mediaCarouselContainer.appendChild(carouselMediaItem);
+               }
+
+               mediaCarousel.classList.remove("d-none");
+            });
+         }
+
+         listingDataContainer.appendChild(cardBody);
+      }
    }
 }

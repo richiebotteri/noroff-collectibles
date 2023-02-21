@@ -11,7 +11,7 @@ export function createIndexPageListings(ApiListingData, listingIndex) {
 
    // Create card elements
    const cardLink = createHtmlElement("a");
-   cardLink.href = "./listing-details/";
+   cardLink.href = `/listing-page.html?id=${id}`;
 
    if (listingIndex === 0) {
       cardLink.classList.add("carousel-item", "active", "text-decoration-none");
@@ -36,13 +36,15 @@ export function createIndexPageListings(ApiListingData, listingIndex) {
    const loader = document.querySelector("#loader");
    loader.classList.add("d-none");
 
-   // Construct Index Page Carousel Card
    cardLink.appendChild(alignContainer);
    alignContainer.appendChild(cardContainer);
    cardContainer.appendChild(grid);
    grid.appendChild(htmlImage);
    grid.appendChild(cardBody);
-   if (listingIndex < 5) {
+
+   const listingItems = carouselListingContainer.children.length;
+
+   if (listingItems < 8) {
       carouselListingContainer.appendChild(cardLink);
    }
 }

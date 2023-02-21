@@ -1,10 +1,10 @@
-import { trimString } from "./trim-string.mjs";
+import { formatStringData } from "../format-string-data.mjs";
 
 export function trimArray(tags) {
    if (typeof tags === "object") {
-      const trimmedArray = tags.map((tag) => {
-         return trimString(tag);
+      const formattedArray = tags.map((tag) => {
+         return formatStringData(tag);
       });
-      return trimmedArray;
+      return formattedArray;
    }
 }
