@@ -69,6 +69,7 @@
   $color-hover: $blue-1000;
   $active-background: $blue-300;
   $active-border: $active-background;
+  background-color: $blue-50;
   @include button-outline-variant(
     $outline,
     $color-hover,

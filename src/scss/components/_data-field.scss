@@ -16,6 +16,11 @@
     }
   }
 
+  &--search {
+    @extend .data-field;
+    display: grid;
+  }
+
   &--left {
     @extend .data-field;
     align-items: center;
@@ -30,7 +35,6 @@
       @extend .data-field--left;
       width: fit-content;
       border: none;
-      z-index: 1;
     }
   }
 
@@ -49,6 +53,18 @@
       background-color: $blue-1000;
       color: $blue-50;
       font-weight: $font-weight-bold;
+
+      &-light {
+        @extend .data-field--right-accent;
+        border: $border-width solid $blue-300;
+        background-color: $blue-50;
+        color: $blue-1000;
+        width: fit-content;
+        .data-field--right-accent-light:hover {
+          background-color: $blue-300;
+          color: $blue-50;
+        }
+      }
     }
 
     &-deadline {

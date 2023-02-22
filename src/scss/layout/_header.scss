@@ -1,22 +1,33 @@
 // Header Classes
 
+header {
+  background-color: $blue-1000;
+  border-radius: $border-radius-pill;
+}
 .navbar {
   height: 100px;
+  width: 100%;
   flex-wrap: nowrap;
   padding: 0;
   z-index: 3;
 }
 
+#navbarSupportedContent {
+  z-index: 3;
+}
 .navbar-collapse {
   position: absolute;
-  top: 60px;
+  top: 50px;
   left: 0px;
-  border-radius: 0 0 50px 50px;
-  background-color: $blue-50;
+  border-radius: 0 0 30px 30px;
   padding: 80px 40px 40px 40px;
   width: inherit;
-  z-index: -1;
   box-shadow: $box-shadow;
+}
+
+.empty-box {
+  background-color: $blue-1000;
+  height: 50px;
 }
 
 .navbar-brand {
@@ -24,6 +35,7 @@
   white-space: normal;
   width: 174px;
   margin-right: 0;
+  z-index: 2;
 }
 
 .nav-link {
@@ -35,43 +47,47 @@
   border: none;
 }
 
-// Header search
-
-.header-search-container {
-  width: inherit;
-}
-
-#search-result-title {
-  border-bottom: 2px solid $blue-1000;
-}
-
-#search-form {
+.data-field--right-navbar {
   z-index: 3;
 }
 
-#search-results-container {
-  width: inherit;
-  overflow: scroll;
+// Header search
+
+#search-form {
   position: relative;
+  z-index: 4;
+}
+
+#search-results-container {
+  position: relative;
+  display: none;
+  width: inherit;
   max-height: 300px;
   top: -30px;
   min-height: 100px;
   border-radius: 0 0 33px 33px;
   background-color: $blue-300;
+  transition: 0.3s ease-in-out;
 }
 
 .search-result-border {
   border-bottom: 2px solid $blue-300;
 }
 
+#ham-button {
+  z-index: 3;
+}
+
 @media (min-width: 992px) {
+  header {
+    background-color: $blue-50;
+  }
+
   .navbar-collapse {
     position: static;
     border-radius: none;
-    background-color: $blue-50;
     padding: 0;
     width: inherit;
-    z-index: 1;
     box-shadow: none;
   }
 
