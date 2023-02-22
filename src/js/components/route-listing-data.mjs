@@ -9,8 +9,8 @@ export function routeListingData(listingObjects, searchValue) {
 
       // Global Header
       createSearchResult(apiListingObject, index, searchValue);
-      const path = document.location.pathname;
 
+      const path = document.location.pathname;
       if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
          createIndexPageListings(apiListingObject, index);
       } else if (path === "/auctions-page.html" || path === "/Semester-Project-2/auctions-page.html") {

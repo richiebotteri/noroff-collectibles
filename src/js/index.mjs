@@ -6,11 +6,11 @@ import { searchForm } from "./listeners/forms/search-form.mjs";
 
 const path = location.pathname;
 
-if (path === "/login/" || path === "/forms.html") {
+if (path === "/login-page.html" || path === "/forms.html") {
    loginForm();
-} else if (path === "/register/") {
+} else if (path === "/register-page.html") {
    registerForm();
-} else if (path === "/create-listing/") {
+} else if (path === "/create-listing-page.html") {
    createListingForm();
 }
 

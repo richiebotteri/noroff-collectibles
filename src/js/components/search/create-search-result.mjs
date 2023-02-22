@@ -21,19 +21,16 @@ export function createSearchResult(apiListingData, index, searchValue) {
       }
    });
 
+   const searchResultContainer = document.querySelector("#search-results-container");
    const searchResultListings = document.querySelector("#search-result-listings");
-
    const searchForm = document.querySelector("#search-form");
-
-   searchForm.onclick = () => {
-      searchResultListings.replaceChildren();
-   };
 
    filters.forEach((filter) => {
       if (filter) {
          const listingItems = searchResultListings.children;
-
          if (filter.includes(searchValue)) {
+            searchResultContainer.classList.add("d-block");
+
             if (listingItems.length) {
                const listingItemsArray = Object.values(listingItems);
                const isId = listingItemsArray.some((listingElement) => {
@@ -51,4 +48,8 @@ export function createSearchResult(apiListingData, index, searchValue) {
          }
       }
    });
+
+   searchForm.onclick = () => {
+      searchResultListings.replaceChildren();
+   };
 }
