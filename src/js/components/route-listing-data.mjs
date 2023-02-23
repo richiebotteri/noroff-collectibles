@@ -7,9 +7,6 @@ export function routeListingData(listingObjects, searchValue) {
    listingObjects.forEach((apiListingObject, index) => {
       // Route data to create card components
 
-      // Global Header
-      createSearchResult(apiListingObject, index, searchValue);
-
       const path = document.location.pathname;
       if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
          createIndexPageListings(apiListingObject, index);
@@ -17,6 +14,11 @@ export function routeListingData(listingObjects, searchValue) {
          createAuctionPageListings(apiListingObject, index);
       } else if (path === "/listing-page.html" || path === "/Semester-Project-2/listing-page.html") {
          createListingPageContent(apiListingObject, index);
+      }
+
+      if (searchValue) {
+         // Global Header
+         createSearchResult(apiListingObject, index, searchValue);
       }
    });
 }

@@ -15,9 +15,11 @@ export function createSearchResult(apiListingData, index, searchValue) {
    const flattened = filterOptions.flat();
 
    const filters = flattened.map((filter) => {
-      const cleanedData = formatStringData(filter);
-      if (filter !== "") {
-         return cleanedData;
+      if (filter) {
+         const cleanedData = formatStringData(filter);
+         if (filter !== "") {
+            return cleanedData;
+         }
       }
    });
 
@@ -28,6 +30,7 @@ export function createSearchResult(apiListingData, index, searchValue) {
    filters.forEach((filter) => {
       if (filter) {
          const listingItems = searchResultListings.children;
+
          if (filter.includes(searchValue)) {
             searchResultContainer.classList.add("d-block");
 
