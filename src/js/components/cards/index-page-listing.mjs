@@ -11,7 +11,7 @@ export function createIndexPageListings(ApiListingData, listingIndex) {
 
    // Create card elements
    const cardLink = createHtmlElement("a");
-   cardLink.href = `/listing-page.html?id=${id}`;
+   cardLink.href = `/Semester-Project-2/listing-page.html?id=${id}`;
 
    if (listingIndex === 0) {
       cardLink.classList.add("carousel-item", "active", "text-decoration-none");
