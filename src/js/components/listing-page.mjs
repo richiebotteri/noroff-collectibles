@@ -12,13 +12,10 @@ export function createListingPageContent(ApiListingData, index) {
    const { id, title, description, media, tags, created, updated, endsAt, _count, bids, seller } = ApiListingData;
    const mediaArray = media;
    // Only displaying cards with images
-
    if (mediaArray.length >= 1 && queryStringId === id) {
       const titleSection = document.querySelector("#listing-title-section");
 
       if (titleSection.children.length === 0) {
-         console.log(titleSection.children.length);
-
          // HEADER SECTION
 
          const tagsContainer = createHtmlElement("div");
@@ -63,7 +60,8 @@ export function createListingPageContent(ApiListingData, index) {
                carouselIndicatorContainer.appendChild(carouselIndicatorButton);
 
                let carouselMediaItem = "";
-               carouselMediaItem = createHtmlImages(media, title);
+               carouselMediaItem = createHtmlImages(item, title);
+
                if (index < 1) {
                   mediaCarouselContainer.appendChild(carouselMediaItem);
                   carouselMediaItem.classList.add("active");
