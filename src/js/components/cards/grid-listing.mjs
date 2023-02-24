@@ -4,7 +4,7 @@ import { createTotalListingHtml } from "../card-components/card-elements/total-l
 
 import { createCardBody } from "../card-components/card-body.mjs";
 
-export function createAuctionPageListings(ApiListingData, listingIndex) {
+export function createGridListing(ApiListingData, listingIndex) {
    // Deconstruct API listing data
    const { id, title, description, media, tags, created, updated, endsAt, _count, bids, seller } = ApiListingData;
    const mediaArray = media;
@@ -18,7 +18,7 @@ export function createAuctionPageListings(ApiListingData, listingIndex) {
       const totalListingParagraph = createTotalListingHtml(listingIndex);
 
       const cardLinkContainer = createHtmlElement("a");
-      cardLinkContainer.href = `/Semester-Project-2/listing-page.html?id=${id}`;
+      cardLinkContainer.href = `/listing-page.html?id=${id}`;
       cardLinkContainer.classList.add("card-listing-y", "g-col-12", "g-col-md-6", "g-col-lg-4", "d-block");
 
       const htmlImage = createHtmlMainImage(media, title);

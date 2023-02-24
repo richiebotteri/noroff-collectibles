@@ -2,7 +2,7 @@ import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
 import { createCardBody } from "../card-components/card-body.mjs";
 import { createHtmlMainImage } from "../card-components/card-elements/main-image.mjs";
 
-export function createIndexPageListings(ApiListingData, listingIndex) {
+export function createCarouselListing(ApiListingData, listingIndex) {
    // Deconstruct API listing data
    const { id, title, description, media, tags, created, updated, endsAt, _count, bids, seller } = ApiListingData;
 
@@ -11,7 +11,7 @@ export function createIndexPageListings(ApiListingData, listingIndex) {
 
    // Create card elements
    const cardLink = createHtmlElement("a");
-   cardLink.href = `/Semester-Project-2/listing-page.html?id=${id}`;
+   cardLink.href = `/listing-page.html?id=${id}`;
 
    if (listingIndex === 0) {
       cardLink.classList.add("carousel-item", "active", "text-decoration-none");
