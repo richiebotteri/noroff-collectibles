@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./dist/css/styles.css" />
+      <script type="module" src="./src/js/index.mjs" defer></script>
+      <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://kit.fontawesome.com/04c0f70bd8.js" crossorigin="anonymous"></script>
+      <title>Home</title>
+   </head>
+   <body class="flex-grow-1 d-flex flex-column justify-content-between min-vh-100">
+      <header class="container mt-2 px-0">
+         <nav class="navbar navbar-expand-lg rounded-pill shadow pe-2">
+            <a href="index.html" class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo">
+               <p>Noroff Collectible</p>
+            </a>
+            <button id="ham-button" class="btn btn-outline-light-blue-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="fa-solid fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-light-blue-1 p-0" id="navbar-content">
+               <div class="empty-box d-lg-none"></div>
+               <div id="navbar-items" class="py-3 py-lg-0 px-3 px-lg-2 d-lg-flex align-items-center w-100">
+                  <ul class="navbar-nav me-auto">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="auctions-page.html">Auctions</a>
+                     </li>
+                  </ul>
+
+                  <!-- new -->
+                  <div class="header-search-container my-2 my-lg-0 mx-lg-2 position-relative">
+                     <form id="search-form" class="data-field g-col-12" method="post" role="search" novalidate>
+                        <input
+                           id="search-input"
+                           class="form-control data-field--left"
+                           type="search"
+                           name="searchfield"
+                           placeholder="Find a listing"
+                           aria-label="Search"
+                           pattern="^[\w]+(\s[\w]+)*$"
+                           oninvalid="this.setCustomValidity('Please enter one or more words separated by whitespace.')"
+                           oninput="setCustomValidity('')"
+                           required
+                        />
+                        <button type="submit" class="btn btn-accent-light data-field--right-accent-light g-col-2">
+                           <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                     </form>
+                     <section id="search-results-container" class="collapse search-results-container border border-light-blue-2 shadow-none pt-3 overflow-scroll">
+                        <div class="mb-3 text-dark-blue">
+                           <h3 id="search-result-title" class="pt-0 pt-lg-0 px-2 pb-1 mb-0">Search</h3>
+                           <div id="search-result-listings"></div>
+                        </div>
+                     </section>
+                  </div>
+                  <a id="logout" href="index.html" class="btn btn-outline-light me-1" aria-current="page">Logout</a>
+                  <a href="create-listing-page.html" class="btn btn-accent-dark" aria-current="page">Create listing</a>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <section class="content-section container mt-3">
+         <h1 class="text-capitalize">All auctions</h1>
+         <p id="listing-count" class="text-capitalize fs-4">Total (30)</p>
+      </section>
+      <!-- Sections  -->
+      <main class="bg-light-green-2">
+         <div id="listing-auction-grid" class="container content-section grid">
+            <div id="loader" class="g-col-12 d-flex flex-column gap-2 justify-content-center align-items-center">
+               <strong class="d-inline-block fs-3">Loading</strong>
+               <div class="spinner-border" role="status" aria-hidden="true"></div>
+            </div>
+         </div>
+      </main>
+      <!-- Footer -->
+      <footer class="footer">
+         <div class="container cta-section d-flex flex-column justify-content-center align-items-center">
+            <h2 class="mb-3">Not registered yet?</h2>
+            <p class="mb-1 text-center">Register now and get 1000 credits to use right away</p>
+            <p class="mb-3 text-center">Save your money and start bidding now</p>
+            <a href="register-page.html" class="btn btn-accent-light">Create an account</a>
+         </div>
+         <div>
+            <p class="footer-copywrite">Copyright</p>
+         </div>
+      </footer>
+   </body>
+</html>
