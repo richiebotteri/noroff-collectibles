@@ -6,9 +6,10 @@ export async function createListing(submitFormData) {
       const { method, action, ...formData } = submitFormData;
       const response = await fetch(`${AUCTIONS_URL}${action}`, tokenOption(method, formData));
       const result = await response.json();
-
-      if (response.status === 200) {
-         location.pathname = "/home.html";
+      if (response.status === 201) {
+         setTimeout(() => {
+            location.pathname = "/home.html";
+         }, 1000);
       }
    } catch (error) {
       console.log(error);
