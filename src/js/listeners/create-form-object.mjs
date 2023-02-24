@@ -16,7 +16,7 @@ export function createFormObject(formElements) {
 
             Object.defineProperty(inputDataObject, key, {
                value: formatFormDate(value),
-               writable: false,
+               enumerable: true,
             });
          }
       } else if (key === "media" || key === "tags") {
@@ -25,7 +25,7 @@ export function createFormObject(formElements) {
 
          Object.defineProperty(inputDataObject, key, {
             value: stringToArray(value),
-            writable: false,
+            enumerable: true,
          });
       } else {
          const formattedKey = formatStringData(key);
