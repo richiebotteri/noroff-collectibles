@@ -1,5 +1,4 @@
 import { createHtmlElement } from "../../../helpers/methods/create-element.mjs";
-import { createAuctionPageListings } from "../../cards/auction-page-listing.mjs";
 
 export function createHtmlMainImage(media, title) {
    const imageChildTag = createHtmlElement("img");
