@@ -70,8 +70,11 @@
 
 .img-thumbnail--listingpage-seller {
   @extend .img-thumbnail;
-  width: 200px;
-  height: 200px;
+  min-width: 250px;
+  min-height: 250px;
+
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .card-text {
