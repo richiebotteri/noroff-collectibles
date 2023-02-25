@@ -5,6 +5,7 @@ import { createListingPageContent } from "./listing-page.mjs";
 import { createSearchResult } from "./search/create-search-result.mjs";
 import { createHomePageContent } from "./home-profile-page.mjs";
 import { createAuctionPageContent } from "./auction-page.mjs";
+import { createIndexPageComponents } from "./index-page.mjs";
 
 export function routeListingData(apiData, searchValue) {
    if (Array.isArray(apiData)) {
@@ -13,7 +14,8 @@ export function routeListingData(apiData, searchValue) {
 
          const path = document.location.pathname;
          if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
-            createCarouselListing(apiListingObject, index);
+            const listing = createCarouselListing(apiListingObject, index);
+            createIndexPageComponents(listing, index);
          } else if (path === "/auctions-page.html" || path === "/Semester-Project-2/auctions-page.html") {
             let listing = createGridListing(apiListingObject, index);
             createAuctionPageContent(listing, apiData);

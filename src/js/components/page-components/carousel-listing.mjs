@@ -4,10 +4,7 @@ import { createHtmlMainImage } from "../card-components/card-elements/main-image
 
 export function createCarouselListing(ApiListingData, listingIndex) {
    // Deconstruct API listing data
-   const { id, title, description, media, tags, created, updated, endsAt, _count, bids, seller } = ApiListingData;
-
-   // Get index page listing container
-   const carouselListingContainer = document.querySelector("#carousel-listing-container");
+   const { id, title, description, media, tags, endsAt, bids } = ApiListingData;
 
    // Create card elements
    const cardLink = createHtmlElement("a");
@@ -42,9 +39,5 @@ export function createCarouselListing(ApiListingData, listingIndex) {
    grid.appendChild(htmlImage);
    grid.appendChild(cardBody);
 
-   const listingItems = carouselListingContainer.children.length;
-
-   if (listingItems < 8) {
-      carouselListingContainer.appendChild(cardLink);
-   }
+   return cardLink;
 }
