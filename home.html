@@ -65,18 +65,18 @@
       </header>
       <section class="container content-section my-2">
          <div class="profile-container d-flex flex-column flex-md-row gap-3 align-items-center justify-content-between">
-            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="rounded-pill img-thumbnail--listingpage-seller" alt="" />
+            <img id="profile-image" src="" class="rounded-pill img-thumbnail--listingpage-seller" alt="" />
             <div class="profile-description d-flex flex-column">
-               <div class="mb-3 px-1 text-center text-md-end">
-                  <p class="fw-bold fs-4">Ronny Goodwind</p>
-                  <p class="fw-semibold fs-5">Ronny.goodwind@email.com</p>
+               <div class="mb-2 px-1 text-center text-md-end">
+                  <p id="profile-name" class="fw-bold fs-4 text-capitalize"></p>
+                  <p id="profile-email" class="fw-semibold fs-5 text-capitalize"></p>
                </div>
                <div class="data-field mb-1">
                   <div class="data-field--left fw-semibold">
                      <p>Auctions won</p>
                   </div>
                   <div class="data-field--right">
-                     <p class="right-width-large fw-bold">7</p>
+                     <p id="profile-auctions-won" class="right-width-large fw-bold"></p>
                   </div>
                </div>
                <div class="data-field mb-1">
@@ -84,7 +84,7 @@
                      <p>Credits</p>
                   </div>
                   <div class="data-field--right-accent">
-                     <p class="right-width-large fw-bold">1000</p>
+                     <p id="profile-credits" class="right-width-large fw-bold"></p>
                   </div>
                </div>
                <!-- Button trigger modal -->
@@ -114,9 +114,9 @@
       <main class="bg-light-green-2">
          <section class="content-section container pb-0">
             <h1 class="text-capitalize">My auctions</h1>
-            <p id="listing-count" class="text-capitalize fs-4"></p>
+            <p id="profile-listing-count" class="text-capitalize fs-4"></p>
          </section>
-         <div id="listing-auction-grid" class="container content-section grid">
+         <div id="profil-listing-auction-grid" class="container content-section grid">
             <div id="loader" class="g-col-12 d-flex flex-column gap-2 justify-content-center align-items-center">
                <strong class="d-inline-block fs-3">Loading</strong>
                <div class="spinner-border" role="status" aria-hidden="true"></div>
