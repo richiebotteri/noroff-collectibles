@@ -8,10 +8,11 @@ export function ifTokenDoTask() {
    const path = location.pathname;
 
    if (isToken) {
-      getProfile();
       deleteStorageSigningOut();
-      if (path === "/auctions-page.html") {
-         changeToSignedInLinks();
+      if (path === "/auctions-page.html" || path === "/listing-page.html") {
+         changeToSignedInLinks(isToken);
+      } else if (path === "/home.html") {
+         getProfile();
       }
    }
 }
