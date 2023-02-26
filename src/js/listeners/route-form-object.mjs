@@ -1,7 +1,6 @@
 import { auth } from "../api/requests/auth.mjs";
 import { createListing } from "../api/requests/create-listing.mjs";
-import { getListings } from "../api/requests/get-listings.mjs";
-import { getProfile } from "../api/requests/get-profile.mjs";
+import { getSearch } from "../api/requests/get-search-data.mjs";
 
 export function routeFormObject(submitFormData) {
    const { action = null } = submitFormData;
@@ -12,5 +11,6 @@ export function routeFormObject(submitFormData) {
       createListing(submitFormData);
    } else {
       const searchInputValue = submitFormData.searchfield;
+      getSearch(searchInputValue);
    }
 }
