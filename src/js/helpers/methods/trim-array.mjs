@@ -6,5 +6,7 @@ export function trimArray(tags) {
          return formatStringData(tag);
       });
       return formattedArray;
+   } else {
+      return "no tags";
    }
 }
