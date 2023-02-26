@@ -24,7 +24,7 @@
                <div id="navbar-items" class="py-3 py-lg-0 px-3 px-lg-2 d-lg-flex align-items-center w-100">
                   <ul class="navbar-nav me-auto">
                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="auctions-page.html">Auctions</a>
@@ -57,7 +57,7 @@
                         </div>
                      </section>
                   </div>
-                  <a id="logout" href="index.html" class="btn btn-outline-light me-1" aria-current="page">Logout</a>
+                  <a id="logout" href="index.html" class="btn btn-outline-light me-1" aria-current="page" onclick="deleteLoggingOut()">Logout</a>
                   <a href="create-listing-page.html" class="btn btn-accent-dark" aria-current="page">Create listing</a>
                </div>
             </div>
@@ -68,8 +68,8 @@
             <img id="profile-image" src="" class="rounded-pill img-thumbnail--avatar" alt="" />
             <div class="profile-description d-flex flex-column">
                <div class="mb-2 px-1 text-center text-md-end">
-                  <p id="profile-name" class="fw-bold fs-4 text-capitalize"></p>
-                  <p id="profile-email" class="fw-semibold fs-5 text-capitalize"></p>
+                  <p id="profile-name" class="fw-bold fs-4 text-capitalize">username</p>
+                  <p id="profile-email" class="fw-semibold fs-5 text-capitalize">username@email.no</p>
                </div>
                <div class="data-field mb-1">
                   <div class="data-field--left fw-semibold">
@@ -111,10 +111,10 @@
          </div>
       </section>
 
-      <main class="bg-light-green-2">
+      <main class="bg-light-green-2 min-vh-100">
          <section class="content-section container pb-0">
             <h1 class="text-capitalize">My auctions</h1>
-            <p id="profile-listing-count" class="text-capitalize fs-4"></p>
+            <p id="profile-listing-count" class="text-capitalize fs-4">Total</p>
          </section>
          <div id="profil-listing-auction-grid" class="container content-section grid">
             <div id="loader" class="g-col-12 d-flex flex-column gap-2 justify-content-center align-items-center">
