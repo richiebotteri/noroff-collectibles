@@ -3,6 +3,9 @@ export function changeToSignedInLinks() {
    const darkBtnLinks = document.querySelectorAll("a[href='register-page.html']");
    const homeLinks = document.querySelectorAll("a[href='index.html']");
    const bidButton = document.querySelector("#bid-button");
+
+   const path = location.pathname;
+
    homeLinks.forEach((homeLink) => {
       homeLink.href = "home.html";
    });
@@ -11,7 +14,7 @@ export function changeToSignedInLinks() {
       if (index === 0) {
          darkBtnLink.href = "create-listing-page.html";
          darkBtnLink.innerText = "Create Listing";
-      } else if (index === 1) {
+      } else if (index === 1 && path === "/listing-page.html") {
          darkBtnLink.classList.add("d-none");
          bidButton.classList.replace("d-none", "d-block");
       }
