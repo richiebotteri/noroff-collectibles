@@ -34,7 +34,5 @@ export function createBidElement(bids) {
       });
 
       return bidsElements;
-   } else {
-      return bids;
    }
 }

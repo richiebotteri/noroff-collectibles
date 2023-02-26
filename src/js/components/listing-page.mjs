@@ -53,7 +53,7 @@ export function createListingPageContent(apiData) {
       if (mediaArray.length === 1) {
          // Generate single image
          const mainImage = createHtmlMainImage(mediaArray, title);
-         mainImage.classList.add("img-thumbnail--listing");
+         mainImage.classList.add("img-thumbnail--listing", "g-col-6");
          listingImgContainer.replaceWith(mainImage);
       } else {
          // Generate image carousel
@@ -110,8 +110,6 @@ export function createListingPageContent(apiData) {
          listingBidderElement.forEach((listingBid) => {
             bidContainer.appendChild(listingBid);
          });
-      } else {
-         bidContainer.appendChild(listingBidderElement);
       }
    }
 }

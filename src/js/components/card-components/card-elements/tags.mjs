@@ -1,7 +1,7 @@
 export function createHtmlTags(apiTags) {
    let htmlTags = "";
 
-   if (apiTags) {
+   if (Array.isArray(apiTags)) {
       htmlTags = apiTags.map((item) => {
          const htmlSpan = document.createElement("div");
          htmlSpan.classList.add("data-field--tag");
