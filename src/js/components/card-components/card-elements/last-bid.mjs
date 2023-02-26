@@ -1,20 +1,11 @@
 import { createHtmlElement } from "../../../helpers/methods/create-element.mjs";
-import { removeEmptyArray } from "../../../helpers/methods/remove-empty-array.mjs";
+import { showLastBid } from "../../../helpers/show-last-bid.mjs";
 import { createChildDataFieldLeft } from "./data-fields/child-field-left.mjs";
 import { createChildDataFieldRight } from "./data-fields/child-field-right.mjs";
 import { createParentDataField } from "./data-fields/parent-field.mjs";
 
 export function createHtmlLastBid(bids) {
-   const removedEmptyBid = removeEmptyArray(bids);
-
-   let bidAmount = "";
-   if (typeof removedEmptyBid === "string") {
-      bidAmount = "no bids";
-   } else {
-      const lastBid = bids.pop();
-      const { amount } = lastBid;
-      bidAmount = `$${amount}`;
-   }
+   const bidsAmount = showLastBid(bids);
 
    const parentDiv = createParentDataField();
 
@@ -25,7 +16,7 @@ export function createHtmlLastBid(bids) {
    const childContentRight = createHtmlElement("p");
 
    childContentLeft.innerText = "Last Bid";
-   childContentRight.innerText = bidAmount;
+   childContentRight.innerText = bidsAmount;
    parentDiv.appendChild(childDivLeft);
    parentDiv.appendChild(childDivRight);
 

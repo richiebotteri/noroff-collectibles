@@ -6,7 +6,7 @@ export function createHtmlImages(mediaSources, title) {
    carouselItem.classList.add("carousel-item", "pe-1");
 
    const imageElement = createHtmlElement("img");
-   imageElement.classList.add("img-thumbnail--listingpage-static");
+   imageElement.classList.add("img-thumbnail--listing");
 
    imageElement.alt = title;
 

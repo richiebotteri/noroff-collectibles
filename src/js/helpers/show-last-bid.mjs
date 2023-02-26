@@ -1,4 +1,8 @@
-export function showLastBid(bidsArray) {
-   // Last bid entry
-   return bidsArray.pop();
+import { removeEmptyArray } from "./methods/remove-empty-array.mjs";
+
+export function showLastBid(bids) {
+   if (typeof bids === "object") {
+      return bids.amount;
+   }
+   return bids;
 }

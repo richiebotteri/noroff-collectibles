@@ -14,6 +14,7 @@ export function createHtmlBids(apiBidsCount) {
 
    const childContentLeft = createHtmlElement("p");
    const childContentRight = createHtmlElement("p");
+   childContentRight.classList.add("fw-bold");
 
    childContentLeft.innerText = "Bids";
    childContentRight.innerText = bids;
