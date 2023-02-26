@@ -3,9 +3,10 @@ import { formatBids } from "../helpers/methods/format-bids.mjs";
 import { formatDate } from "../helpers/methods/format-date.mjs";
 import { removeEmptyArray } from "../helpers/methods/remove-empty-array.mjs";
 import { trimArray } from "../helpers/methods/trim-array.mjs";
-import { routeListingData } from "./route-listing-data.mjs";
 
 export function formatFetchData(apiDataArray) {
+   let formattedApiDataArray = [];
+
    apiDataArray.forEach((apiData, index) => {
       const { id, title, description, media, tags, created, updated, endsAt, _count, bids, seller } = apiData;
       // String
@@ -26,7 +27,7 @@ export function formatFetchData(apiDataArray) {
 
       const formattedBids = formatBids(bids);
 
-      const formattedApiData = {
+      const formattedApiDataObject = {
          index: index,
          id: id,
          title: formattedTitle,
@@ -41,6 +42,8 @@ export function formatFetchData(apiDataArray) {
          seller: seller,
       };
 
-      routeListingData(formattedApiData);
+      formattedApiDataArray.push(formattedApiDataObject);
    });
+
+   return formattedApiDataArray;
 }
