@@ -55,7 +55,8 @@
   width: 200px;
   min-width: 200px;
   object-fit: cover;
-  border: 2px solid $green-800;
+  background-image: $green-800;
+  border: 2px solid whitesmoke;
 }
 
 @media (min-width: 576px) {
