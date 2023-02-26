@@ -1,79 +1,117 @@
 import { createHtmlElement } from "../helpers/methods/create-element.mjs";
-import { createCardBodyExpanded } from "./card-components/card-body-expanded.mjs";
+import { showLastBid } from "../helpers/show-last-bid.mjs";
+import { createBidElement } from "./bids/createBidElement.mjs";
 import { createHtmlImages } from "./card-components/card-elements/images.mjs";
 import { createHtmlMainImage } from "./card-components/card-elements/main-image.mjs";
 import { createHtmlTags } from "./card-components/card-elements/tags.mjs";
 
-export function createListingPageContent(ApiListingData, index) {
+export function createListingPageContent(apiData) {
    const url = new URL(document.location);
    const queryStringId = url.searchParams.get("id");
 
    // Deconstruct API listing data
-   const { id, title, description, media, tags, created, updated, endsAt, _count, bids, seller } = ApiListingData;
-   const mediaArray = media;
-   // Only displaying cards with images
-   if (mediaArray.length >= 1 && queryStringId === id) {
-      const titleSection = document.querySelector("#listing-title-section");
+   const { id, title, description, mediaArray, tagsArray, createdDate, updatedDate, endsAtDate, bidsCount, bids, seller } = apiData;
 
-      if (titleSection.children.length === 0) {
-         // HEADER SECTION
+   if (queryStringId === id) {
+      const lastBidAmount = showLastBid(bids);
 
-         const tagsContainer = createHtmlElement("div");
-         tagsContainer.classList.add("d-flex", "flex-wrap", "gap-1");
-         const listingTitle = createHtmlElement("h1");
-         listingTitle.classList.add("text-capitalize");
-         listingTitle.innerText = title;
-         const listingTagsArray = createHtmlTags(tags);
+      // Title section
+      //
 
-         titleSection.appendChild(listingTitle);
-         titleSection.appendChild(tagsContainer);
+      const listingTitle = document.querySelector("#listing-title");
+      listingTitle.innerText = title;
 
-         listingTagsArray.forEach((listingTag) => {
-            tagsContainer.appendChild(listingTag);
+      const tagsContainer = document.querySelector("#listing-tags");
+      const listingTagsArray = createHtmlTags(tagsArray);
+
+      listingTagsArray.forEach((listingTag) => {
+         tagsContainer.appendChild(listingTag);
+      });
+
+      // Top card section
+      //
+
+      // Card body
+      const listingBids = document.querySelector("#listing-bids");
+      listingBids.innerText = bidsCount;
+
+      const listingLastBid = document.querySelector("#listing-last-bid");
+      listingLastBid.innerText = lastBidAmount;
+
+      const listingCreated = document.querySelector("#listing-created");
+      listingCreated.innerText = createdDate;
+
+      const listingDeadline = document.querySelector("#listing-deadline");
+      listingDeadline.innerText = endsAtDate;
+
+      // Media
+      const listingImgContainer = document.querySelector("#listing-img-container");
+      const mediaCarousel = document.querySelector("#media-carousel");
+      const carouselIndicatorContainer = document.querySelector("#listing-carousel-indicators");
+      const mediaCarouselContainer = document.querySelector("#media-carousel-container");
+
+      if (mediaArray.length === 1) {
+         // Generate single image
+         const mainImage = createHtmlMainImage(mediaArray, title);
+         mainImage.classList.add("img-thumbnail--listing");
+         listingImgContainer.replaceWith(mainImage);
+      } else {
+         // Generate image carousel
+         listingImgContainer.classList.add("d-none");
+         mediaArray.forEach((item, index) => {
+            const carouselIndicatorButton = createHtmlElement("button");
+            carouselIndicatorButton.setAttribute("aria-label", `Slide ${index}`);
+            carouselIndicatorButton.setAttribute("aria-current", "true");
+            carouselIndicatorButton.classList.add("active");
+            carouselIndicatorButton.dataset.bsSlideTo = `${index}`;
+            carouselIndicatorButton.dataset.bsTarget = `#media-carousel`;
+            carouselIndicatorContainer.appendChild(carouselIndicatorButton);
+
+            let carouselMediaItem = "";
+            carouselMediaItem = createHtmlImages(item, title);
+
+            if (index < 1) {
+               mediaCarouselContainer.appendChild(carouselMediaItem);
+               carouselMediaItem.classList.add("active");
+            } else {
+               mediaCarouselContainer.appendChild(carouselMediaItem);
+            }
+
+            mediaCarousel.classList.remove("d-none");
          });
+      }
 
-         // CONTENT SECTION
-         const listingDataContainer = document.querySelector("#listing-data-container");
+      // Description
+      const listingDescription = document.querySelector("#listing-description");
+      listingDescription.innerText = description;
 
-         // carousel
-         const mediaCarousel = document.querySelector("#media-carousel");
-         const carouselIndicatorContainer = document.querySelector("#listing-carousel-indicators");
-         const mediaCarouselContainer = document.querySelector("#media-carousel-container");
+      // Seller
+      const sellerImage = document.querySelector("#seller-image");
+      const sellerName = document.querySelector("#seller-name");
+      const sellerEmail = document.querySelector("#seller-email");
+      const sellerAuctionsWon = document.querySelector("#seller-auctions-won");
 
-         // Card body
-         const cardBody = createCardBodyExpanded(created, bids, endsAt, _count);
+      const { avatar, email, name, wins } = seller;
+      const totalWins = wins.length;
 
-         // Switch image carousel if more than one image
+      sellerImage.src = "avatar";
+      sellerImage.alt = name;
 
-         if (mediaArray.length === 1) {
-            const mainImage = createHtmlMainImage(media, title);
-            mainImage.classList.add("img-thumbnail--listingpage-static", "g-col-12", "g-col-lg-6");
-            listingDataContainer.appendChild(mainImage);
-         } else {
-            mediaArray.forEach((item, index) => {
-               const carouselIndicatorButton = createHtmlElement("button");
-               carouselIndicatorButton.setAttribute("aria-label", `Slide ${index}`);
-               carouselIndicatorButton.setAttribute("aria-current", "true");
-               carouselIndicatorButton.classList.add("active");
-               carouselIndicatorButton.dataset.bsSlideTo = `${index}`;
-               carouselIndicatorButton.dataset.bsTarget = `#media-carousel`;
-               carouselIndicatorContainer.appendChild(carouselIndicatorButton);
+      sellerName.innerHTML = name;
+      sellerEmail.innerHTML = email;
+      sellerAuctionsWon.innerText = totalWins;
 
-               let carouselMediaItem = "";
-               carouselMediaItem = createHtmlImages(item, title);
+      // Bid history
 
-               if (index < 1) {
-                  mediaCarouselContainer.appendChild(carouselMediaItem);
-                  carouselMediaItem.classList.add("active");
-               } else {
-                  mediaCarouselContainer.appendChild(carouselMediaItem);
-               }
+      const bidContainer = document.querySelector("#bid-container");
+      const listingBidderElement = createBidElement(bids);
 
-               mediaCarousel.classList.remove("d-none");
-            });
-         }
-
-         listingDataContainer.appendChild(cardBody);
+      if (Array.isArray(listingBidderElement)) {
+         listingBidderElement.forEach((listingBid) => {
+            bidContainer.appendChild(listingBid);
+         });
+      } else {
+         bidContainer.appendChild(listingBidderElement);
       }
    }
 }
