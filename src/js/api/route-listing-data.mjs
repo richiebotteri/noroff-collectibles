@@ -37,6 +37,9 @@ export function routeListingData(rawData) {
       });
    } else {
       // Profile
-      createHomePageContent(rawData);
+
+      if (path === "/home.html") {
+         createHomePageContent(rawData);
+      }
    }
 }
