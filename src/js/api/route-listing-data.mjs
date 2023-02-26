@@ -7,11 +7,11 @@ import { createAuctionPageContent } from "../components/auction-page.mjs";
 import { createIndexPageComponents } from "../components/index-page.mjs";
 import { formatFetchData } from "./format-fetch-data.mjs";
 
-export function routeListingData(rawDataArray) {
+export function routeListingData(rawData) {
    const path = document.location.pathname;
 
-   if (rawDataArray) {
-      const modifiedDataArray = formatFetchData(rawDataArray);
+   if (Array.isArray(rawData)) {
+      const modifiedDataArray = formatFetchData(rawData);
 
       modifiedDataArray.forEach((apiData) => {
          if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
@@ -37,6 +37,6 @@ export function routeListingData(rawDataArray) {
       });
    } else {
       // Profile
-      createHomePageContent(apiData);
+      createHomePageContent(rawData);
    }
 }
