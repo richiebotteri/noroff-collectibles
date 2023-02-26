@@ -1,0 +1,99 @@
+.profile-container,
+#seller-description {
+  max-width: 720px;
+}
+
+.profile-description {
+  width: 100%;
+}
+
+#profile-image,
+#seller-image {
+  background-color: $green-800;
+}
+
+.my-card-img {
+  border-radius: $border-radius $border-radius 0 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+  &--details {
+    @extend .my-card-img;
+    padding-bottom: 20px;
+  }
+}
+
+.img-thumbnail {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border: none;
+  padding: 0;
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+.img-thumbnail--homepage {
+  @extend .img-thumbnail;
+}
+
+.img-thumbnail--listingpage {
+  @extend .img-thumbnail;
+  height: inherit;
+}
+
+.img-thumbnail--listing {
+  @extend .img-thumbnail;
+  height: 366px;
+  border-radius: $border-radius;
+  background-color: $green-800;
+  border: 2px solid $green-800;
+}
+
+.img-thumbnail--avatar {
+  height: 200px;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  border: 2px solid $green-800;
+}
+
+@media (min-width: 576px) {
+  .my-card-img {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  .my-card-img--details {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .my-card-img,
+  .my-card-img--details {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .my-card-img--details {
+    padding-bottom: 0px;
+  }
+
+  .img-thumbnail--homepage {
+    border-radius: $border-radius 0 0 $border-radius;
+    height: 350px;
+  }
+  .img-thumbnail--listingpage {
+    border-radius: $border-radius 0 0 $border-radius;
+    height: inherit;
+  }
+}
+
+@media (min-width: 992px) {
+  .my-card-img {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .my-card-img--details {
+    border-radius: 0;
+  }
+}
