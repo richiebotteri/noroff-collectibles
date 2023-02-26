@@ -2,15 +2,15 @@ import { loadItem } from "../storage/localStorage/load.mjs";
 import { createGridListing } from "../components/page-components/grid-listing.mjs";
 import { createCarouselListing } from "../components/page-components/carousel-listing.mjs";
 import { createListingPageContent } from "../components/listing-page.mjs";
-import { createSearchResult } from "../components/search/create-search-result.mjs";
 import { createHomePageContent } from "../components/home-profile-page.mjs";
 import { createAuctionPageContent } from "../components/auction-page.mjs";
 import { createIndexPageComponents } from "../components/index-page.mjs";
 
-export function routeListingData(apiData, searchValue) {
+export function routeListingData(apiData) {
    const path = document.location.pathname;
 
    if (apiData && Array.isArray(apiData.mediaArray)) {
+      // Listing Data
       if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
          const listing = createCarouselListing(apiData);
          createIndexPageComponents(listing, apiData);
@@ -31,10 +31,8 @@ export function routeListingData(apiData, searchValue) {
             createHomePageContent(listing);
          }
       }
-   }
-
-   if (searchValue) {
-      // Global Header
-      createSearchResult(apiData, searchValue);
+   } else {
+      // Profile
+      createHomePageContent(apiData);
    }
 }

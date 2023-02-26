@@ -4,14 +4,13 @@ import { AUCTIONS_URL } from "../env.mjs";
 import { guestOption } from "../options/guest-option.mjs";
 import { formatFetchData } from "../format-fetch-data.mjs";
 
-export async function getListings(searchValue) {
+export async function getListings() {
    try {
       const response = await fetch(`${AUCTIONS_URL}/listings/?sort=created&sortOrder=desc&_seller=true&_bids=true`, guestOption);
       const listings = await response.json();
       if (response.status === 200) {
          ifTokenDoTask();
          setTimeout(() => {
-            routeListingData(searchValue);
             formatFetchData(listings);
          }, 1000);
       }
