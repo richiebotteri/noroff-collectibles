@@ -11,32 +11,46 @@
       <title>Listing Page</title>
    </head>
    <body class="bg-light-green-2 flex-grow-1 d-flex flex-column justify-content-between min-vh-100">
-      <header class="container mt-2">
-         <nav class="navbar navbar-expand-lg rounded-pill shadow">
+      <header class="container mt-2 px-0">
+         <nav class="navbar navbar-expand-lg rounded-pill shadow pe-2">
             <a href="index.html" class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo">
                <p>Noroff Collectible</p>
             </a>
-            <div class="container-fluid d-flex data-field--right-navbar justify-content-end">
-               <button class="btn btn-outline-light-blue-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="fa-solid fa-bars"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <button id="ham-button" class="btn btn-outline-light-blue-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="fa-solid fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-light-blue-1 p-0" id="navbar-content">
+               <div class="empty-box d-lg-none"></div>
+               <div id="navbar-items" class="py-3 py-lg-0 px-3 px-lg-2 d-lg-flex align-items-center w-100">
+                  <ul class="navbar-nav me-auto">
                      <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="auctions-page.html">Auctions</a>
+                        <a class="nav-link active" aria-current="page" href="auctions-page.html">Auctions</a>
                      </li>
                   </ul>
-                  <div class="header-search-container mb-2 mb-lg-0 me-lg-2 position-relative">
-                     <form id="search-form" method="post" class="form-search-field d-flex" role="search">
-                        <input class="form-control" type="search" name="searchfield" placeholder="Find a listing" aria-label="Search" />
-                        <button class="form-search-input btn btn-accent-dark--search" data-bs-toggle="collapse" data-bs-target="#search-results-container" aria-controls="search-results-container" aria-expanded="false" aria-label="Toggle navigation">
+
+                  <!-- new -->
+                  <div class="header-search-container my-2 my-lg-0 mx-lg-2 position-relative">
+                     <form id="search-form" class="data-field g-col-12" method="post" role="search" novalidate>
+                        <input
+                           id="search-input"
+                           class="form-control data-field--left"
+                           type="search"
+                           name="searchfield"
+                           placeholder="Find a listing"
+                           aria-label="Search"
+                           pattern="^[\w]+(\s[\w]+)*$"
+                           oninvalid="this.setCustomValidity('Please enter one or more words separated by whitespace.')"
+                           oninput="setCustomValidity('')"
+                           required
+                        />
+                        <button type="submit" class="btn btn-accent-light data-field--right-accent-light g-col-2">
                            <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                      </form>
-                     <section id="search-results-container" class="collapse search-results-container border border-light-blue-2 shadow-none pt-3">
+                     <section id="search-results-container" class="collapse search-results-container border border-light-blue-2 shadow-none pt-3 overflow-scroll">
                         <div class="mb-3 text-dark-blue">
                            <h3 id="search-result-title" class="pt-0 pt-lg-0 px-2 pb-1 mb-0">Search</h3>
                            <div id="search-result-listings"></div>
@@ -53,8 +67,14 @@
       <main class="grid">
          <div class="container content-section g-col-12 grid">
             <div class="card-listing-details g-col-12 m-lg-auto p-2">
-               <section id="listing-title-section" class="pb-0 rounded-top border-0 text-dark-blue pb-2"></section>
+               <section class="pb-0 rounded-top border-0 text-dark-blue pb-2">
+                  <h1 id="listing-title" class="text-capitalize">Loading...</h1>
+                  <div id="listing-tags" class="d-flex flex-wrap gap-1"></div>
+               </section>
                <div id="listing-data-container" class="grid">
+                  <div class="g-col-12 g-col-lg-6">
+                     <img id="listing-image" class="img-thumbnail--listingpage-static g-col-12 g-col-lg-6" />
+                  </div>
                   <div id="media-carousel" class="carousel d-none slide g-col-12 g-col-lg-6" data-bs-ride="carousel">
                      <div id="listing-carousel-indicators" class="carousel-indicators carousel-indicators--details">
                         <!-- indicators -->
@@ -75,32 +95,82 @@
                         </button>
                      </div>
                   </div>
+                  <div id="listing-card-body" class="g-col-12 g-col-lg-6">
+                     <div class="data-field">
+                        <div class="data-field--left mb-1">
+                           <p>Bids</p>
+                        </div>
+                        <div class="data-field--right mb-1">
+                           <p class="fw-bold" id="listing-bids"></p>
+                        </div>
+                     </div>
+                     <div class="data-field mb-1">
+                        <div class="data-field--left mb-1">
+                           <p>Last Bid</p>
+                        </div>
+                        <div class="data-field--right-accent mb-1">
+                           <p id="listing-last-bid"></p>
+                        </div>
+                     </div>
+                     <div class="data-field">
+                        <div class="data-field--left mb-1">
+                           <p>Created</p>
+                        </div>
+                        <div class="data-field--right mb-1">
+                           <p id="listing-created"></p>
+                        </div>
+                     </div>
+                     <div class="data-field mb-1">
+                        <div class="data-field--left-deadline mb-1">
+                           <p>Ends in</p>
+                        </div>
+                        <div class="data-field--right-deadline mb-1">
+                           <p id="listing-deadline"></p>
+                        </div>
+                     </div>
+                     <a id="register-button" href="register-page.html" class="btn btn-accent-dark w-100">Register Now</a>
+                     <button id="bid-button" class="btn btn-accent-dark w-100 d-none" data-bs-toggle="modal" data-bs-target="#bid-modal">Make bid</button>
+                  </div>
+                  <!-- Modal -->
+                  <div class="modal fade" id="bid-modal" tabindex="-1" aria-labelledby="bid-modal-label" aria-hidden="true">
+                     <div class="modal-dialog card bg-light-blue-1 p-3">
+                        <!-- login form -->
+                        <form method="post" action="/profile/" id="login-form" class="modal-content border-0 d-flex flex-column gap-2 needs-validation" novalidate>
+                           <h2>Make Bid</h2>
+                           <div id="bid-group" class="form-group">
+                              <label for="bid" class="form-label">Amount</label>
+                              <input type="text" class="form-control" id="bid" name="bid" placeholder="Add credits" />
+                           </div>
+                           <input type="submit" class="btn btn-accent-dark" value="Add Bid" />
+                        </form>
+                     </div>
+                  </div>
                </div>
             </div>
 
             <!-- Listing Description -->
-            <section class="card-listing-description g-col-12 g-col-xl-6 p-2 p-sm-3">
+            <section class="card-listing-description g-col-12 g-col-xl-5 p-2 p-sm-3">
                <h3>Description</h3>
-               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, a!</p>
+               <p id="listing-description" class="fs-5"></p>
             </section>
             <!-- Listing Seller -->
-            <div class="card-listing-seller g-col-12 g-col-xl-6 p-2 p-sm-3">
-               <div class="card-title">
-                  <h3>Seller</h3>
-               </div>
-               <div class="card-body p-0 d-flex flex-column flex-md-row justify-content-md-center align-items-center gap-2">
-                  <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="rounded-pill img-thumbnail--listingpage-seller" alt="" />
-                  <div class="d-flex flex-column gap-2">
-                     <div class="text-center">
-                        <p>Ronny Goodwind</p>
-                        <p>Ronny.goodwind@email.com</p>
+            <div class="card-listing-seller g-col-12 g-col-xl-7 p-2 p-sm-3">
+               <h3 class="mb-3">Seller</h3>
+               <div class="d-flex flex-column flex-md-row gap-md-3 align-content-end">
+                  <div class="d-flex justify-content-center mb-2 mb-md-0">
+                     <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="rounded-pill img-thumbnail--listingpage-seller" alt="" />
+                  </div>
+                  <div id="seller-description" class="d-flex flex-column align-items-center align-items-md-start justify-content-center g-col-12 g-col-lg-6 w-100">
+                     <div class="mb-2">
+                        <p id="seller-name" class="fw-bold fs-4 text-capitalize ps-1">Richie</p>
+                        <p id="seller-email" class="fw-semibold fs-5 text-capitalize ps-1">Email</p>
                      </div>
-                     <div class="data-field mb-1">
+                     <div class="data-field">
                         <div class="data-field--left fw-semibold">
                            <p>Auctions won</p>
                         </div>
                         <div class="data-field--right">
-                           <p class="right-width-large fw-bold">7</p>
+                           <p id="seller-auctions-won" class="right-width-large fw-bold"></p>
                         </div>
                      </div>
                   </div>
