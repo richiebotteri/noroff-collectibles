@@ -4,6 +4,8 @@ import { createListingForm } from "./listeners/forms/create-listing-form.mjs";
 import { getListings } from "./api/requests/get-listings.mjs";
 import { searchForm } from "./listeners/forms/search-form.mjs";
 
+import { hasToken } from "./api/auth/has-token.mjs";
+
 const path = location.pathname;
 
 if (path === "/login-page.html" || path === "/forms.html") {
@@ -16,3 +18,5 @@ if (path === "/login-page.html" || path === "/forms.html") {
 
 getListings();
 searchForm();
+
+hasToken();
