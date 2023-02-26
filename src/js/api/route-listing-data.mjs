@@ -13,9 +13,10 @@ export function routeListingData(apiData, searchValue) {
    if (apiData && Array.isArray(apiData.mediaArray)) {
       if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
          const listing = createCarouselListing(apiData);
-         createIndexPageComponents(listing);
+         createIndexPageComponents(listing, apiData);
       } else if (path === "/auctions-page.html" || path === "/Semester-Project-2/auctions-page.html") {
          let listing = createGridListing(apiData);
+
          createAuctionPageContent(listing, apiData);
       } else if (path === "/listing-page.html" || path === "/Semester-Project-2/listing-page.html") {
          createListingPageContent(apiData);

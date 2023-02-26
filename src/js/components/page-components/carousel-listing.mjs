@@ -2,15 +2,18 @@ import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
 import { createCardBody } from "../card-components/card-body.mjs";
 import { createHtmlMainImage } from "../card-components/card-elements/main-image.mjs";
 
-export function createCarouselListing(ApiListingData, listingIndex) {
+export function createCarouselListing(apiData) {
    // Deconstruct API listing data
-   const { id, title, description, media, tags, endsAt, bids } = ApiListingData;
+
+   const { id, title, description, mediaArray, tagsArray, endsAtDate, bids } = apiData;
 
    // Create card elements
    const cardLink = createHtmlElement("a");
    cardLink.href = `/listing-page.html?id=${id}`;
 
-   if (listingIndex === 0) {
+   const { index } = apiData;
+
+   if (index === 0) {
       cardLink.classList.add("carousel-item", "active", "text-decoration-none");
    } else {
       cardLink.classList.add("carousel-item", "text-decoration-none");
@@ -25,10 +28,10 @@ export function createCarouselListing(ApiListingData, listingIndex) {
    const grid = createHtmlElement("div");
    grid.classList.add("grid", "gap-0");
 
-   const htmlImage = createHtmlMainImage(media, title);
+   const htmlImage = createHtmlMainImage(mediaArray, title);
    htmlImage.classList.add("img-thumbnail--homepage", "g-col-12", "g-col-md-6");
 
-   const cardBody = createCardBody(title, description, tags, endsAt, bids);
+   const cardBody = createCardBody(title, description, tagsArray, endsAtDate, bids);
 
    const loader = document.querySelector("#loader");
    loader.classList.add("d-none");

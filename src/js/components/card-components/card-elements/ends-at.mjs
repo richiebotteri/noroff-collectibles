@@ -1,12 +1,9 @@
 import { createHtmlElement } from "../../../helpers/methods/create-element.mjs";
-import { formatDate } from "../../../helpers/methods/format-date.mjs";
 import { createChildDataFieldLeft } from "./data-fields/child-field-left.mjs";
 import { createChildDataFieldRight } from "./data-fields/child-field-right.mjs";
 import { createParentDataField } from "./data-fields/parent-field.mjs";
 
 export function createHtmlEndsAt(apiEndDate) {
-   const newDateFormat = formatDate(apiEndDate);
-
    const parentDiv = createParentDataField();
 
    const childDivLeft = createChildDataFieldLeft("data-field--left-deadline");
@@ -16,7 +13,7 @@ export function createHtmlEndsAt(apiEndDate) {
    const childContentRight = createHtmlElement("p");
 
    childContentLeft.innerText = "Ends in";
-   childContentRight.innerText = newDateFormat;
+   childContentRight.innerText = apiEndDate;
    parentDiv.appendChild(childDivLeft);
    parentDiv.appendChild(childDivRight);
 
