@@ -72,8 +72,8 @@
                   <div id="listing-tags" class="d-flex flex-wrap gap-1"></div>
                </section>
                <div id="listing-data-container" class="grid">
-                  <div class="g-col-12 g-col-lg-6">
-                     <img id="listing-image" class="img-thumbnail--listingpage-static g-col-12 g-col-lg-6" />
+                  <div id="listing-img-container" class="g-col-12 g-col-lg-6">
+                     <img id="listing-image" class="img-thumbnail--listing g-col-12 g-col-lg-6" />
                   </div>
                   <div id="media-carousel" class="carousel d-none slide g-col-12 g-col-lg-6" data-bs-ride="carousel">
                      <div id="listing-carousel-indicators" class="carousel-indicators carousel-indicators--details">
@@ -158,12 +158,12 @@
                <h3 class="mb-3">Seller</h3>
                <div class="d-flex flex-column flex-md-row gap-md-3 align-content-end">
                   <div class="d-flex justify-content-center mb-2 mb-md-0">
-                     <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="rounded-pill img-thumbnail--listingpage-seller" alt="" />
+                     <img id="seller-image" class="rounded-pill img-thumbnail--avatar" />
                   </div>
                   <div id="seller-description" class="d-flex flex-column align-items-center align-items-md-start justify-content-center g-col-12 g-col-lg-6 w-100">
                      <div class="mb-2">
-                        <p id="seller-name" class="fw-bold fs-4 text-capitalize ps-1">Richie</p>
-                        <p id="seller-email" class="fw-semibold fs-5 text-capitalize ps-1">Email</p>
+                        <p id="seller-name" class="fw-bold fs-4 text-capitalize ps-1">Seller Name</p>
+                        <p id="seller-email" class="fw-semibold fs-5 text-capitalize ps-1">Seller Email</p>
                      </div>
                      <div class="data-field">
                         <div class="data-field--left fw-semibold">
@@ -186,38 +186,13 @@
                   <table class="table">
                      <thead class="bg-light-blue-2">
                         <tr>
-                           <th scope="col">#</th>
+                           <th scope="col" class="ps-2">#</th>
                            <th scope="col">Created</th>
                            <th scope="col">Name</th>
                            <th scope="col">Amount</th>
                         </tr>
                      </thead>
-                     <tbody>
-                        <tr>
-                           <th scope="row">1</th>
-                           <td>01/02/23</td>
-                           <td>Tom H.</td>
-                           <td>$300</td>
-                        </tr>
-                        <tr class="bg-light-blue-2">
-                           <th scope="row">2</th>
-                           <td>01/02/22</td>
-                           <td>Chris D.</td>
-                           <td>$250</td>
-                        </tr>
-                        <tr>
-                           <th scope="row">3</th>
-                           <td>01/02/22</td>
-                           <td>Chris D.</td>
-                           <td>$250</td>
-                        </tr>
-                        <tr class="bg-light-blue-2">
-                           <th scope="row">4</th>
-                           <td>01/02/22</td>
-                           <td>Chris D.</td>
-                           <td>$250</td>
-                        </tr>
-                     </tbody>
+                     <tbody id="bid-container"></tbody>
                   </table>
                </div>
             </div>
