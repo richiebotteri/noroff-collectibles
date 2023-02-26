@@ -16,7 +16,6 @@ export function routeListingData(apiData, searchValue) {
          createIndexPageComponents(listing, apiData);
       } else if (path === "/auctions-page.html" || path === "/Semester-Project-2/auctions-page.html") {
          let listing = createGridListing(apiData);
-
          createAuctionPageContent(listing, apiData);
       } else if (path === "/listing-page.html" || path === "/Semester-Project-2/listing-page.html") {
          createListingPageContent(apiData);
@@ -28,7 +27,6 @@ export function routeListingData(apiData, searchValue) {
          const profileName = profile.name;
 
          if (sellerName === profileName) {
-            console.log(apiData);
             let listing = createGridListing(apiData);
             createHomePageContent(listing);
          }
