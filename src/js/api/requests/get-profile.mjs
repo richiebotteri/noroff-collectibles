@@ -1,4 +1,4 @@
-import { routeListingData } from "../../components/route-listing-data.mjs";
+import { routeListingData } from "../route-listing-data.mjs";
 import { loadItem } from "../../storage/localStorage/load.mjs";
 import { AUCTIONS_URL } from "../env.mjs";
 import { tokenOption } from "../options/token-option.mjs";
