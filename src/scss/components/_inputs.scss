@@ -9,11 +9,13 @@
   position: absolute;
 }
 
-#api-success-msg {
+#api-success-msg,
+#sign-in-out-msg {
   background-color: $green-200;
   border: 2px solid rgba($green-500, 0.1);
   border-radius: $border-radius-pill;
   color: $green-1000;
+  transition: 0.6s ease-in-out;
 }
 
 #api-fail-msg {
@@ -21,4 +23,5 @@
   border: 2px solid rgba($dark-red, 0.1);
   border-radius: $border-radius-pill;
   color: $dark-red;
+  transition: 0.6s ease-in-out;
 }
