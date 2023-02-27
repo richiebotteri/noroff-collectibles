@@ -1,3 +1,4 @@
+import { showOnlineMessage } from "../../components/validation/online-message.mjs";
 import { loadItem } from "../../storage/localStorage/load.mjs";
 import { getProfile } from "../requests/get-profile.mjs";
 import { changeElements } from "./change-elements.mjs";
@@ -10,5 +11,12 @@ export function hasToken() {
       changeElements();
       deleteLoggingOut();
       getProfile();
+   } else {
+      const userOnline = loadItem("userOnline");
+      const path = location.pathname;
+
+      if (!userOnline && path === "/index.html") {
+         showOnlineMessage();
+      }
    }
 }
