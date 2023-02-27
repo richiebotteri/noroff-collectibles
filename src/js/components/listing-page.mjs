@@ -1,5 +1,5 @@
 import { createHtmlElement } from "../helpers/methods/create-element.mjs";
-import { showLastBid } from "../helpers/show-last-bid.mjs";
+import { showLastBid } from "../helpers/methods/show-last-bid.mjs";
 import { createBidElement } from "./bids/createBidElement.mjs";
 import { createHtmlImages } from "./card-components/card-elements/images.mjs";
 import { createHtmlMainImage } from "./card-components/card-elements/main-image.mjs";
@@ -94,7 +94,7 @@ export function createListingPageContent(apiData) {
       const { avatar, email, name, wins } = seller;
       const totalWins = wins.length;
 
-      sellerImage.src = "avatar";
+      sellerImage.src = avatar;
       sellerImage.alt = name;
 
       sellerName.innerHTML = name;
