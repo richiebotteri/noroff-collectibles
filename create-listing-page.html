@@ -79,7 +79,7 @@
                </div>
                <div id="endsAt-group" class="form-group">
                   <label for="endsAt" class="form-label">Bid ends at*</label>
-                  <input type="datetime-local" id="endsAt" name="endsAt" class="form-control" value="2023-02-22T00:00" min="2023-02-22T00:00" max="2023-04-22T00:00" required />
+                  <input type="datetime-local" id="endsAt" name="endsAt" class="form-control" required />
                </div>
                <div id="tags-group" class="form-group">
                   <label for="tags" class="form-label">Tags</label>
@@ -91,6 +91,9 @@
                </div>
 
                <div class="create-post-feedback card bg-success p-5 rounded-2 text-white fw-semibold mb-2 d-none"></div>
+               <div id="api-success-msg" class="p-2 d-none mt-2">
+                  <p class="fw-semibold text-center">You created a post!</p>
+               </div>
                <button type="submit" class="btn btn-accent-dark">Create</button>
             </form>
          </div>
