@@ -14,24 +14,28 @@ export function routeListingData(rawData) {
       const modifiedDataArray = formatFetchData(rawData);
 
       modifiedDataArray.forEach((apiData) => {
-         if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
-            const listing = createCarouselListing(apiData);
-            createIndexPageComponents(listing, apiData);
-         } else if (path === "/auctions-page.html" || path === "/Semester-Project-2/auctions-page.html") {
-            let listing = createGridListing(apiData);
-            createAuctionPageContent(listing, apiData);
-         } else if (path === "/listing-page.html" || path === "/Semester-Project-2/listing-page.html") {
-            createListingPageContent(apiData);
-         } else if (path === "/home.html") {
-            const { seller } = apiData;
-            const sellerName = seller.name;
-
-            const profile = loadItem("profile");
-            const profileName = profile.name;
-
-            if (sellerName === profileName) {
+         const mediaExist = apiData.mediaArray;
+         // filter
+         if (mediaExist) {
+            if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
+               const listing = createCarouselListing(apiData);
+               createIndexPageComponents(listing, apiData);
+            } else if (path === "/auctions-page.html" || path === "/Semester-Project-2/auctions-page.html") {
                let listing = createGridListing(apiData);
-               createHomePageContent(listing);
+               createAuctionPageContent(listing, apiData);
+            } else if (path === "/listing-page.html" || path === "/Semester-Project-2/listing-page.html") {
+               createListingPageContent(apiData);
+            } else if (path === "/home.html") {
+               const { seller } = apiData;
+               const sellerName = seller.name;
+
+               const profile = loadItem("profile");
+               const profileName = profile.name;
+
+               if (sellerName === profileName) {
+                  let listing = createGridListing(apiData);
+                  createHomePageContent(listing);
+               }
             }
          }
       });
