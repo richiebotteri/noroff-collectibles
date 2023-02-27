@@ -5,6 +5,7 @@ import { getListings } from "./api/requests/get-listings.mjs";
 import { searchForm } from "./listeners/forms/search-form.mjs";
 
 import { hasToken } from "./api/auth/has-token.mjs";
+import { createListingPageContent } from "./components/listing-page.mjs";
 
 const path = location.pathname;
 
@@ -14,6 +15,8 @@ if (path === "/login-page.html" || path === "/forms.html") {
    registerForm();
 } else if (path === "/create-listing-page.html") {
    createListingForm();
+} else if (path === "/listing-page.html") {
+   createListingPageContent();
 }
 
 getListings();
