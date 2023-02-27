@@ -1,5 +1,5 @@
 import { createHtmlElement } from "../../../helpers/methods/create-element.mjs";
-import { showLastBid } from "../../../helpers/show-last-bid.mjs";
+import { showLastBid } from "../../../helpers/methods/show-last-bid.mjs";
 import { createChildDataFieldLeft } from "./data-fields/child-field-left.mjs";
 import { createChildDataFieldRight } from "./data-fields/child-field-right.mjs";
 import { createParentDataField } from "./data-fields/parent-field.mjs";
@@ -16,7 +16,12 @@ export function createHtmlLastBid(bids) {
    const childContentRight = createHtmlElement("p");
 
    childContentLeft.innerText = "Last Bid";
-   childContentRight.innerText = bidsAmount;
+
+   if (typeof bidsAmount === "number") {
+      childContentRight.innerText = bidsAmount;
+   } else {
+      childContentRight.innerText = bidsAmount;
+   }
    parentDiv.appendChild(childDivLeft);
    parentDiv.appendChild(childDivRight);
 

@@ -1,5 +1,4 @@
 import { formatStringData } from "../helpers/format-string-data.mjs";
-import { formatBids } from "../helpers/methods/format-bids.mjs";
 import { formatDate } from "../helpers/methods/format-date.mjs";
 import { removeEmptyArray } from "../helpers/methods/remove-empty-array.mjs";
 import { trimArray } from "../helpers/methods/trim-array.mjs";
@@ -25,8 +24,6 @@ export function formatFetchData(apiDataArray) {
 
       const bidsCount = _count.bids;
 
-      const formattedBids = formatBids(bids);
-
       const formattedApiDataObject = {
          index: index,
          id: id,
@@ -38,7 +35,7 @@ export function formatFetchData(apiDataArray) {
          endsAtDate: endsAtDate,
          updatedDate: updatedDate,
          bidsCount: bidsCount,
-         bids: formattedBids,
+         bids: bids,
          seller: seller,
       };
 
