@@ -88,23 +88,28 @@
                   </div>
                </div>
                <!-- Button trigger modal -->
-               <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+               <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#update-avatar-form">
                   Update Avatar
                   <i class="fa-solid fa-user-pen"></i>
                </button>
 
                <!-- Modal -->
-               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog card bg-light-blue-1 p-3">
-                     <!-- login form -->
-                     <form method="post" action="/profile/" id="login-form" class="modal-content border-0 d-flex flex-column gap-2 needs-validation" novalidate>
-                        <h1>Update Avatar</h1>
-                        <div id="media-group" class="form-group">
-                           <label for="media" class="form-label">Avatar Media</label>
-                           <input type="text" class="form-control" id="media" name="media" placeholder="Add URL" />
-                        </div>
-                        <input type="submit" class="btn btn-accent-dark" value="Login" />
-                     </form>
+               <div class="modal fade" id="update-avatar-form" tabindex="-1" aria-labelledby="update-avatar-form-label" aria-hidden="true">
+                  <div class="modal-dialog">
+                     <div class="card bg-light-blue-1">
+                        <!-- login form -->
+                        <form method="put" action="/profiles" id="avatar-form" class="modal-content border-0 p-3 d-flex flex-column gap-2 needs-validation" novalidate>
+                           <h1>Update Avatar</h1>
+                           <div id="avatar-group" class="form-group">
+                              <label for="avatar" class="form-label">Avatar media</label>
+                              <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Add URL" required />
+                           </div>
+                           <div id="api-success-msg" class="p-2 d-none">
+                              <p class="fw-semibold text-center">Image is being updated</p>
+                           </div>
+                           <input type="submit" class="btn btn-accent-dark" value="Update" />
+                        </form>
+                     </div>
                   </div>
                </div>
             </div>
