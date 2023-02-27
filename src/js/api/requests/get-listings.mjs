@@ -4,8 +4,9 @@ import { routeListingData } from "../route-listing-data.mjs";
 
 export async function getListings() {
    try {
-      const response = await fetch(`${AUCTIONS_URL}/listings/?sort=created&sortOrder=desc&_seller=true&_bids=true`, guestOption);
+      const response = await fetch(`${AUCTIONS_URL}/listings/?_bids=true&_seller=true&_active=true&sort=created&sortOrder=desc`, guestOption);
       const listings = await response.json();
+
       if (response.status === 200) {
          routeListingData(listings);
       }

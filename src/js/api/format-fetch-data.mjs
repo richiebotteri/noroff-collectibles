@@ -23,6 +23,7 @@ export function formatFetchData(apiDataArray) {
       const updatedDate = formatDate(updated);
 
       const bidsCount = _count.bids;
+      const showsAllBids = bids.flat();
 
       const formattedApiDataObject = {
          index: index,
@@ -35,7 +36,7 @@ export function formatFetchData(apiDataArray) {
          endsAtDate: endsAtDate,
          updatedDate: updatedDate,
          bidsCount: bidsCount,
-         bids: bids,
+         bids: showsAllBids,
          seller: seller,
       };
 
