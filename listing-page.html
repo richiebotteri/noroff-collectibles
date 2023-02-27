@@ -133,13 +133,19 @@
                   </div>
                   <!-- Modal -->
                   <div class="modal fade" id="bid-modal" tabindex="-1" aria-labelledby="bid-modal-label" aria-hidden="true">
-                     <div class="modal-dialog card bg-light-blue-1 p-3">
+                     <div class="modal-dialog">
                         <!-- login form -->
-                        <form method="post" action="/profile/" id="login-form" class="modal-content border-0 d-flex flex-column gap-2 needs-validation" novalidate>
+                        <form method="post" action="/listings" id="bid-form" class="modal-content border-0 d-flex flex-column gap-2 needs-validation card bg-light-blue-1 p-3" novalidate>
                            <h2>Make Bid</h2>
                            <div id="bid-group" class="form-group">
-                              <label for="bid" class="form-label">Amount</label>
-                              <input type="text" class="form-control" id="bid" name="bid" placeholder="Add credits" />
+                              <label for="amount" class="form-label">Amount</label>
+                              <input type="text" class="form-control" id="amount" name="amount" placeholder="Add credits" required min="0" />
+                              <div id="api-success-msg" class="p-2 d-none mt-2">
+                                 <p class="fw-semibold text-center">You added a bid!</p>
+                              </div>
+                              <div id="api-fail-msg" class="p-2 mt-2 d-none">
+                                 <p id="api-fail-msg-text" class="fw-semibold text-center"></p>
+                              </div>
                            </div>
                            <input type="submit" class="btn btn-accent-dark" value="Add Bid" />
                         </form>
