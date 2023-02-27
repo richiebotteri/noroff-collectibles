@@ -1,19 +1,25 @@
+import { formatFetchData } from "../api/format-fetch-data.mjs";
+import { getListingById } from "../api/requests/get-listing-by-id.mjs";
 import { createHtmlElement } from "../helpers/methods/create-element.mjs";
-import { showLastBid } from "../helpers/methods/show-last-bid.mjs";
+import { getLastArrayItem } from "../helpers/methods/get-last-array-item.mjs";
 import { createBidElement } from "./bids/createBidElement.mjs";
 import { createHtmlImages } from "./card-components/card-elements/images.mjs";
 import { createHtmlMainImage } from "./card-components/card-elements/main-image.mjs";
 import { createHtmlTags } from "./card-components/card-elements/tags.mjs";
 
-export function createListingPageContent(apiData) {
+export async function createListingPageContent() {
    const url = new URL(document.location);
    const queryStringId = url.searchParams.get("id");
 
-   // Deconstruct API listing data
-   const { id, title, description, mediaArray, tagsArray, createdDate, updatedDate, endsAtDate, bidsCount, bids, seller } = apiData;
+   const listingObject = await getListingById(queryStringId);
 
-   if (queryStringId === id) {
-      const lastBidAmount = showLastBid(bids);
+   const listingArray = [listingObject];
+
+   const formattedListing = formatFetchData(listingArray);
+
+   formattedListing.forEach((listingData) => {
+      // Deconstruct API listing data
+      const { title, description, mediaArray, tagsArray, createdDate, endsAtDate, bidsCount, bids, seller } = listingData;
 
       // Title section
       //
@@ -36,7 +42,14 @@ export function createListingPageContent(apiData) {
       listingBids.innerText = bidsCount;
 
       const listingLastBid = document.querySelector("#listing-last-bid");
-      listingLastBid.innerText = lastBidAmount;
+
+      if (bids.length) {
+         const lastBidder = getLastArrayItem(bids);
+         const lastBidAmount = lastBidder.amount;
+         listingLastBid.innerText = `${lastBidAmount} Credits`;
+      } else {
+         listingLastBid.innerText = "Be the first";
+      }
 
       const listingCreated = document.querySelector("#listing-created");
       listingCreated.innerText = createdDate;
@@ -53,7 +66,7 @@ export function createListingPageContent(apiData) {
       if (mediaArray.length === 1) {
          // Generate single image
          const mainImage = createHtmlMainImage(mediaArray, title);
-         mainImage.classList.add("img-thumbnail--listing", "g-col-6");
+         mainImage.classList.add("img-thumbnail--listing", "g-col-12", "g-col-lg-6");
          listingImgContainer.replaceWith(mainImage);
       } else {
          // Generate image carousel
@@ -104,6 +117,7 @@ export function createListingPageContent(apiData) {
       // Bid history
 
       const bidContainer = document.querySelector("#bid-container");
+
       const listingBidderElement = createBidElement(bids);
 
       if (Array.isArray(listingBidderElement)) {
@@ -111,5 +125,5 @@ export function createListingPageContent(apiData) {
             bidContainer.appendChild(listingBid);
          });
       }
-   }
+   });
 }

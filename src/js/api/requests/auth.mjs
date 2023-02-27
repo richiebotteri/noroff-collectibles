@@ -8,7 +8,6 @@ export async function auth(submitFormData) {
 
       const response = await fetch(`${AUCTIONS_URL}${action}`, authOption(method, formData));
       const result = await response.json();
-      console.log(result);
 
       if (action === "/auth/login" && response.status === 200) {
          const { accessToken, ...profile } = result;

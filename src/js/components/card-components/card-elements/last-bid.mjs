@@ -1,12 +1,10 @@
 import { createHtmlElement } from "../../../helpers/methods/create-element.mjs";
-import { showLastBid } from "../../../helpers/methods/show-last-bid.mjs";
+import { getLastArrayItem } from "../../../helpers/methods/get-last-array-item.mjs";
 import { createChildDataFieldLeft } from "./data-fields/child-field-left.mjs";
 import { createChildDataFieldRight } from "./data-fields/child-field-right.mjs";
 import { createParentDataField } from "./data-fields/parent-field.mjs";
 
 export function createHtmlLastBid(bids) {
-   const bidsAmount = showLastBid(bids);
-
    const parentDiv = createParentDataField();
 
    const childDivLeft = createChildDataFieldLeft("data-field--left");
@@ -17,11 +15,14 @@ export function createHtmlLastBid(bids) {
 
    childContentLeft.innerText = "Last Bid";
 
-   if (typeof bidsAmount === "number") {
-      childContentRight.innerText = bidsAmount;
+   if (bids.length) {
+      const lastBidder = getLastArrayItem(bids);
+      const lastBidAmount = lastBidder.amount;
+      childContentRight.innerText = lastBidAmount;
    } else {
-      childContentRight.innerText = bidsAmount;
+      childContentRight.innerText = "Be the first";
    }
+
    parentDiv.appendChild(childDivLeft);
    parentDiv.appendChild(childDivRight);
 
