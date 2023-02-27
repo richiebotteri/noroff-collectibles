@@ -7,9 +7,12 @@ export async function createListing(submitFormData) {
       const response = await fetch(`${AUCTIONS_URL}${action}`, tokenOption(method, formData));
       const result = await response.json();
       if (response.status === 201) {
+         const successMsg = document.querySelector("#api-success-msg");
+         successMsg.classList.replace("d-none", "d-block");
+
          setTimeout(() => {
             location.pathname = "/home.html";
-         }, 1000);
+         }, 1500);
       }
    } catch (error) {
       console.log(error);
