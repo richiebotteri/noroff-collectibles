@@ -11,60 +11,59 @@
       <title>Register</title>
    </head>
    <body class="bg-light-green-2 flex-grow-1 d-flex flex-column justify-content-between min-vh-100">
-      <body class="bg-light-green-2 flex-grow-1 d-flex flex-column justify-content-between min-vh-100">
-         <header class="container mt-2 px-0">
-            <nav class="navbar navbar-expand-lg rounded-pill shadow pe-2">
-               <a href="index.html" class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo">
-                  <p>Noroff Collectible</p>
-               </a>
-               <button id="ham-button" class="btn btn-outline-light-blue-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="fa-solid fa-bars"></span>
-               </button>
-               <div class="collapse navbar-collapse bg-light-blue-1 p-0" id="navbar-content">
-                  <div class="empty-box d-lg-none"></div>
-                  <div id="navbar-items" class="py-3 py-lg-0 px-3 px-lg-2 d-lg-flex align-items-center w-100">
-                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                           <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" aria-current="page" href="auctions-page.html">Auctions</a>
-                        </li>
-                     </ul>
+      <header class="container mt-2 px-0">
+         <nav class="navbar navbar-expand-lg rounded-pill shadow pe-2">
+            <a href="index.html" class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo">
+               <p>Noroff Collectible</p>
+            </a>
+            <button id="ham-button" class="btn btn-outline-light-blue-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="fa-solid fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-light-blue-1 p-0" id="navbar-content">
+               <div class="empty-box d-lg-none"></div>
+               <div id="navbar-items" class="py-3 py-lg-0 px-3 px-lg-2 d-lg-flex align-items-center w-100">
+                  <ul class="navbar-nav me-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="auctions-page.html">Auctions</a>
+                     </li>
+                  </ul>
 
-                     <!-- new -->
-                     <div class="header-search-container my-2 my-lg-0 mx-lg-2 position-relative">
-                        <form id="search-form" class="data-field g-col-12" method="post" role="search" novalidate>
-                           <input
-                              id="search-input"
-                              class="form-control data-field--left"
-                              type="search"
-                              name="searchfield"
-                              placeholder="Find a listing"
-                              aria-label="Search"
-                              pattern="^[\w]+(\s[\w]+)*$"
-                              oninvalid="this.setCustomValidity('Please enter one or more words separated by whitespace.')"
-                              oninput="setCustomValidity('')"
-                              required
-                           />
-                           <button type="submit" class="btn btn-accent-light data-field--right-accent-light g-col-2">
-                              <i class="fa-solid fa-magnifying-glass"></i>
-                           </button>
-                        </form>
-                        <section id="search-results-container" class="collapse search-results-container border border-light-blue-2 shadow-none pt-3 overflow-scroll">
-                           <div class="mb-3 text-dark-blue">
-                              <h3 id="search-result-title" class="pt-0 pt-lg-0 px-2 pb-1 mb-0">Search</h3>
-                              <div id="search-result-listings"></div>
-                           </div>
-                        </section>
-                     </div>
-
-                     <a href="login-page.html" class="btn btn-outline-light me-1" aria-current="page">Login</a>
-                     <a href="register-page.html" class="btn btn-accent-dark active" aria-current="page">Register</a>
+                  <!-- new -->
+                  <div class="header-search-container my-2 my-lg-0 mx-lg-2 position-relative">
+                     <form id="search-form" class="data-field g-col-12" method="post" role="search" novalidate>
+                        <input
+                           id="search-input"
+                           class="form-control data-field--left"
+                           type="search"
+                           name="searchfield"
+                           placeholder="Find a listing"
+                           aria-label="Search"
+                           pattern="^[\w]+(\s[\w]+)*$"
+                           oninvalid="this.setCustomValidity('Please enter one or more words separated by whitespace.')"
+                           oninput="setCustomValidity('')"
+                           required
+                        />
+                        <button type="submit" class="btn btn-accent-light data-field--right-accent-light g-col-2">
+                           <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                     </form>
+                     <section id="search-results-container" class="collapse search-results-container border border-light-blue-2 shadow-none pt-3 overflow-scroll">
+                        <div class="mb-3 text-dark-blue">
+                           <h3 id="search-result-title" class="pt-0 pt-lg-0 px-2 pb-1 mb-0">Search</h3>
+                           <div id="search-result-listings"></div>
+                        </div>
+                     </section>
                   </div>
+
+                  <a href="login-page.html" class="btn btn-outline-light me-1" aria-current="page">Login</a>
+                  <a href="register-page.html" class="btn btn-accent-dark active" aria-current="page">Register</a>
                </div>
-            </nav>
-         </header>
+            </div>
+         </nav>
+      </header>
 
       <main class="container my-4">
          <div class="card bg-light-blue-1 p-3">
