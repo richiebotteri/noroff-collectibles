@@ -1,19 +1,25 @@
 import { auth } from "../api/requests/auth.mjs";
 import { createListing } from "../api/requests/create-listing.mjs";
 import { getSearch } from "../api/requests/get-search-data.mjs";
+import { postBid } from "../api/requests/post-bid.mjs";
 import { updateAvatar } from "../api/requests/update-avatar.mjs";
 
-export function routeFormObject(submitFormData) {
-   const { action = null } = submitFormData;
+export function routeFormObject(formData) {
+   const { action = null } = formData;
+
    const path = location.pathname;
    if (action === "/auth/register" || action === "/auth/login") {
-      auth(submitFormData);
+      auth(formData);
    } else if (action === "/listings") {
-      createListing(submitFormData);
+      if (formData.amount) {
+         postBid(formData);
+      } else {
+         createListing(formData);
+      }
    } else if (action === "/profiles") {
-      updateAvatar(submitFormData);
+      updateAvatar(formData);
    } else {
-      const searchInputValue = submitFormData.searchfield;
+      const searchInputValue = formData.searchfield;
       getSearch(searchInputValue);
    }
 }

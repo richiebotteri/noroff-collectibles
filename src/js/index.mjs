@@ -7,6 +7,7 @@ import { searchForm } from "./listeners/forms/search-form.mjs";
 import { hasToken } from "./api/auth/has-token.mjs";
 import { createListingPageContent } from "./components/listing-page.mjs";
 import { avatarForm } from "./listeners/forms/update-avatar.mjs";
+import { bidForm } from "./listeners/forms/bid-form.mjs";
 
 const path = location.pathname;
 
@@ -19,6 +20,7 @@ if (path === "/login-page.html" || path === "/forms.html") {
 } else if (path === "/home.html") {
    avatarForm();
 } else if (path === "/listing-page.html") {
+   bidForm();
    createListingPageContent();
 }
 
