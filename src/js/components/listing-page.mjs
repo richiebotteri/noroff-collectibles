@@ -41,12 +41,18 @@ export async function createListingPageContent() {
       const listingBids = document.querySelector("#listing-bids");
       listingBids.innerText = bidsCount;
 
-      const listingLastBid = document.querySelector("#listing-last-bid");
+      const listingLastBid = document.querySelectorAll("#listing-last-bid");
 
       if (bids.length) {
          const lastBidder = getLastArrayItem(bids);
          const lastBidAmount = lastBidder.amount;
-         listingLastBid.innerText = `${lastBidAmount} Credits`;
+         listingLastBid.forEach((element, index) => {
+            if (index === 0) {
+               element.innerText = `${lastBidAmount} Credits`;
+            } else {
+               element.innerText = `${lastBidAmount} Credits`;
+            }
+         });
       } else {
          listingLastBid.innerText = "Be the first";
       }
@@ -66,7 +72,7 @@ export async function createListingPageContent() {
       if (mediaArray.length === 1) {
          // Generate single image
          const mainImage = createHtmlMainImage(mediaArray, title);
-         mainImage.classList.add("img-thumbnail--listing", "g-col-12", "g-col-lg-6");
+         mainImage.classList.add("img-thumbnail--listing", "g-col-12", "g-col-lg-6", "mb-2", "mb-lg-0");
          listingImgContainer.replaceWith(mainImage);
       } else {
          // Generate image carousel

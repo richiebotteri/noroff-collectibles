@@ -10,6 +10,7 @@ export function createBidElement(bids) {
          const bidNumber = index + 1;
 
          const bidContainer = createHtmlElement("tr");
+         bidContainer.classList.add("bg-light-blue-1");
 
          const bidderIndex = createHtmlElement("th");
          bidderIndex.setAttribute("scope", "row");
@@ -21,9 +22,11 @@ export function createBidElement(bids) {
 
          const bidderNameElement = createHtmlElement("td");
          bidderNameElement.innerText = bidderName;
+         bidderNameElement.classList.add("text-capitalize");
 
          const bidderBidAmount = createHtmlElement("td");
-         bidderBidAmount.innerText = amount;
+         bidderBidAmount.innerText = `${amount} Cr.`;
+         bidderBidAmount.classList.add("text-capitalize");
 
          bidContainer.appendChild(bidderIndex);
          bidContainer.appendChild(bidderBidCreated);

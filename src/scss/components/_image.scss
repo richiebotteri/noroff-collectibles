@@ -58,6 +58,13 @@
   border: 2px solid whitesmoke;
 }
 
+.img-thumbnail--avatar-seller {
+  @extend .img-thumbnail--avatar;
+  height: 150px;
+  width: 150px;
+  min-width: 150px;
+}
+
 @media (min-width: 576px) {
   .my-card-img {
     border-radius: $border-radius $border-radius 0 0;

@@ -9,12 +9,12 @@ export function changeElements() {
       const homeLinks = document.querySelectorAll("a[href='index.html']");
 
       const headerRegisterBtn = darkBtnLinks[0];
-      const listingRegisterBtn = darkBtnLinks[1];
+      const registerToBidBtn = document.querySelector("#register-to-bid");
       const loginBtn = document.querySelector("a[href='login-page.html']");
 
       const createListingBtn = document.querySelector("a[href='create-listing-page.html']");
       const logoutBtn = document.querySelector("#logout");
-      const bidButton = document.querySelector("#bid-button");
+      const bidForm = document.querySelector("#bid-form");
 
       const logoLink = homeLinks[0];
 
@@ -22,16 +22,16 @@ export function changeElements() {
       headerRegisterBtn.classList.add("d-none");
       loginBtn.classList.add("d-none");
 
-      if (listingRegisterBtn) {
-         listingRegisterBtn.classList.add("d-none");
+      if (registerToBidBtn) {
+         registerToBidBtn.classList.add("d-none");
       }
 
       // show button
       logoutBtn.classList.replace("d-none", "d-block");
       createListingBtn.classList.replace("d-none", "d-block");
 
-      if (bidButton) {
-         bidButton.classList.replace("d-none", "d-block");
+      if (bidForm) {
+         bidForm.classList.replace("d-none", "d-block");
       }
 
       // change href
