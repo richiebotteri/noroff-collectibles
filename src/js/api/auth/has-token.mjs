@@ -1,4 +1,5 @@
 import { showOnlineMessage } from "../../components/validation/online-message.mjs";
+import { deleteItem } from "../../storage/localStorage/delete.mjs";
 import { loadItem } from "../../storage/localStorage/load.mjs";
 import { getProfile } from "../requests/get-profile.mjs";
 import { changeElements } from "./change-elements.mjs";
@@ -17,6 +18,7 @@ export function hasToken() {
 
       if (!userOnline && path === "/index.html") {
          showOnlineMessage();
+         deleteItem("userOnline");
       }
    }
 }
