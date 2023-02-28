@@ -40,6 +40,15 @@
   min-height: 94px;
 }
 
+#listing-card-body {
+  border: $border-width solid $blue-300;
+  border-radius: $border-radius;
+}
+
+#listing-data-container {
+  height: inherit;
+}
+
 @media (min-width: 992px) {
   .card {
     border-radius: $border-radius;
@@ -48,5 +57,9 @@
       @extend .card;
       width: 700px;
     }
+  }
+
+  #listing-data-container {
+    height: 710px;
   }
 }

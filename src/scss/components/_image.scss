@@ -44,10 +44,9 @@
 
 .img-thumbnail--listing {
   @extend .img-thumbnail;
-  height: 366px;
+  height: 400px;
   border-radius: $border-radius;
-  background-color: $green-800;
-  border: 2px solid $green-800;
+  background-color: $blue-1000;
 }
 
 .img-thumbnail--avatar {
@@ -96,5 +95,8 @@
 
   .my-card-img--details {
     border-radius: 0;
+  }
+  .img-thumbnail--listing {
+    height: inherit;
   }
 }

@@ -25,3 +25,19 @@
   color: $dark-red;
   transition: 0.6s ease-in-out;
 }
+
+#bid-form {
+  border: $border-width solid $blue-300;
+  border-radius: 0 0 0.4rem 0.4rem;
+  background-color: $blue-300;
+}
+
+#last-bid-promo {
+  background-color: $blue-300;
+  border-radius: 0.4rem 0.4rem 0 0;
+  height: 80px;
+}
+
+#register-to-bid {
+  border-radius: 0 0 0.4rem 0.4rem;
+}
