@@ -68,13 +68,13 @@
       <!-- Responsive Detail Listing Card -->
       <main class="grid">
          <div class="container content-section g-col-12 grid">
-            <div class="card-listing-details g-col-12 m-lg-auto p-2">
+            <div class="card-listing-details g-col-12 m-lg-auto p-2 p-sm-3 gap-2">
                <section class="pb-0 rounded-top border-0 text-dark-blue pb-2">
                   <h1 id="listing-title" class="text-capitalize">Loading...</h1>
-                  <div id="listing-tags" class="d-flex flex-wrap gap-1"></div>
+                  <div id="listing-tags" class="d-flex flex-wrap gap-1 mt-2"></div>
                </section>
                <div id="listing-data-container" class="grid">
-                  <div id="listing-img-container" class="g-col-12 g-col-lg-6">
+                  <div id="listing-img-container" class="g-col-12 g-col-lg-6 mb-2">
                      <img id="listing-image" class="img-thumbnail--listing g-col-12 g-col-lg-6" />
                   </div>
                   <div id="media-carousel" class="carousel d-none slide g-col-12 g-col-lg-6" data-bs-ride="carousel">
@@ -97,88 +97,92 @@
                         </button>
                      </div>
                   </div>
-                  <div id="listing-card-body" class="g-col-12 g-col-lg-6">
-                     <div class="data-field">
-                        <div class="data-field--left mb-1">
-                           <p>Bids</p>
-                        </div>
-                        <div class="data-field--right mb-1">
-                           <p class="fw-bold" id="listing-bids"></p>
-                        </div>
+                  <div id="listing-card-body" class="g-col-12 g-col-lg-6 d-flex flex-column justify-content-between">
+                     <div id="last-bid-promo" class="d-flex gap-1 justify-content-center align-items-center">
+                        <p class="fs-3 fw-bold border-dark-blue">Listing Bids</p>
                      </div>
-                     <div class="data-field mb-1">
-                        <div class="data-field--left mb-1">
-                           <p>Last Bid</p>
-                        </div>
-                        <div class="data-field--right-accent mb-1">
-                           <p id="listing-last-bid"></p>
-                        </div>
-                     </div>
-                     <div class="data-field">
-                        <div class="data-field--left mb-1">
-                           <p>Created</p>
-                        </div>
-                        <div class="data-field--right mb-1">
-                           <p id="listing-created"></p>
-                        </div>
-                     </div>
-                     <div class="data-field mb-1">
-                        <div class="data-field--left-deadline mb-1">
-                           <p>Ends in</p>
-                        </div>
-                        <div class="data-field--right-deadline mb-1">
-                           <p id="listing-deadline"></p>
-                        </div>
-                     </div>
-                     <a id="register-button" href="register-page.html" class="btn btn-accent-dark w-100">Register Now</a>
-                     <button id="bid-button" class="btn btn-accent-dark w-100 d-none" data-bs-toggle="modal" data-bs-target="#bid-modal">Make bid</button>
-                  </div>
-                  <!-- Modal -->
-                  <div class="modal fade" id="bid-modal" tabindex="-1" aria-labelledby="bid-modal-label" aria-hidden="true">
-                     <div class="modal-dialog">
-                        <!-- login form -->
-                        <form method="post" action="/listings" id="bid-form" class="modal-content border-0 d-flex flex-column gap-2 needs-validation card bg-light-blue-1 p-3" novalidate>
-                           <h2>Make Bid</h2>
-                           <div id="bid-group" class="form-group">
-                              <label for="amount" class="form-label">Amount</label>
-                              <input type="text" class="form-control" id="amount" name="amount" placeholder="Add credits" required min="0" />
-                              <div id="api-success-msg" class="p-2 d-none mt-2">
-                                 <p class="fw-semibold text-center">You added a bid!</p>
+                     <div class="d-flex flex-column justify-content-center my-3 my-lg-0">
+                        <div class="p-2 py-0">
+                           <div class="data-field">
+                              <div class="data-field--left mb-1">
+                                 <p>Current Price</p>
                               </div>
-                              <div id="api-fail-msg" class="p-2 mt-2 d-none">
-                                 <p id="api-fail-msg-text" class="fw-semibold text-center"></p>
+                              <div class="data-field--right-accent mb-1">
+                                 <p id="listing-last-bid" class="fw-bold border-2 border-bottom pe-1 border-dark-blue">0</p>
+                                 <i class="fa-solid fa-tag"></i>
                               </div>
                            </div>
-                           <input type="submit" class="btn btn-accent-dark" value="Add Bid" />
-                        </form>
+                           <div class="data-field mb-2">
+                              <div class="data-field--left-deadline mb-1">
+                                 <p>Ends in</p>
+                              </div>
+                              <div class="data-field--right-deadline mb-1">
+                                 <p id="listing-deadline"></p>
+                              </div>
+                           </div>
+                           <div class="data-field">
+                              <div class="data-field--left mb-1">
+                                 <p>Bids</p>
+                              </div>
+                              <div class="data-field--right mb-1">
+                                 <p class="fw-bold" id="listing-bids"></p>
+                              </div>
+                           </div>
+
+                           <div class="data-field">
+                              <div class="data-field--left">
+                                 <p>Created</p>
+                              </div>
+                              <div class="data-field--right">
+                                 <p id="listing-created"></p>
+                              </div>
+                           </div>
+                        </div>
                      </div>
+                     <div id="register-to-bid" class="p-3 bg-light-blue-2">
+                        <a id="register-button" href="register-page.html" class="btn btn-accent-dark w-100">Register to Bid</a>
+                     </div>
+                     <!-- login form -->
+                     <form method="post" action="/listings" id="bid-form" class="d-flex flex-column gap-2 needs-validation shadow-none p-2 p-sm-3 d-none" novalidate>
+                        <div id="bid-group" class="form-group">
+                           <label for="amount" class="form-label">Bid Amount</label>
+                           <input type="text" class="form-control" id="amount" name="amount" placeholder="Place credits" required min="0" />
+                        </div>
+                        <input type="submit" class="btn btn-accent-dark" value="Add Bid" />
+                        <div id="api-success-msg" class="p-1 d-none">
+                           <p class="fw-semibold text-center">You added a bid!</p>
+                        </div>
+                        <div id="api-fail-msg" class="p-1 d-none">
+                           <p id="api-fail-msg-text" class="fw-semibold text-center"></p>
+                        </div>
+                     </form>
                   </div>
                </div>
             </div>
 
             <!-- Listing Description -->
-            <section class="card-listing-description g-col-12 g-col-xl-5 p-2 p-sm-3">
+            <section class="card-listing-description g-col-12 g-col-lg-6 p-2 p-sm-3 p-sm-3">
                <h3>Description</h3>
-               <p id="listing-description" class="fs-5"></p>
+               <p id="listing-description"></p>
             </section>
             <!-- Listing Seller -->
-            <div class="card-listing-seller g-col-12 g-col-xl-7 p-2 p-sm-3">
+            <div class="card-listing-seller g-col-12 g-col-lg-6 p-2 p-sm-3 p-sm-3">
                <h3 class="mb-3">Seller</h3>
                <div class="d-flex flex-column flex-md-row gap-md-3 align-content-end">
-                  <div class="d-flex justify-content-center mb-2 mb-md-0">
-                     <img id="seller-image" class="rounded-pill img-thumbnail--avatar" />
-                  </div>
-                  <div id="seller-description" class="d-flex flex-column align-items-center align-items-md-start justify-content-center g-col-12 g-col-lg-6 w-100">
-                     <div class="mb-2">
-                        <p id="seller-name" class="fw-bold fs-4 text-capitalize ps-1">Seller Name</p>
-                        <p id="seller-email" class="fw-semibold fs-5 text-capitalize ps-1">Seller Email</p>
-                     </div>
-                     <div class="data-field">
-                        <div class="data-field--left fw-semibold">
-                           <p>Auctions won</p>
-                        </div>
-                        <div class="data-field--right">
-                           <p id="seller-auctions-won" class="right-width-large fw-bold"></p>
+                  <div id="seller-description" class="d-flex flex-column align-items-center align-items-md-start align-items-lg-center justify-content-center w-100">
+                     <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-center mb-2 gap-2">
+                        <img id="seller-image" class="rounded-pill img-thumbnail--avatar-seller" />
+                        <div>
+                           <p id="seller-name" class="fw-bold fs-4 text-center text-sm-start text-capitalize ps-1">Seller Name</p>
+                           <p id="seller-email" class="fw-semibold text-center text-sm-start fs-5 text-capitalize ps-1 mb-2">Seller Email</p>
+                           <div class="data-field">
+                              <div class="data-field--left fw-semibold">
+                                 <p>Wins</p>
+                              </div>
+                              <div class="data-field--right">
+                                 <p id="seller-auctions-won" class="right-width-large fw-bold"></p>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -190,7 +194,7 @@
                <div class="card-title">
                   <h3>Bidding History</h3>
                </div>
-               <div class="border rounded">
+               <div class="border rounded bg-light-blue-2">
                   <table class="table">
                      <thead class="bg-light-blue-2">
                         <tr>
