@@ -12,16 +12,16 @@ import { changeInputDate } from "./helpers/change-input-date.mjs";
 
 const path = location.pathname;
 
-if (path === "/login-page.html" || path === "/forms.html") {
+if (path === "/Semester-Project-2/login-page.html" || path === "/Semester-Project-2/forms.html") {
    loginForm();
-} else if (path === "/register-page.html") {
+} else if (path === "/Semester-Project-2/register-page.html") {
    registerForm();
-} else if (path === "/create-listing-page.html") {
+} else if (path === "/Semester-Project-2/create-listing-page.html") {
    createListingForm();
    changeInputDate();
-} else if (path === "/home.html") {
+} else if (path === "/Semester-Project-2/home.html") {
    avatarForm();
-} else if (path === "/listing-page.html") {
+} else if (path === "/Semester-Project-2/listing-page.html") {
    bidForm();
    createListingPageContent();
 }

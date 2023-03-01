@@ -11,7 +11,7 @@ export async function createListing(submitFormData) {
          successMsg.classList.replace("d-none", "d-block");
 
          setTimeout(() => {
-            location.pathname = "/home.html";
+            location.pathname = "/Semester-Project-2/home.html";
          }, 1500);
       }
    } catch (error) {

@@ -12,7 +12,7 @@ export function deleteLoggingOut() {
          saveItem("userOnline", false);
 
          setTimeout(() => {
-            location.pathname = "/index.html";
+            location.pathname = "/Semester-Project-2/index.html";
          }, 1000);
       });
    }

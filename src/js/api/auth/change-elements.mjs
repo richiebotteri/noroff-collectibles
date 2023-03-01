@@ -3,7 +3,7 @@
 export function changeElements() {
    const path = location.pathname;
 
-   if (path === "/auctions-page.html" || path === "/listing-page.html") {
+   if (path === "/Semester-Project-2/auctions-page.html" || path === "/Semester-Project-2/listing-page.html") {
       // Change header links
       const darkBtnLinks = document.querySelectorAll("a[href='register-page.html']");
       const homeLinks = document.querySelectorAll("a[href='index.html']");
@@ -35,6 +35,6 @@ export function changeElements() {
       }
 
       // change href
-      logoLink.href = "/home.html";
+      logoLink.href = "/Semester-Project-2/home.html";
    }
 }

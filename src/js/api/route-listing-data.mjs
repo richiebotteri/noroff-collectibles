@@ -15,13 +15,13 @@ export function routeListingData(rawData) {
       modifiedDataArray.forEach((apiData) => {
          const mediaExist = apiData.mediaArray;
 
-         if (path === "/index.html" || path === "/Semester-Project-2/index.html") {
+         if (path === "/Semester-Project-2/index.html") {
             const listing = createCarouselListing(apiData);
             createIndexPageComponents(listing, apiData);
-         } else if (path === "/auctions-page.html" || path === "/Semester-Project-2/auctions-page.html") {
+         } else if (path === "/Semester-Project-2/auctions-page.html") {
             let listing = createGridListing(apiData);
             createAuctionPageContent(listing, apiData);
-         } else if (path === "/home.html") {
+         } else if (path === "/Semester-Project-2/home.html") {
             const { seller } = apiData;
             const sellerName = seller.name;
 
@@ -37,7 +37,7 @@ export function routeListingData(rawData) {
    } else {
       // Profile
 
-      if (path === "/home.html") {
+      if (path === "/Semester-Project-2/home.html") {
          createHomePageContent(rawData);
       }
    }

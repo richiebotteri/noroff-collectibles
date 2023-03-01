@@ -9,7 +9,7 @@ export function createCarouselListing(apiData) {
 
    // Create card elements
    const cardLink = createHtmlElement("a");
-   cardLink.href = `/listing-page.html?id=${id}`;
+   cardLink.href = `/Semester-Project-2/listing-page.html?id=${id}`;
 
    const { index } = apiData;
 
