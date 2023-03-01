@@ -9,6 +9,7 @@ import { createListingPageContent } from "./components/listing-page.mjs";
 import { avatarForm } from "./listeners/forms/update-avatar.mjs";
 import { bidForm } from "./listeners/forms/bid-form.mjs";
 import { changeInputDate } from "./helpers/change-input-date.mjs";
+import { addMoreListings } from "./helpers/add-more-listings.mjs";
 
 const path = location.pathname;
 
