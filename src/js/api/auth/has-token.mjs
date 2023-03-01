@@ -16,7 +16,7 @@ export function hasToken() {
       const userOnline = loadItem("userOnline");
       const path = location.pathname;
 
-      if (!userOnline && path === "/Semester-Project-2/index.html") {
+      if (userOnline === false && path === "/Semester-Project-2/index.html") {
          showOnlineMessage();
          deleteItem("userOnline");
       }
