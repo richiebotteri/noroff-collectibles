@@ -20,7 +20,7 @@ export function createHtmlLastBid(bids) {
       const lastBidAmount = lastBidder.amount;
       childContentRight.innerText = lastBidAmount;
    } else {
-      childContentRight.innerText = "Be the first";
+      childContentRight.innerText = "no bids";
    }
 
    parentDiv.appendChild(childDivLeft);

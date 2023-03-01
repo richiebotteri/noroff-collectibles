@@ -8,13 +8,13 @@ import { addStringLimit } from "../../helpers/methods/add-string-limit.mjs";
 
 export function createCardBody(title, description, tags, endsAt, bids) {
    const cardBody = createHtmlElement("div");
-   cardBody.classList.add("card-body", "g-col-12", "g-col-md-6");
+   cardBody.classList.add("card-body", "g-col-12", "g-col-md-6", "d-flex", "flex-column", "justify-content-between");
 
    const tagChildContainer = createHtmlElement("div");
 
    //  Card Body Content
    const htmlTitle = createHtmlTitle(title);
-   const htmlTags = createHtmlTags(tags);
+   const wrapper = createHtmlElement("div");
    const htmlLastBidField = createHtmlLastBid(bids);
    const htmlEndsAtField = createHtmlEndsAt(endsAt);
 
@@ -22,23 +22,16 @@ export function createCardBody(title, description, tags, endsAt, bids) {
 
    const htmlDescription = createHTMlDescription(descriptionLimit);
 
-   if (htmlTags.length === 0) {
-      tagChildContainer.classList.add("d-none");
-   } else {
-      tagChildContainer.classList.add("d-flex", "flex-wrap", "gap-1", "pb-2");
-   }
-
    //  Create Component
 
    cardBody.appendChild(htmlTitle);
    cardBody.appendChild(tagChildContainer);
-   htmlTags.forEach((htmlTag) => {
-      tagChildContainer.appendChild(htmlTag);
-   });
 
    cardBody.appendChild(htmlDescription);
-   cardBody.appendChild(htmlLastBidField);
-   cardBody.appendChild(htmlEndsAtField);
+
+   wrapper.appendChild(htmlLastBidField);
+   wrapper.appendChild(htmlEndsAtField);
+   cardBody.appendChild(wrapper);
 
    return cardBody;
 }
