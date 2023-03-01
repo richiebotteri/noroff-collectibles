@@ -16,6 +16,8 @@ if (path === "/Semester-Project-2/login-page.html" || path === "/Semester-Projec
    loginForm();
 } else if (path === "/Semester-Project-2/register-page.html") {
    registerForm();
+} else if (path === "/Semester-Project-2/auctions-page.html") {
+   addMoreListings();
 } else if (path === "/Semester-Project-2/create-listing-page.html") {
    createListingForm();
    changeInputDate();
