@@ -47,6 +47,7 @@
     background-color: $component-active-bg;
     border-radius: 0 $border-radius-pill $border-radius-pill 0;
     margin-left: -$border-width;
+
     &-accent {
       @extend .data-field--right;
       border: $border-width solid $blue-1000;
@@ -82,6 +83,7 @@
       width: 100%;
       height: 100%;
       margin-left: -$border-width;
+      z-index: 4;
     }
   }
 

@@ -11,27 +11,28 @@
       <title>Listing Page</title>
    </head>
    <body class="bg-light-green-2 flex-grow-1 d-flex flex-column justify-content-between min-vh-100">
-      <header class="container mt-2 px-0">
-         <nav class="navbar navbar-expand-lg rounded-pill shadow pe-2">
-            <a href="index.html" class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo">
-               <p>Noroff Collectible</p>
-            </a>
-            <button id="ham-button" class="btn btn-outline-light-blue-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="fa-solid fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse bg-light-blue-1 p-0" id="navbar-content">
-               <div class="empty-box d-lg-none"></div>
-               <div id="navbar-items" class="py-3 py-lg-0 px-3 px-lg-2 d-lg-flex align-items-center w-100">
+      <div class="container p-2 mt-1">
+         <header class="shadow">
+            <nav class="navbar-expand-lg d-flex position-relative">
+               <a href="index.html" class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo">
+                  <p>Noroff Collectible</p>
+               </a>
+               <div class="container-fluid data-field--right-navbar justify-content-end d-lg-none">
+                  <!-- Ham Button -->
+                  <button id="ham-button" class="btn btn-outline-light-blue-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="fa-solid fa-bars"></span>
+                  </button>
+               </div>
+               <div class="collapse navbar-collapse bg-light-blue-1 pt-4 pt-lg-0 py-3 py-lg-0 px-3 px-lg-2 d-lg-flex align-items-center" id="navbar-content">
                   <ul class="navbar-nav me-auto">
-                     <li class="nav-item">
+                     <li class="nav-item me-1">
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="auctions-page.html">Auctions</a>
+                        <a class="nav-link" aria-current="page" href="auctions-page.html">Auctions</a>
                      </li>
                   </ul>
 
-                  <!-- new -->
                   <div class="header-search-container my-2 my-lg-0 mx-lg-2 position-relative">
                      <form id="search-form" class="data-field g-col-12" method="post" role="search" novalidate>
                         <input
@@ -62,9 +63,9 @@
                   <a href="register-page.html" class="btn btn-accent-dark" aria-current="page">Register</a>
                   <a href="create-listing-page.html" class="btn btn-accent-dark d-none" aria-current="page">Create Listing</a>
                </div>
-            </div>
-         </nav>
-      </header>
+            </nav>
+         </header>
+      </div>
       <!-- Responsive Detail Listing Card -->
       <main class="grid">
          <div class="container content-section g-col-12 grid">
