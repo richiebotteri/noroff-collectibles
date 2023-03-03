@@ -7,7 +7,8 @@ export function limitArrayEntries(array, maxListing = 10) {
 
    if (numberOfListings === maxListing) {
       const path = location.pathname;
-      if (path === "/auctions-page") {
+      if (path === "/auctions-page.html") {
+         console.log("here");
          const loadMoreBtn = document.querySelector("#load-more");
          loadMoreBtn.classList.replace("d-none", "d-block");
       }
