@@ -21,7 +21,7 @@ export function routeListingData(rawData) {
          } else if (path === "/Semester-Project-2/auctions-page.html") {
             let listing = createGridListing(apiData);
             createAuctionPageContent(listing, apiData);
-         } else if (path === "/Semester-Project-2/home.html") {
+         } else if (path === "/Semester-Project-2/profile.html") {
             const { seller } = apiData;
             const sellerName = seller.name;
 
@@ -37,7 +37,7 @@ export function routeListingData(rawData) {
    } else {
       // Profile
 
-      if (path === "/Semester-Project-2/home.html") {
+      if (path === "/Semester-Project-2/profile.html") {
          createHomePageContent(rawData);
       }
    }

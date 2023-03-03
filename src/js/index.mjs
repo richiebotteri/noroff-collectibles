@@ -22,7 +22,7 @@ if (path === "/Semester-Project-2/login-page.html" || path === "/Semester-Projec
 } else if (path === "/Semester-Project-2/create-listing-page.html") {
    createListingForm();
    changeInputDate();
-} else if (path === "/Semester-Project-2/home.html") {
+} else if (path === "/Semester-Project-2/profile.html") {
    avatarForm();
 } else if (path === "/Semester-Project-2/listing-page.html") {
    bidForm();

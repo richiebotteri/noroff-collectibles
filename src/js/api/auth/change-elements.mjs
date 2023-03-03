@@ -16,8 +16,6 @@ export function changeElements() {
       const logoutBtn = document.querySelector("#logout");
       const bidForm = document.querySelector("#bid-form");
 
-      const logoLink = homeLinks[0];
-
       // hide buttons
       headerRegisterBtn.classList.add("d-none");
       loginBtn.classList.add("d-none");
@@ -35,6 +33,11 @@ export function changeElements() {
       }
 
       // change href
-      logoLink.href = "/Semester-Project-2/home.html";
+      homeLinks.forEach((homeLink, index) => {
+         homeLink.href = "/Semester-Project-2/profile.html";
+         if (index === 1) {
+            homeLink.innerText = "Profile";
+         }
+      });
    }
 }

@@ -17,7 +17,7 @@ export async function auth(submitFormData) {
          const signInMsg = document.querySelector("#sign-in-out-msg");
          signInMsg.classList.replace("d-none", "d-block");
          setTimeout(() => {
-            location.pathname = "/Semester-Project-2/home.html";
+            location.pathname = "/Semester-Project-2/profile.html";
          }, 1000);
       }
    } catch (error) {
