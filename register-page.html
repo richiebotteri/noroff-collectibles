@@ -11,10 +11,10 @@
       <title>Register</title>
    </head>
    <body class="bg-light-green-2 flex-grow-1 d-flex flex-column justify-content-between min-vh-100">
-      <div class="container p-2 mt-1">
+      <div class="container mt-2">
          <header class="shadow">
             <nav class="navbar-expand-lg d-flex position-relative">
-               <a href="index.html" class="navbar-brand px-3 py-2 bg-dark-blue text-light-blue-1 data-field--left-logo">
+               <a href="index.html" class="navbar-brand px-3 fs-5 bg-dark-blue text-light-blue-1 data-field--left-logo">
                   <p>Noroff Collectible</p>
                </a>
                <div class="container-fluid data-field--right-navbar justify-content-end d-lg-none">
@@ -24,15 +24,16 @@
                   </button>
                </div>
                <div class="collapse navbar-collapse bg-light-blue-1 pt-4 pt-lg-0 py-3 py-lg-0 px-3 px-lg-2 d-lg-flex align-items-center" id="navbar-content">
-                  <ul class="navbar-nav me-auto">
-                     <li class="nav-item me-1">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="auctions-page.html">Auctions</a>
-                     </li>
-                  </ul>
-
+                  <nav class="navbar me-auto">
+                     <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" aria-current="page" href="auctions-page.html">Auctions</a>
+                        </li>
+                     </ul>
+                  </nav>
                   <div class="header-search-container my-2 my-lg-0 mx-lg-2 position-relative">
                      <form id="search-form" class="data-field g-col-12" method="post" role="search" novalidate>
                         <input
@@ -47,7 +48,7 @@
                            oninput="setCustomValidity('')"
                            required
                         />
-                        <button type="submit" class="btn btn-accent-light data-field--right-accent-light g-col-2">
+                        <button id="search-btn" type="submit" class="btn btn-accent-light data-field--right-accent-light g-col-2">
                            <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                      </form>

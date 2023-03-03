@@ -9,6 +9,10 @@
   position: absolute;
 }
 
+#search-btn {
+  z-index: -1;
+}
+
 #api-success-msg,
 #sign-in-out-msg {
   background-color: $green-200;

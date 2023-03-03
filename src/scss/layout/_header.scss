@@ -4,11 +4,9 @@ header {
   border-radius: $border-radius-pill;
 }
 .navbar {
-  height: 100px;
-  width: 100%;
+  height: inherit;
   flex-wrap: nowrap;
   z-index: 4;
-  background-color: $blue-1000;
 }
 
 .navbar-collapse {
@@ -26,6 +24,7 @@ header {
   width: 174px;
   margin-right: 0;
   z-index: 4;
+  height: inherit;
 }
 
 .nav-link {
