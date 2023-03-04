@@ -10,7 +10,7 @@ export function createGridListing(apiData) {
    // Create card elements
    const cardLinkContainer = createHtmlElement("a");
 
-   cardLinkContainer.href = `/listing-page.html?id=${id}`;
+   cardLinkContainer.href = `/Semester-Project-2/listing-page.html?id=${id}`;
    cardLinkContainer.classList.add("card-listing-y", "g-col-12", "g-col-md-6");
 
    const htmlImage = createHtmlMainImage(mediaArray, title);

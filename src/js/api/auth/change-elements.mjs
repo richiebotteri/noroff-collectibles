@@ -3,7 +3,7 @@
 export function changeElements() {
    const path = location.pathname;
 
-   if (path === "/auctions-page.html" || path === "/listing-page.html") {
+   if (path === "/Semester-Project-2/auctions-page.html" || path === "/Semester-Project-2/listing-page.html") {
       const darkBtnLinks = document.querySelectorAll("a[href='register-page.html']");
       const homeLinks = document.querySelectorAll("a[href='index.html']");
 
@@ -36,7 +36,7 @@ export function changeElements() {
 
       // change href
       homeLinks.forEach((homeLink, index) => {
-         homeLink.href = "/profile.html";
+         homeLink.href = "/Semester-Project-2/profile.html";
          if (index === 1) {
             homeLink.innerText = "Profile";
          }

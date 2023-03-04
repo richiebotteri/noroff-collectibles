@@ -10,6 +10,7 @@ import { avatarForm } from "./listeners/forms/update-avatar.mjs";
 import { bidForm } from "./listeners/forms/bid-form.mjs";
 import { changeInputDate } from "./helpers/change-input-date.mjs";
 import { addMoreListings } from "./helpers/add-more-listings.mjs";
+import { toggleSearchDisplay } from "./components/search/toggle-display.mjs";
 
 const path = location.pathname;
 
@@ -34,4 +35,5 @@ if (path !== "/Semester-Project-2/profile.html") {
 }
 
 searchForm();
+toggleSearchDisplay();
 hasToken();

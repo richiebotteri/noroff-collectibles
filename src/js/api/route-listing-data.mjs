@@ -10,10 +10,10 @@ export function routeListingData(rawData) {
    if (Array.isArray(rawData)) {
       const modifiedData = formatFetchData(rawData);
       modifiedData.forEach((listingData) => {
-         if (path === "/index.html") {
+         if (path === "/Semester-Project-2/index.html") {
             const listingElement = createCarouselListing(listingData);
             createIndexPageComponents(listingElement, listingData);
-         } else if (path === "/auctions-page.html") {
+         } else if (path === "/Semester-Project-2/auctions-page.html") {
             let listingElement = createGridListing(listingData);
             createAuctionPageContent(listingElement);
          }

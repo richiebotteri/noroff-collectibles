@@ -13,7 +13,7 @@ export async function getListings(loadMoreListings = 10) {
          const selectedListings = sliceApiData(listings, loadMoreListings);
 
          const path = location.pathname;
-         if (path === "/auctions-page.html") {
+         if (path === "/Semester-Project-2/auctions-page.html") {
             const loadMoreBtn = document.querySelector("#load-more");
             loadMoreBtn.classList.replace("d-none", "d-block");
          }
