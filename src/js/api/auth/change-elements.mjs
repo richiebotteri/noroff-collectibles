@@ -3,8 +3,7 @@
 export function changeElements() {
    const path = location.pathname;
 
-   if (path === "/Semester-Project-2/auctions-page.html" || path === "/Semester-Project-2/listing-page.html") {
-      // Change header links
+   if (path === "/auctions-page.html" || path === "/listing-page.html") {
       const darkBtnLinks = document.querySelectorAll("a[href='register-page.html']");
       const homeLinks = document.querySelectorAll("a[href='index.html']");
 
@@ -16,9 +15,12 @@ export function changeElements() {
       const logoutBtn = document.querySelector("#logout");
       const bidForm = document.querySelector("#bid-form");
 
+      const footerCta = document.querySelector("footer > .container");
+
       // hide buttons
       headerRegisterBtn.classList.add("d-none");
       loginBtn.classList.add("d-none");
+      footerCta.classList.add("d-none");
 
       if (registerToBidBtn) {
          registerToBidBtn.classList.add("d-none");
@@ -34,7 +36,7 @@ export function changeElements() {
 
       // change href
       homeLinks.forEach((homeLink, index) => {
-         homeLink.href = "/Semester-Project-2/profile.html";
+         homeLink.href = "/profile.html";
          if (index === 1) {
             homeLink.innerText = "Profile";
          }
