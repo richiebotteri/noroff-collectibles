@@ -103,6 +103,7 @@ export async function createListingPageContent() {
       // Description
       const listingDescription = document.querySelector("#listing-description");
       listingDescription.innerText = description;
+      listingDescription.classList.add("fs-5");
 
       // Seller
       const sellerImage = document.querySelector("#seller-image");
