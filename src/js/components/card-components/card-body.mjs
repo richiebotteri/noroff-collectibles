@@ -7,7 +7,7 @@ import { addStringLimit } from "../../helpers/methods/add-string-limit.mjs";
 
 export function createCardBody(title, description, tags, endsAt, bids) {
    const cardBody = createHtmlElement("div");
-   cardBody.classList.add("card-body", "g-col-12", "g-col-md-6", "d-flex", "flex-column", "justify-content-between");
+   cardBody.classList.add("card-body", "g-col-12", "g-col-md-6", "d-flex", "flex-column", "justify-content-between", "pb-3");
 
    const tagChildContainer = createHtmlElement("div");
 
