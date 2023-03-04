@@ -2,7 +2,6 @@ import { createHTMlDescription } from "./card-elements/description.mjs";
 import { createHtmlEndsAt } from "./card-elements/ends-at.mjs";
 import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
 import { createHtmlLastBid } from "./card-elements/last-bid.mjs";
-import { createHtmlTags } from "./card-elements/tags.mjs";
 import { createHtmlTitle } from "./card-elements/title.mjs";
 import { addStringLimit } from "../../helpers/methods/add-string-limit.mjs";
 
@@ -14,13 +13,15 @@ export function createCardBody(title, description, tags, endsAt, bids) {
 
    //  Card Body Content
    const htmlTitle = createHtmlTitle(title);
+   htmlTitle.classList.add("text-capitalize");
+
    const wrapper = createHtmlElement("div");
    const htmlLastBidField = createHtmlLastBid(bids);
    const htmlEndsAtField = createHtmlEndsAt(endsAt);
 
    const descriptionLimit = addStringLimit(description);
-
    const htmlDescription = createHTMlDescription(descriptionLimit);
+   htmlDescription.classList.add("text-capitalize");
 
    //  Create Component
 
