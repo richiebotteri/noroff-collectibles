@@ -24,6 +24,7 @@
   &--left-button {
     @extend .data-field;
     align-items: center;
+    justify-content: center;
     padding: $padding-y $padding-x;
     border-radius: $border-radius-pill 0 0 $border-radius-pill;
   }
