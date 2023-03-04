@@ -18,7 +18,7 @@ export function createHtmlLastBid(bids) {
    if (bids.length) {
       const lastBidder = getLastArrayItem(bids);
       const lastBidAmount = lastBidder.amount;
-      childContentRight.innerText = lastBidAmount;
+      childContentRight.innerText = `${lastBidAmount} Cr`;
    } else {
       childContentRight.innerText = "no bids";
    }

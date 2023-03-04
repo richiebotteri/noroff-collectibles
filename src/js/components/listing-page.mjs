@@ -48,9 +48,9 @@ export async function createListingPageContent() {
          const lastBidAmount = lastBidder.amount;
          listingLastBid.forEach((element, index) => {
             if (index === 0) {
-               element.innerText = `${lastBidAmount} Credits`;
+               element.innerText = `${lastBidAmount} Cr`;
             } else {
-               element.innerText = `${lastBidAmount} Credits`;
+               element.innerText = `${lastBidAmount} Cr`;
             }
          });
       } else {
