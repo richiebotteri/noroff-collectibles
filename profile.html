@@ -83,7 +83,7 @@
                </div>
                <div class="data-field mb-1">
                   <div class="data-field--left fw-semibold">
-                     <p>Auctions won</p>
+                     <p class="w-inherit">Auctions won</p>
                   </div>
                   <div class="data-field--right">
                      <p id="profile-auctions-won" class="right-width-large fw-bold"></p>
@@ -126,16 +126,27 @@
          </div>
       </section>
 
-      <main class="bg-light-green-2 min-vh-100">
-         <section class="content-section container pb-0">
+      <main class="bg-light-green-2 min-vh-100 pb-4">
+         <div class="container py-3">
+            <div class="data-field">
+               <button id="listings-toggle-btn" class="data-field--left-button btn btn-outline-light active">My Listings</button>
+               <button id="wins-toggle-btn" class="data-field--right-button btn btn-outline-light">Wins</button>
+            </div>
+         </div>
+         <section id="my-listings-container" class="container pb-0 d-block">
             <h1 class="text-capitalize">My auctions</h1>
             <p id="profile-listing-count" class="text-capitalize fs-4">Total</p>
+            <div id="profil-listing-auction-grid" class="grid pt-3"></div>
+            <div id="loader" class="g-col-12 d-flex flex-column gap-2 justify-content-center align-items-center">
+               <strong class="d-inline-block fs-3">Loading</strong>
+               <div class="spinner-border" role="status" aria-hidden="true"></div>
+            </div>
          </section>
-         <div id="profil-listing-auction-grid" class="container content-section grid"></div>
-         <div id="loader" class="g-col-12 d-flex flex-column gap-2 justify-content-center align-items-center">
-            <strong class="d-inline-block fs-3">Loading</strong>
-            <div class="spinner-border" role="status" aria-hidden="true"></div>
-         </div>
+         <section id="my-wins-container" class="container pb-0 d-none">
+            <h1 class="text-capitalize">My Wins</h1>
+            <p id="profile-listing-win-count" class="text-capitalize fs-4">Total</p>
+            <div id="profil-listing-win-grid" class="grid pt-3"></div>
+         </section>
       </main>
       <!-- Footer -->
       <footer class="footer">

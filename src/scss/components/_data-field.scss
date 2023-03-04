@@ -21,6 +21,13 @@
     display: grid;
   }
 
+  &--left-button {
+    @extend .data-field;
+    align-items: center;
+    padding: $padding-y $padding-x;
+    border-radius: $border-radius-pill 0 0 $border-radius-pill;
+  }
+
   &--left {
     @extend .data-field;
     align-items: center;
@@ -36,6 +43,15 @@
       width: fit-content;
       border: none;
     }
+  }
+
+  &--right-button {
+    @extend .data-field;
+    justify-content: center;
+    align-items: center;
+    padding: $padding-y $padding-x;
+    border-radius: 0 $border-radius-pill $border-radius-pill 0;
+    margin-left: -$border-width;
   }
 
   &--right {
@@ -111,6 +127,10 @@
 
 .right-width-large {
   width: 95px;
+}
+
+.w-inherit {
+  width: inherit;
 }
 
 @media (min-width: 992px) {

@@ -1,10 +1,12 @@
 #profil-listing-auction-grid,
+#profil-listing-win-grid,
 #listing-auction-grid {
   gap: 50px 0;
 }
 
 @media (min-width: 768px) {
   #profil-listing-auction-grid,
+  #profil-listing-win-grid,
   #listing-auction-grid {
     gap: 50px;
   }
