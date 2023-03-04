@@ -1,7 +1,7 @@
 export function formatDate(apiDate) {
    const date = new Date(apiDate);
    const dateFormat = {
-      year: "numeric",
+      year: "2-digit",
       month: "numeric",
       day: "numeric",
    };
