@@ -6,15 +6,15 @@ import { changeElements } from "./change-elements.mjs";
 import { deleteLoggingOut } from "./delete-logging-out.mjs";
 
 export function hasToken() {
+   const path = location.pathname;
    const tokenExist = loadItem("token");
 
    if (tokenExist) {
       changeElements();
       deleteLoggingOut();
-      getProfile();
+      if (path === "/Semester-Project-2/profile.html") getProfile();
    } else {
       const userOnline = loadItem("userOnline");
-      const path = location.pathname;
 
       if (userOnline === false && path === "/Semester-Project-2/index.html") {
          showOnlineMessage();

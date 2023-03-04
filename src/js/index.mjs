@@ -29,7 +29,9 @@ if (path === "/Semester-Project-2/login-page.html" || path === "/Semester-Projec
    createListingPageContent();
 }
 
-getListings();
-searchForm();
+if (path !== "/Semester-Project-2/profile.html") {
+   getListings();
+}
 
+searchForm();
 hasToken();
