@@ -11,7 +11,7 @@ export function createGridListing(apiData) {
    const cardLinkContainer = createHtmlElement("a");
 
    cardLinkContainer.href = `/listing-page.html?id=${id}`;
-   cardLinkContainer.classList.add("card-listing-y", "g-col-12", "g-col-md-6", "g-col-lg-4");
+   cardLinkContainer.classList.add("card-listing-y", "g-col-12", "g-col-md-6");
 
    const htmlImage = createHtmlMainImage(mediaArray, title);
    htmlImage.classList.add("img-thumbnail");

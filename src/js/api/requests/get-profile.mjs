@@ -3,6 +3,7 @@ import { AUCTIONS_URL } from "../env.mjs";
 import { tokenOption } from "../options/token-option.mjs";
 import { createHomePageContent } from "../../components/home-profile-page.mjs";
 import { formatFetchData } from "../format-fetch-data.mjs";
+import { guestOption } from "../options/guest-option.mjs";
 
 export async function getProfile() {
    try {
@@ -12,20 +13,27 @@ export async function getProfile() {
       const responseProfile = await fetch(`${AUCTIONS_URL}/profiles/${profileName}`, tokenOption("get"));
       const userProfile = await responseProfile.json();
 
-      const responseListings = await fetch(`${AUCTIONS_URL}/profiles/${profileName}/listings/?_bids=true&_seller=true`, tokenOption("get"));
-      const listings = await responseListings.json();
+      const profileListingResponse = await fetch(`${AUCTIONS_URL}/profiles/${profileName}/listings/?_bids=true&_seller=true&sort=created&sortOrder=desc`, tokenOption("get"));
+      const profileListings = await profileListingResponse.json();
+
+      const allListingsResponse = await fetch(`${AUCTIONS_URL}/listings/?limit=100&offset=100&_bids=true&_seller=true&sort=created`, guestOption());
+      const allListings = await allListingsResponse.json();
 
       const userData = {};
 
-      if (responseProfile.status === 200 && responseListings.status === 200) {
+      if (responseProfile.status === 200 && profileListingResponse.status === 200 && allListingsResponse.status === 200) {
          Object.defineProperties(userData, {
             profile: {
                value: userProfile,
             },
             profileListings: {
-               value: formatFetchData(listings),
+               value: formatFetchData(profileListings),
+            },
+            allListings: {
+               value: formatFetchData(allListings),
             },
          });
+
          createHomePageContent(userData);
       }
    } catch (error) {
