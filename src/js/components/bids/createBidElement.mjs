@@ -1,5 +1,6 @@
 import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
 import { formatDate } from "../../helpers/methods/format-date.mjs";
+import { shortenBidName } from "../../helpers/methods/shorten-bid-name.mjs";
 
 export function createBidElement(bids) {
    if (Array.isArray(bids)) {
@@ -7,6 +8,7 @@ export function createBidElement(bids) {
 
       bids.forEach((bid, index) => {
          const { amount, bidderName, created } = bid;
+
          const bidNumber = index + 1;
 
          const bidContainer = createHtmlElement("tr");
@@ -22,7 +24,13 @@ export function createBidElement(bids) {
          bidderBidCreated.classList.add("d-none", "d-sm-block");
 
          const bidderNameElement = createHtmlElement("td");
-         bidderNameElement.innerText = bidderName;
+
+         if (bidderName.length > 10) {
+            const shortBidderName = shortenBidName(bidderName);
+            bidderNameElement.innerText = shortBidderName;
+         } else {
+            bidderNameElement.innerText = bidderName;
+         }
          bidderNameElement.classList.add("text-capitalize");
 
          const bidderBidAmount = createHtmlElement("td");
