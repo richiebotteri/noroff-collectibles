@@ -18,10 +18,12 @@ export async function auth(submitFormData) {
          saveItem("token", accessToken);
          saveItem("profile", profile);
          saveItem("userOnline", true);
-         const signInMsg = document.querySelector("#sign-in-out-msg");
+
+         const signInMsg = document.querySelector("#login-success-msg");
          signInMsg.classList.replace("d-none", "d-block");
+
          setTimeout(() => {
-            location.pathname = "/Semester-Project-2/profile.html";
+            location.pathname = "/profile.html";
          }, 1000);
       }
 
@@ -30,12 +32,22 @@ export async function auth(submitFormData) {
          const registerSuccessMsg = document.querySelector("#register-success-msg");
          registerSuccessMsg.classList.replace("d-none", "d-block");
          setTimeout(() => {
-            location.pathname = "/Semester-Project-2/login.html";
+            location.pathname = "/login.html";
          }, 1000);
       }
 
       // Profile already exist
       if (response.status === 400) {
+         failMsgContainer.classList.replace("d-none", "d-block");
+         const responseErrorText = result.errors[0].message;
+         failMsgText.innerText = responseErrorText;
+         setTimeout(() => {
+            failMsgContainer.classList.replace("d-block", "d-none");
+         }, 3500);
+      }
+
+      // Profile already exist
+      if (response.status === 401) {
          failMsgContainer.classList.replace("d-none", "d-block");
          const responseErrorText = result.errors[0].message;
          failMsgText.innerText = responseErrorText;

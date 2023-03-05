@@ -24,7 +24,7 @@ export function giveValidationMessage(isValidForm, form) {
          case "email":
             const emailContainer = document.querySelector("#email-group");
 
-            displayValidationMessage(isValidForm, emailContainer, "Your email should be a valid Noroff email address, which starts with your username, followed by the domain '@stud.noroff.no'.");
+            displayValidationMessage(isValidForm, emailContainer, "Your email should be a valid Noroff email address, which starts with your username, followed by the domain '@stud.noroff.no'. or '@noroff.no'");
             break;
          case "password":
             const passwordContainer = document.querySelector("#password-group");

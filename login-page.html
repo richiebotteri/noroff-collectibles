@@ -74,16 +74,19 @@
                <h1>Login</h1>
                <div id="email-group" class="form-group mb-1">
                   <label for="email" class="form-label">Email*</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="username@stud.noroff.no" pattern="^[\w\-.]+@(stud.)?noroff.no$" required />
+                  <input type="email" class="form-control" id="email" name="email" placeholder="email" pattern="^[\w\-.]+@(stud.)?noroff.no$" required />
                </div>
                <div id="password-group" class="form-group">
                   <label for="password" class="form-label">Password*</label>
-                  <input type="password" class="form-control" id="password" name="password" placeholder="write your password" minlength="8" required />
+                  <input type="password" class="form-control" id="password" name="password" placeholder="password" minlength="8" required />
                </div>
                <div class="d-flex justify-content-center">
-                  <div id="sign-in-out-msg" class="p-2 mt-2 w-100 d-none">
-                     <p class="fw-semibold text-center px-2">Logging In!</p>
+                  <div id="login-success-msg" class="p-2 mt-2 w-100 d-none">
+                     <p class="fw-semibold text-center px-2">Logging in! Redirect to Profile</p>
                   </div>
+               </div>
+               <div id="api-fail-msg" class="p-2 d-none">
+                  <p id="api-fail-msg-text" class="fw-semibold text-center"></p>
                </div>
                <input type="submit" class="btn btn-accent-dark" value="Login" />
             </form>
