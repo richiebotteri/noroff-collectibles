@@ -17,7 +17,15 @@ export async function auth(submitFormData) {
          const signInMsg = document.querySelector("#sign-in-out-msg");
          signInMsg.classList.replace("d-none", "d-block");
          setTimeout(() => {
-            location.pathname = "/Semester-Project-2/profile.html";
+            location.pathname = "/profile.html";
+         }, 1000);
+      }
+
+      if (action === "/auth/register" && response.status === 201) {
+         const registerSuccessMsg = document.querySelector("#register-success-msg");
+         registerSuccessMsg.classList.replace("d-none", "d-block");
+         setTimeout(() => {
+            location.pathname = "/login.html";
          }, 1000);
       }
    } catch (error) {

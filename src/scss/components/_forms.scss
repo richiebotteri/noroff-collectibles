@@ -14,7 +14,8 @@
 }
 
 #api-success-msg,
-#sign-in-out-msg {
+#sign-in-out-msg,
+#register-success-msg {
   background-color: $green-200;
   border: 2px solid rgba($green-500, 0.1);
   border-radius: $border-radius-pill;

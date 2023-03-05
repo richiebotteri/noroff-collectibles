@@ -73,9 +73,9 @@
             <!-- Register form -->
             <form method="post" action="/auth/register" id="register-form" class="d-flex flex-column gap-2 needs-validation" novalidate>
                <h1>Register</h1>
-               <div id="username-group" class="form-group">
-                  <label for="username" class="form-label">Username*</label>
-                  <input type="text" class="form-control" id="username" name="username" placeholder="write your username" required pattern="^[\w]+$" maxlength="20" />
+               <div id="name-group" class="form-group">
+                  <label for="name" class="form-label">Username*</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="write your username" required pattern="^[\w]+$" maxlength="20" />
                </div>
                <div id="email-group" class="form-group mb-1">
                   <label for="email" class="form-label">Email*</label>
@@ -89,15 +89,16 @@
                   <label for="avatar" class="form-label">Avatar</label>
                   <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Add URL" />
                </div>
-
+               <div class="d-flex justify-content-center">
+                  <div id="register-success-msg" class="p-2 mt-2 w-100 d-none">
+                     <p class="fw-semibold text-center px-2">User Account Registered! Redirect to Login</p>
+                  </div>
+               </div>
                <input type="submit" class="btn btn-accent-dark fw-bold" value="Register" />
             </form>
-            <div class="my-2 w-100 m-auto d-flex gap-1">
-               <p class="fs-5">Already have an account?</p>
-               <a href="login-page.html" class="fs-5 fw-bold">
-                  Login here
-                  <i class="fa-solid fa-angle-right"></i>
-               </a>
+            <div class="my-2 gap-1">
+               <p class="mb-2">Already have an account?</p>
+               <a href="login-page.html" class="btn btn-outline-light w-100">Login here</a>
             </div>
          </div>
       </main>
