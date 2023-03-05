@@ -1,5 +1,13 @@
+.hide-table-cell {
+  display: none;
+}
+
 @media (min-width: 576px) {
   tr {
     font-size: 1.25rem;
+  }
+
+  .hide-table-cell {
+    display: table-cell;
   }
 }

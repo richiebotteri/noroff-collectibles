@@ -21,7 +21,7 @@ export function createBidElement(bids) {
 
          const bidderBidCreated = createHtmlElement("td");
          bidderBidCreated.innerText = formatDate(created);
-         bidderBidCreated.classList.add("d-none", "d-sm-block");
+         bidderBidCreated.classList.add("hide-table-cell");
 
          const bidderNameElement = createHtmlElement("td");
 
