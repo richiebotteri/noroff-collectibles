@@ -16,18 +16,18 @@ import path from "./helpers/path.mjs";
 import { showOfflineMsg } from "./api/auth/show-offline-msg.mjs";
 
 // Only evoked on specific pages
-if (path() === "/login-page.html" || path() === "/forms.html") {
+if (path() === "/Semester-Project-2/login-page.html" || path() === "/Semester-Project-2/forms.html") {
    loginForm();
-} else if (path() === "/register-page.html") {
+} else if (path() === "/Semester-Project-2/register-page.html") {
    registerForm();
-} else if (path() === "/auctions-page.html") {
+} else if (path() === "/Semester-Project-2/auctions-page.html") {
    addMoreListings();
-} else if (path() === "/create-listing-page.html") {
+} else if (path() === "/Semester-Project-2/create-listing-page.html") {
    createListingForm();
    changeInputDate();
-} else if (path() === "/profile.html") {
+} else if (path() === "/Semester-Project-2/profile.html") {
    avatarForm();
-} else if (path() === "/listing-page.html") {
+} else if (path() === "/Semester-Project-2/listing-page.html") {
    bidForm();
    createListingPageContent();
 }

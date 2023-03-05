@@ -21,7 +21,7 @@ export async function auth(submitFormData) {
          const signInMsg = document.querySelector("#sign-in-out-msg");
          signInMsg.classList.replace("d-none", "d-block");
          setTimeout(() => {
-            location.pathname = "/profile.html";
+            location.pathname = "/Semester-Project-2/profile.html";
          }, 1000);
       }
 
@@ -30,7 +30,7 @@ export async function auth(submitFormData) {
          const registerSuccessMsg = document.querySelector("#register-success-msg");
          registerSuccessMsg.classList.replace("d-none", "d-block");
          setTimeout(() => {
-            location.pathname = "/login.html";
+            location.pathname = "/Semester-Project-2/login.html";
          }, 1000);
       }
 

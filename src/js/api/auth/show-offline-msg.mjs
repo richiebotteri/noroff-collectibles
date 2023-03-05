@@ -6,7 +6,7 @@ import { loadItem } from "../../storage/localStorage/load.mjs";
 export function showOfflineMsg() {
    const userOnline = loadItem("userOnline");
 
-   if (userOnline === false && path() === "/index.html") {
+   if (userOnline === false && path() === "/Semester-Project-2/index.html") {
       displayOfflineMessage();
       deleteItem("userOnline");
       deleteItem();
