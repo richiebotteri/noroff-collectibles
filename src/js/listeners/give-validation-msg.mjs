@@ -17,7 +17,7 @@ export function giveValidationMessage(isValidForm, form) {
             displayValidationMessage(isValidForm, endsAtContainer, "This field is required");
             break;
          case "username":
-            const usernameContainer = document.querySelector("#username-group");
+            const usernameContainer = document.querySelector("#name-group");
 
             displayValidationMessage(isValidForm, usernameContainer, "Your username should only include letters, numbers, and underscores.");
             break;
