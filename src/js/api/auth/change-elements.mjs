@@ -1,5 +1,3 @@
-// import { deleteLoggingOut } from "./delete-logging-out.mjs";
-
 import path from "../../helpers/path.mjs";
 
 export function changeElements() {
