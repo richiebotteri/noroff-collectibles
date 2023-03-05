@@ -36,6 +36,12 @@ export async function getProfile() {
 
          createHomePageContent(userData);
       }
+
+      // Remove loader if zero posts
+      if (profileListings.length === 0) {
+         const loader = document.querySelector("#loader");
+         loader.classList.add("d-none");
+      }
    } catch (error) {
       console.log(error);
    }
