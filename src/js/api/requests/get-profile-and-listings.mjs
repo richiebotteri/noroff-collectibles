@@ -65,7 +65,7 @@ export async function getProfileAndListings(loadMoreListings = 10) {
       }
 
       // Send all data to profile page if token exist
-      if (hasToken()) {
+      if (path() === "/profile.html" && hasToken()) {
          createHomePageContent(fetchApiData);
       }
    } catch (error) {

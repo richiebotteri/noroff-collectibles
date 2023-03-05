@@ -1,4 +1,4 @@
-import { getListings } from "../api/requests/get-listings.mjs";
+import { getProfileAndListings } from "../api/requests/get-profile-and-listings.mjs";
 
 export function addMoreListings() {
    const loadMoreBtn = document.querySelector("#load-more");
@@ -7,7 +7,7 @@ export function addMoreListings() {
    loadMoreBtn.onclick = () => {
       addListings += 10;
       if (addListings !== 100) {
-         getListings(addListings);
+         getProfileAndListings(addListings);
       } else {
          loadMoreBtn.classList.add("disabled", "d-none");
       }
