@@ -23,10 +23,19 @@ export function createFormObject(formElements) {
          const formattedKey = formatStringData(key);
          const formattedValue = formatStringData(value);
 
-         Object.defineProperty(inputDataObject, key, {
-            value: stringToArray(value),
-            enumerable: true,
-         });
+         if (key === "media") {
+            if (value) {
+               Object.defineProperty(inputDataObject, key, {
+                  value: stringToArray(value),
+                  enumerable: true,
+               });
+            }
+         } else {
+            Object.defineProperty(inputDataObject, key, {
+               value: stringToArray(value),
+               enumerable: true,
+            });
+         }
       } else if (key === "amount") {
          Object.defineProperty(inputDataObject, key, {
             value: parseFloat(value),

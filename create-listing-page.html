@@ -74,11 +74,11 @@
                <h2>Create a Listing</h2>
                <div id="title-group" class="form-group">
                   <label for="title" class="form-label">Title*</label>
-                  <input type="text" class="form-control" id="title" name="title" placeholder="Add title" required maxlength="280" />
+                  <input type="text" class="form-control" id="title" name="title" placeholder="Add title" maxlength="280" required />
                </div>
                <div id="description-group" class="form-group">
                   <label for="description" class="form-label">Description</label>
-                  <input type="text" class="form-control" id="description" name="description" placeholder="Describe your item" />
+                  <input type="text" class="form-control" id="description" name="description" placeholder="Describe your item" required />
                </div>
                <div id="endsAt-group" class="form-group">
                   <label for="endsAt" class="form-label">Bid ends at*</label>
@@ -90,12 +90,17 @@
                </div>
                <div id="media-group" class="form-group">
                   <label for="media" class="form-label">Media</label>
-                  <input type="text" class="form-control" id="media" name="media" placeholder="Add URL" />
+                  <input type="text" class="form-control" id="media" name="media" placeholder="https://url.com" />
                </div>
 
                <div class="create-post-feedback card bg-success p-5 rounded-2 text-white fw-semibold mb-2 d-none"></div>
-               <div id="api-success-msg" class="p-2 d-none mt-2">
-                  <p class="fw-semibold text-center">You created a post!</p>
+               <div class="d-flex justify-content-center">
+                  <div id="create-success-msg" class="p-2 mt-2 w-100 d-none">
+                     <p class="fw-semibold text-center px-2">You created a post!</p>
+                  </div>
+               </div>
+               <div id="api-fail-msg" class="p-2 d-none">
+                  <p id="api-fail-msg-text" class="fw-semibold text-center"></p>
                </div>
                <button type="submit" class="btn btn-accent-dark">Create</button>
             </form>
