@@ -12,7 +12,7 @@ export async function createListing(submitFormData) {
 
       if (response.status === 201) {
          const createSuccessMsg = document.querySelector("#create-success-msg");
-         successMsg.classList.replace("d-none", "d-block");
+         createSuccessMsg.classList.replace("d-none", "d-block");
 
          setTimeout(() => {
             location.pathname = "/Semester-Project-2/profile.html";

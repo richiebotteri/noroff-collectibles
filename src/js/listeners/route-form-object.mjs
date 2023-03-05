@@ -9,13 +9,13 @@ export function routeFormObject(formData) {
 
    if (action === "/auth/register" || action === "/auth/login") {
       auth(formData);
-   } else if (action === "/Semester-Project-2/listings") {
+   } else if (action === "/listings") {
       if (formData.amount) {
          postBid(formData);
       } else {
          createListing(formData);
       }
-   } else if (action === "/Semester-Project-2/profiles") {
+   } else if (action === "/profiles") {
       updateAvatar(formData);
    } else {
       const searchInputValue = formData.searchfield;
