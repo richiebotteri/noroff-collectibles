@@ -11,13 +11,9 @@ export async function createListingPageContent() {
    const url = new URL(document.location);
    const queryStringId = url.searchParams.get("id");
 
-   const listingObject = await getListingById(queryStringId);
+   const listingArray = await getListingById(queryStringId);
 
-   const listingArray = [listingObject];
-
-   const formattedListing = formatFetchData(listingArray);
-
-   formattedListing.forEach((listingData) => {
+   listingArray.forEach((listingData) => {
       // Deconstruct API listing data
       const { title, description, mediaArray, tagsArray, createdDate, endsAtDate, bidsCount, bids, seller } = listingData;
 

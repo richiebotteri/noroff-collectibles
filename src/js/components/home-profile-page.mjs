@@ -1,14 +1,14 @@
+import { getListingById } from "../api/requests/get-listing-by-id.mjs";
 import { createGridListing } from "./page-components/grid-listing.mjs";
 
 export function createHomePageContent(userData) {
-   const { profile, profileListings, allListings } = userData;
+   const { profile, profileListings } = userData;
 
    profileListings.forEach((profileListing) => {
       const listingsContainer = document.querySelector("#profil-listing-auction-grid");
       const listingElement = createGridListing(profileListing);
       listingsContainer.appendChild(listingElement);
    });
-
    const { credits, wins, email, name, _count, avatar } = profile;
    const profileWinsContainer = document.querySelector("#profil-listing-win-grid");
    const profileWinCountContainer = document.querySelector("#profile-listing-win-count");
@@ -20,14 +20,19 @@ export function createHomePageContent(userData) {
       winsCount = wins.length;
    }
 
-   allListings.forEach((listing) => {
-      const { id } = listing;
-      if (wins.includes(id)) {
-         const listingWon = listing;
-         const listingElement = createGridListing(listingWon);
-         profileWinsContainer.appendChild(listingElement);
-         profileWinCountContainer.innerText = `Total (${winsCount})`;
+   wins.forEach((listingID) => {
+      async function getListingsWon() {
+         const listingWonArray = await getListingById(listingID);
+
+         if (listingWonArray) {
+            listingWonArray.forEach((listingWon) => {
+               const listingElement = createGridListing(listingWon);
+               profileWinsContainer.appendChild(listingElement);
+               profileWinCountContainer.innerText = `Total (${winsCount})`;
+            });
+         }
       }
+      getListingsWon();
    });
 
    // Profile.html content containers
