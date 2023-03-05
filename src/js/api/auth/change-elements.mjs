@@ -1,9 +1,9 @@
 // import { deleteLoggingOut } from "./delete-logging-out.mjs";
 
-export function changeElements() {
-   const path = location.pathname;
+import path from "../../helpers/path.mjs";
 
-   if (path === "/Semester-Project-2/auctions-page.html" || path === "/Semester-Project-2/listing-page.html") {
+export function changeElements() {
+   if (path() === "/auctions-page.html" || path() === "/listing-page.html") {
       const darkBtnLinks = document.querySelectorAll("a[href='register-page.html']");
       const homeLinks = document.querySelectorAll("a[href='index.html']");
 
@@ -36,7 +36,7 @@ export function changeElements() {
 
       // change href
       homeLinks.forEach((homeLink, index) => {
-         homeLink.href = "/Semester-Project-2/profile.html";
+         homeLink.href = "/profile.html";
          if (index === 1) {
             homeLink.innerText = "Profile";
          }

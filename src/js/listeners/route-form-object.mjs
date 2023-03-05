@@ -7,7 +7,6 @@ import { updateAvatar } from "../api/requests/update-avatar.mjs";
 export function routeFormObject(formData) {
    const { action = null } = formData;
 
-   const path = location.pathname;
    if (action === "/auth/register" || action === "/auth/login") {
       auth(formData);
    } else if (action === "/listings") {
