@@ -9,6 +9,10 @@ export async function auth(submitFormData) {
       const response = await fetch(`${AUCTIONS_URL}${action}`, authOption(method, formData));
       const result = await response.json();
 
+      const failMsgContainer = document.querySelector("#api-fail-msg");
+      const failMsgText = document.querySelector("#api-fail-msg-text");
+
+      // Profile login success
       if (action === "/auth/login" && response.status === 200) {
          const { accessToken, ...profile } = result;
          saveItem("token", accessToken);
@@ -21,12 +25,23 @@ export async function auth(submitFormData) {
          }, 1000);
       }
 
+      // Profile registration success
       if (action === "/auth/register" && response.status === 201) {
          const registerSuccessMsg = document.querySelector("#register-success-msg");
          registerSuccessMsg.classList.replace("d-none", "d-block");
          setTimeout(() => {
             location.pathname = "/login.html";
          }, 1000);
+      }
+
+      // Profile already exist
+      if (response.status === 400) {
+         failMsgContainer.classList.replace("d-none", "d-block");
+         const responseErrorText = result.errors[0].message;
+         failMsgText.innerText = responseErrorText;
+         setTimeout(() => {
+            failMsgContainer.classList.replace("d-block", "d-none");
+         }, 3500);
       }
    } catch (error) {
       console.log(error);
