@@ -15,7 +15,8 @@
 
 #create-success-msg,
 #login-success-msg,
-#register-success-msg {
+#register-success-msg,
+#api-success-msg {
   background-color: $green-200;
   border: 2px solid rgba($green-500, 0.1);
   border-radius: $border-radius-pill;
