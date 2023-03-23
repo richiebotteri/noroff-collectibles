@@ -6,15 +6,18 @@ import { formatFetchData } from "../format-fetch-data.mjs";
 import { guestOption } from "../options/guest-option.mjs";
 import { sliceApiData } from "../../helpers/slice-api-data.mjs";
 import { routeListingData } from "../route-listing-data.mjs";
-import path from "../../helpers/path.mjs";
+
 import hasToken from "../../helpers/has-token.mjs";
+import getUrlPathname from "../../helpers/get-url-pathname.mjs";
+import { getBaseUrl } from "../../helpers/get-base-url.mjs";
 
 export async function getProfileAndListings(loadMoreListings = 10) {
    try {
       const fetchApiData = {};
-
+      const baseUrl = getBaseUrl();
+      const urlPathName = getUrlPathname();
       // Fetch profile data if on profile page and has token
-      if (path() === "/Semester-Project-2/profile.html" && hasToken()) {
+      if (urlPathName === baseUrl + "/profile.html" && hasToken()) {
          const profileStorage = loadItem("profile");
          const profileName = profileStorage.name;
 
@@ -57,7 +60,7 @@ export async function getProfileAndListings(loadMoreListings = 10) {
          });
 
          // Slice listing entries in portions of 10 listings per load
-         if (path() === "/Semester-Project-2/auctions-page.html") {
+         if (urlPathName === baseUrl + "/auctions-page.html") {
             const loadMoreBtn = document.querySelector("#load-more");
             loadMoreBtn.classList.replace("d-none", "d-block");
          }

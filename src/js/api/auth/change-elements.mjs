@@ -1,7 +1,11 @@
-import path from "../../helpers/path.mjs";
+import { getBaseUrl } from "../../helpers/get-base-url.mjs";
+import getUrlPathname from "../../helpers/get-url-pathname.mjs";
 
 export function changeElements() {
-   if (path() === "/Semester-Project-2/auctions-page.html" || path() === "/Semester-Project-2/listing-page.html") {
+   const baseUrl = getBaseUrl();
+   const urlPathName = getUrlPathname();
+
+   if (urlPathName === baseUrl + "/auctions-page.html") {
       const darkBtnLinks = document.querySelectorAll("a[href='register-page.html']");
       const homeLinks = document.querySelectorAll("a[href='index.html']");
 
@@ -34,7 +38,7 @@ export function changeElements() {
 
       // change href
       homeLinks.forEach((homeLink, index) => {
-         homeLink.href = "/Semester-Project-2/profile.html";
+         homeLink.href = baseUrl + "/profile.html";
          if (index === 1) {
             homeLink.innerText = "Profile";
          }

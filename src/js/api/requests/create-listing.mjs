@@ -1,8 +1,10 @@
+import { getBaseUrl } from "../../helpers/get-base-url.mjs";
 import { AUCTIONS_URL } from "../env.mjs";
 import { tokenOption } from "../options/token-option.mjs";
 
 export async function createListing(submitFormData) {
    try {
+      const baseUrl = getBaseUrl();
       const { method, action, ...formData } = submitFormData;
       const response = await fetch(`${AUCTIONS_URL}${action}`, tokenOption(method, formData));
       const result = await response.json();
@@ -15,7 +17,7 @@ export async function createListing(submitFormData) {
          createSuccessMsg.classList.replace("d-none", "d-block");
 
          setTimeout(() => {
-            location.pathname = "/Semester-Project-2/profile.html";
+            location.pathname = baseUrl + "/profile.html";
          }, 1500);
       }
 

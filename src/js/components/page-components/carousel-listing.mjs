@@ -1,15 +1,16 @@
+import { getBaseUrl } from "../../helpers/get-base-url.mjs";
 import { createHtmlElement } from "../../helpers/methods/create-element.mjs";
 import { createCardBody } from "../card-components/card-body.mjs";
 import { createHtmlMainImage } from "../card-components/card-elements/main-image.mjs";
 
 export function createCarouselListing(apiData) {
    // Deconstruct API listing data
+   const baseUrl = getBaseUrl();
 
    const { id, title, description, mediaArray, tagsArray, endsAtDate, bids } = apiData;
-
    // Create card elements
    const cardLink = createHtmlElement("a");
-   cardLink.href = `/Semester-Project-2/listing-page.html?id=${id}`;
+   cardLink.href = `${baseUrl}/listing-page.html?id=${id}`;
 
    const { index } = apiData;
 

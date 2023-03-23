@@ -12,24 +12,38 @@ import { getProfileAndListings } from "./api/requests/get-profile-and-listings.m
 import { changeElements } from "./api/auth/change-elements.mjs";
 import { deleteLoggingOut } from "./api/auth/delete-logging-out.mjs";
 import hasToken from "./helpers/has-token.mjs";
-import path from "./helpers/path.mjs";
+
 import { showOfflineMsg } from "./api/auth/show-offline-msg.mjs";
+import { getBaseUrl } from "./helpers/get-base-url.mjs";
+import getUrlPathname from "./helpers/get-url-pathname.mjs";
+
+const baseUrl = getBaseUrl();
+const urlPathName = getUrlPathname();
 
 // Only evoked on specific pages
-if (path() === "/Semester-Project-2/login-page.html" || path() === "/Semester-Project-2/forms.html") {
-   loginForm();
-} else if (path() === "/Semester-Project-2/register-page.html") {
-   registerForm();
-} else if (path() === "/Semester-Project-2/auctions-page.html") {
-   addMoreListings();
-} else if (path() === "/Semester-Project-2/create-listing-page.html") {
-   createListingForm();
-   changeInputDate();
-} else if (path() === "/Semester-Project-2/profile.html") {
-   avatarForm();
-} else if (path() === "/Semester-Project-2/listing-page.html") {
-   bidForm();
-   createListingPageContent();
+switch (urlPathName) {
+   case baseUrl + "/index.html":
+      break;
+   case baseUrl + "/login-page.html":
+      loginForm();
+      break;
+   case baseUrl + "/register-page.html":
+      registerForm();
+      break;
+   case baseUrl + "/auctions-page.html":
+      addMoreListings();
+      break;
+   case baseUrl + "/create-listing-page.html":
+      createListingForm();
+      changeInputDate();
+      break;
+   case baseUrl + "/profile.html":
+      avatarForm();
+      break;
+   case baseUrl + "/listing-page.html":
+      bidForm();
+      createListingPageContent();
+      break;
 }
 
 // Only evoked if token

@@ -1,9 +1,11 @@
+import { getBaseUrl } from "../../helpers/get-base-url.mjs";
 import { saveItem } from "../../storage/localStorage/save.mjs";
 import { AUCTIONS_URL } from "../env.mjs";
 import { authOption } from "../options/auth-option.mjs";
 
 export async function auth(submitFormData) {
    try {
+      const baseUrl = getBaseUrl();
       const { method, action, ...formData } = submitFormData;
 
       const response = await fetch(`${AUCTIONS_URL}${action}`, authOption(method, formData));
@@ -23,7 +25,7 @@ export async function auth(submitFormData) {
          signInMsg.classList.replace("d-none", "d-block");
 
          setTimeout(() => {
-            location.pathname = "/Semester-Project-2/profile.html";
+            location.pathname = baseUrl + "/profile.html";
          }, 1000);
       }
 
@@ -32,7 +34,7 @@ export async function auth(submitFormData) {
          const registerSuccessMsg = document.querySelector("#register-success-msg");
          registerSuccessMsg.classList.replace("d-none", "d-block");
          setTimeout(() => {
-            location.pathname = "/Semester-Project-2/login.html";
+            location.pathname = baseUrl + "/login.html";
          }, 1000);
       }
 

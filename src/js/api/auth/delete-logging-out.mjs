@@ -1,9 +1,11 @@
+import { getBaseUrl } from "../../helpers/get-base-url.mjs";
 import { deleteItem } from "../../storage/localStorage/delete.mjs";
 import { loadItem } from "../../storage/localStorage/load.mjs";
 import { saveItem } from "../../storage/localStorage/save.mjs";
 
 export function deleteLoggingOut() {
    const tokenExist = loadItem("token");
+   const baseUrl = getBaseUrl();
    if (tokenExist) {
       const logoutBtn = document.querySelector("#logout");
       logoutBtn.addEventListener("click", () => {
@@ -12,7 +14,7 @@ export function deleteLoggingOut() {
          saveItem("userOnline", false);
 
          setTimeout(() => {
-            location.pathname = "/Semester-Project-2/index.html";
+            location.pathname = baseUrl + "/index.html";
          }, 500);
       });
    }
